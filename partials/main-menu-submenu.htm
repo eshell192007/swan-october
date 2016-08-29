@@ -1,0 +1,14 @@
+[viewBag]
+==
+<ul class="submenu">
+    {% for item in items %}
+        <li 
+            class="{{ item.isActive or item.isChildActive ? 'active-nav-item' :'' }} 
+            {{ item.items ? 'more' :'' }}" >
+            <a href="{{ item.url }}">{{ item.title }}</a>
+            {% if item.items %}
+                {% partial 'main-menu-submenu' items=item.items %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

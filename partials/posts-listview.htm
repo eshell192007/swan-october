@@ -1,0 +1,28 @@
+[viewBag]
+
+[blogPosts allPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
+<div class="list">
+    {% for post in allPosts.posts.take(5) %}
+    <ul class="listview">
+        <li>
+            <a href="{{ 'blog/post'|page({ slug: post.slug }) }}">
+                {% if post.featured_images.count > 0 %}
+                <img class="media-object" src="{{ post.featured_images.thumb(50,50,{'mode':'crop'}) }}" />
+                {% else %}
+                <img class="media-object" src="{{ 'assets/images/img-default-thumb-sq.jpg'|theme }}" />
+                {% endif %}
+                <h3>{{ post.title }}</h3>
+            </a>
+        </li>
+    </ul>
+    {% else %}
+        <p>There are no posts to display. You know what they say, no news is good news!</p>
+    {% endfor %}
+</div>

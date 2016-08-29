@@ -1,0 +1,51 @@
+[viewBag]
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/post"
+
+[staticMenu]
+code = "main-menu"
+
+[staticPage]
+==
+{% component 'SeoBlogPost' data=post %}
+{% set post = blogPost.post %} 
+
+    <div class="content-image">
+    {% if post.featured_images.count > 0  %}
+        <img src="{{ post.featured_images.thumb(655,280,{'mode':'crop'}) }}" style="max-width: 100%" />
+    {% else %}
+        <img class="media-object" src="{{ 'assets/images/img-default.jpg'|theme }}" />
+    {% endif %}
+    </div>
+
+<div class="content-body">
+<h1>{{ post.title }}</h1>
+<div style="margin-top:-30px;font-size:1.3em;">
+    <span class="month">{{ post.published_at|date('M') }} /</span>
+    <span class="day">{{ post.published_at|date('d') }} /</span>
+    <span class="year">20{{ post.published_at|date('y') }}</span>
+</div>
+{{ post.content_html|raw }}
+
+<div style="overflow:auto;margin:20px 0;">
+{% if post.rjgallery.images.count > 0  %}
+    <h4>Galería {{ post.rjgallery.images.title }}</h4>
+{% else %}
+    
+{% endif %}
+{% component 'gallery' gallery=post.rjgallery %}
+</div>
+Compartir en: 
+
+<p class="info">
+    <!-- Publicado
+    {% if post.categories.count %} in
+        {% for category in post.categories %}
+            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    {% endif %} 
+    en {{ post.published_at|date('M d, Y') }} --> 
+</p><br /><br /><br />
+</div>

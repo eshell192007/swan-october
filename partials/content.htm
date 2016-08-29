@@ -5,27 +5,12 @@
 [staticPage]
 
 [staticBreadcrumbs]
-
-[ssbuttonsssb]
-facebook = 1
-twitter = 1
-google+ = 1
-tumblr = 0
-pinterest = 0
-pocket = 1
-reddit = 0
-linkedin = 1
-wordpress = 0
-pinboard = 0
-email = 0
-theme = "flat_web_icon_set_black"
 ==
-<div id="content" class="layout__content">
+<div id="content" class="layout__content--full">
     {% if banner == true %}
-        <img src="http://cinefilia.org.co/storage/app/media/{{ banner }}" style="max-width: 100%" />
+        <img src="/storage/app/media/{{ banner }}" style="max-width: 100%" />
     {% endif %}
-    <div class="content-body">
-    {% page %}
-    Compartir en: {% component 'ssbuttonsssb' %}
+    <div>
+        {% page %}
     </div>
 </div>

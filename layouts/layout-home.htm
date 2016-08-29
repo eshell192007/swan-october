@@ -1,4 +1,3 @@
-[staticPage]
 ==
 <!DOCTYPE html>
 <!--[if IE 8]> <html class="no-js lt-ie9" lang="en" ><![endif]-->
@@ -7,21 +6,14 @@
 <head>
     {% partial 'layout/head' %}
 </head>
-{% if background == true %}
-    <body style="background: #000 url('http://cinefilia.org.co/storage/app/media/{{ background }}')no-repeat fixed center center;">  
-{% else %}
-    <body>
-{% endif %}  
-
-    {variable tab="Header" type="mediafinder" mode="image"  name="background" label="Background"}{/variable}
-
+<body>
     <div id="app" class="layout_main layout--centered">
         <!-- Header :::::::::::::::::::::: -->
         <div id="header" class="layout__header">
-            {% partial 'layout/header' %}
+            {% partial 'header' %}
         </div>
         <div id="header-mobile" class="header__mobile">
-            {% partial 'layout/header-mobile' %}
+            {% partial 'header-mobile' %}
         </div>
         <!-- Content Area :::::::::::::::::::::: --> 
         <div id="contentarea" class="layout__contentarea">
@@ -32,7 +24,7 @@
         </div>
         <!-- Footer :::::::::::::::::::::: -->        
         <div id="footer" class="layout__footer">
-             {% partial "layout/footer" %}
+             {% partial "footer" %}
         </div>
     </div>
 

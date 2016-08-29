@@ -1,0 +1,68 @@
+[viewBag]
+snippetCode = "listado-posts"
+snippetName = "Listado de Posts"
+snippetProperties[category][title] = "Filtro de Categoría"
+snippetProperties[category][type] = "string"
+snippetProperties[category][default] = ""
+snippetProperties[category][options][] = ""
+snippetProperties[postsPerPage][title] = "Posts por página"
+snippetProperties[postsPerPage][type] = "string"
+snippetProperties[postsPerPage][default] = 5
+snippetProperties[postsPerPage][options][] = ""
+snippetProperties[noPostsMessage][title] = "Si no hay posts (mensaje)"
+snippetProperties[noPostsMessage][type] = "string"
+snippetProperties[noPostsMessage][default] = "No hay posts!"
+snippetProperties[noPostsMessage][options][] = ""
+
+[blogPosts]
+pageNumber = ":page"
+categoryFilter = "{{ category }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
+==
+{% set posts = blogPosts.posts %}
+
+<div class="cards-other">
+    {% for post in blogPosts.posts.take(postsPerPage) %} 
+        <div class="card">
+            <a href="{{ post.url }}">
+                <div class="card-image">
+                    {% if post.featured_images.count > 0 %}
+                        <img class="media-object" src="{{ post.featured_images.thumb(300,128,{'mode':'crop'}) }}" width="240" />
+                    {% else %}
+                        <img class="media-object" src="{{ 'assets/images/img-default-thumb.jpg'|theme }}" width="240" />
+                    {% endif %}
+                </div>
+                <div class="card-summary">
+                    <h3>{{ post.title }}</h3>
+                    <span class="month">{{ post.published_at|date('M') }} /</span>
+                    <span class="day">{{ post.published_at|date('d') }} /</span>
+                    <span class="year">20{{ post.published_at|date('y') }}</span>
+                    {% if post.excerpt == true %}
+                        <p>{{ post.excerpt }}</p>
+                        {% else %}
+                        {{ html_limit(post.content_html|raw, 180, '... Ver más') }}
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    <!--
+                    <span>Publicado</span>
+                    {% if post.categories.count %} <span>en</span> {% endif %}
+                    {% for category in post.categories %}
+                        <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                    {% endfor %}   
+                    -->             
+                </div>
+            </a>
+        </div>
+    {% else %}
+        <p>{{ noPostsMessage }}</p>
+    {% endfor %}
+</div>
