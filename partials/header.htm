@@ -1,0 +1,30 @@
+[viewBag]
+
+[staticMenu mainMenu]
+code = "main-menu"
+
+[staticPage]
+==
+<div class="logo">
+    <a href="/">
+        <img src="{{ 'assets/images/logo-app.png'|theme }}" alt="Cinefilia">
+    </a>
+</div>
+<div class="main-navigation" role="banner">
+    <nav role="navigation">    
+        {% partial 'layout/main-menu' items=mainMenu.menuItems id='js-navigation-menu' class='navigation-menu show' %}
+    </nav>
+    <div class="navigation-tools">
+      <div class="social-bar">
+        <a href="https://www.facebook.com/pages/cinefilia/117278921647890?ref=ts" target="_blank" class="btn-dark circle">
+          <img src="{{ 'assets/images/ic-social-facebook.png'|theme }}" alt="Facebook">
+        </a>
+        <a href="https://twitter.com/cinefiliaorg" target="_blank" class="btn-dark circle">
+          <img src="{{ 'assets/images/ic-social-twitter.png'|theme }}" alt="Twitter">
+        </a>
+        <a href="https://www.youtube.com/channel/UCOYLhaWVmiZVarHhqPCS4sA/videos?shelf_id=0&view=0&sort=dd" target="_blank" class="btn-dark circle">
+          <img src="{{ 'assets/images/ic-social-youtube.png'|theme }}" alt="Youtube">
+        </a> 
+      </div>
+    </div>
+</div>

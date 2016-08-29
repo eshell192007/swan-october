@@ -1,0 +1,48 @@
+.role {
+    margin-top:-20px;
+}
+
+.avatar {
+    border-radius:50%;float:left;margin-right:15px;
+}
+
+.content-body a {
+  color: #EE1F25 !important;
+}
+
+.content-body a:hover {
+  color: #FFF !important;
+}
+
+.title-detail-cursos {
+    border-top: 3px solid #EE1F25;
+}
+
+.btn-medium-register {
+    background: #000 none repeat scroll 0 0;
+    border: 2px solid #707070;
+    border-radius: 10px;
+    transition: all 0.2s ease 0s;
+    width: 150px;
+    z-index: 3000;
+}
+.btn-medium-register, .btn-medium-register:hover {
+    color: #dcdcdc;
+    display: inline-block;
+    font-family: AldoPC;
+    font-size: 1em;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 3px;
+    padding-left: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.btn-medium-register:hover {
+    background: #242424 none repeat scroll 0 0;
+    border: 2px solid #EE1F25;
+    border-radius: 10px;
+    transition: all 0.2s ease 0s;
+    width: 150px;
+}

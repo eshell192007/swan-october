@@ -1,0 +1,37 @@
+==
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en" ><![endif]-->
+<!--[if gt IE 8]><html class="no-js" lang="en" ><![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% partial 'layout/head' %}
+</head>
+<body style="background: #000 url('http://cinefilia.org.co/storage/app/media/backgrounds/body-bg-red.jpg')no-repeat fixed center center;">
+    {variable tab="Header" type="mediafinder" mode="image" name="banner" label="Banner image"}{/variable}
+    <div id="app" class="layout_main layout--centered">
+        <!-- Header :::::::::::::::::::::: -->
+        <div id="header" class="layout__header">
+            {% partial 'layout/header' %}
+        </div>
+        <div id="header-mobile" class="header__mobile">
+            {% partial 'layout/header-mobile-actualidad' %}
+        </div>
+        <!-- Content Area :::::::::::::::::::::: --> 
+        <div id="contentarea" class="layout__contentarea">
+            <!-- Subheader :::::::::::::::::::::: -->
+            {% partial 'layout/subheader-actualidad' %}
+            <!-- Content :::::::::::::::::::::: -->
+            {% partial 'layout/content-actualidad' %}
+            <!-- Sidebar :::::::::::::::::::::: -->
+            {% partial 'layout/sidebar' %}
+        </div>
+        <!-- Footer :::::::::::::::::::::: -->        
+        <div id="footer" class="layout__footer">
+             {% partial "layout/footer" %}
+        </div>
+    </div>
+
+{% partial 'scripts' %}
+
+</body>
+</html>

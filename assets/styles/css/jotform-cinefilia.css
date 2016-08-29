@@ -1,0 +1,344 @@
+/* | */
+
+/*__INSPECT_SEPERATOR__*/
+
+    /* Injected CSS Code */
+
+
+body {
+  background-color: none ;
+  background:#000;
+  background: #000 url("http://cinefilia.org.co/storage/app/media//backgrounds/body-bg-purple.jpg") no-repeat fixed center center;
+  margin:0;
+}
+
+option {
+    background: #fff none repeat scroll 0 0;
+}
+
+.form-line.form-line-active {
+    background-color: #E5F9FF !important;
+}
+
+.form-line-active input:focus {
+    border: 1px solid #5DC9EA !important;
+}
+
+.form-line-error .form-error-message {
+    background: #fff none repeat scroll 0 0 !important;
+    border-radius: 0;
+    bottom: auto;
+    box-shadow: none;
+    color: red !important;
+    display: inline-block;
+    font-size: 10px;
+    line-height: 20px;
+    margin: 0;
+    min-width: 105px;
+    padding: 0 5px;
+    position: absolute !important;
+    right: 0;
+    top: 0;
+    font-size: 0.7em !important;
+}
+
+.form-required {
+    color: #A159F9;
+    margin-left: 5px;
+}
+
+.form-line-error input:not(#coupon-input), .form-line-error select, .form-line-error textarea, .form-validation-error {
+    border: 1px solid red !important;
+    box-shadow: 0 0 2px red;
+}
+
+
+
+
+/* Progressbar widget   */
+
+.progressBarContainer {
+    background: #f7f7f7 none repeat scroll 0 0;
+    font-size: 0.8em;
+    text-align: center;
+    width: inherit;
+    height: 10px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    background:#f7f7f7;
+    z-index: 9999999;
+    padding-top: 0;
+}
+
+.progressBarSubtitle {
+    display: block;
+    overflow: auto;
+    padding-bottom: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    position: fixed;
+    bottom: 0;
+    left:35%;
+    width: 300px;
+    color:#808080;
+    
+}
+
+.progressjs-progress {
+    margin-left:10px;
+    background:#383838;
+
+}
+
+.progressjs-container {
+    height: 10px;
+    overflow: hidden; 
+    background:#242424;
+}
+
+.progressjs-theme-mintGreen .progressjs-inner {
+    background:#5DC9EA !important;
+}
+
+
+#progressCompleted, #progressTotal, #status_text1 {
+
+}
+
+#progressPercentage {
+    font-size:2em;
+    color: #5DC9EA;
+    display: block;
+}
+
+#progressBarWidget {
+    height: 10px;
+    width: 100%;
+}
+
+
+/* Page break   */
+
+
+.form-pagebreak {
+  width: 100%;
+  margin-left:0;
+  position:fixed;
+  bottom:0;
+  left:0;
+  background:#242424;
+  z-index: 8888;
+  border-top: 1px solid #383838;
+-webkit-box-shadow: 1px -4px 13px -3px rgba(0,0,0,0.45);
+-moz-box-shadow: 1px -4px 13px -3px rgba(0,0,0,0.45);
+box-shadow: 1px -4px 13px -3px rgba(0,0,0,0.45);
+}
+
+.form-pagebreak-back-container {
+  float: left;
+  margin-left: 20px;
+}
+
+.form-pagebreak-next-container {
+  float: right;
+  margin-right: 20px;
+}
+
+/* FORM WRAP  */
+
+.form-all {
+ overflow:auto;
+ padding-bottom: 30px;
+ margin-bottom: 100px;
+ margin-top:40px;
+ min-height: 550px;
+}
+
+.form-button-error {
+  font-size: 0.7em;
+  margin-top: 20px;
+  display:none !important;
+}
+
+.jotform-form {
+    margin: 0 auto;
+    padding: 40px 0;
+    width: 550px;
+    
+}
+
+.form-all .form-error-message {
+   z-index: 20;
+}
+
+
+.form-pagebreak-next-container, .form-pagebreak-back-container {
+}
+
+
+.form-all .qq-upload-button, .form-all .form-submit-button, .form-all .form-submit-reset, .form-all .form-submit-print {
+    /*background: #5DC9EA none repeat scroll 0 0;*/
+    box-shadow: none;
+    color: #ffffff !important;
+    text-shadow: none;
+    margin-bottom: 0  !important;
+    margin-top: 0  !important;
+}
+
+.form-submit-button-simple_white {
+    background: #5DC9EA none repeat scroll 0 0 !important;
+    box-shadow: none;
+    color: #ffffff !important;
+    text-shadow: none;
+    margin-bottom: 0  !important;
+    margin-top: 0  !important;
+}
+
+.form-submit-button-simple_white:hover {
+    background: #48ABC9 none repeat scroll 0 0 !important;
+    box-shadow: none;
+    color: #ffffff !important;
+    text-shadow: none;
+    margin-bottom: 0  !important;
+    margin-top: 0  !important;
+}
+
+.form-pagebreak-back, .form-pagebreak-next, .qq-upload-button, .form-submit-button, .form-submit-reset, .form-submit-print {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #f5f5f5 0%, #eeeeee 100%) repeat scroll 0 0;
+    border: 2px solid #5DC9EA;
+    border-radius: 3px;
+    box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    color: #666;
+    cursor: pointer;
+    padding: 6px 12px;
+    text-shadow: 0 1px #fff;
+}
+
+.success-wrap {
+    width:550px;
+    height: 400px;
+    background: #fff;
+    border-radius:20px;
+    margin: 50px auto 0 auto;
+    overflow:auto;
+    text-align: center;
+    padding-top:100px;
+    font-family: Arial;
+}
+
+.sucess-wrap a:link {
+    color:#00C79A;
+    text-decoration:none;
+}
+
+.sucess-wrap a:visited {
+    color:#00C79A;
+    text-decoration:none;
+}
+
+
+/*  MEDIA QUERIES */
+
+@media (max-width: 600px) {
+    .progressBarSubtitle {
+    display: none;
+    }
+    .jotform-form {
+        margin: 0 auto;
+        padding: 40px 0;
+        width: 100%;
+    }
+    
+    .form-all {
+        margin-top: 0;
+    }
+}
+
+/*  Full Name */
+
+#cid_65 .form-sub-label-container {
+     width: 130px !important;
+     float:left !important;   
+}
+
+/*  Phone number + Code Area */
+
+#cid_61 .form-sub-label-container {
+    width: auto !important;
+}
+
+/*  Code Area field */
+
+#input_61_area {
+    width: 60px !important;    
+}
+
+#sublabel_area {
+   width: 60px !important; 
+}
+
+#input_61_phone {
+    width: 200px !important;    
+}
+
+/*  Mobile Phone number + Code Area */
+
+#cid_62 .form-sub-label-container {
+    width: auto !important;
+}
+
+/*  Code Area field */
+
+#input_62_area {
+    width: 60px !important;    
+}
+
+#sublabel_area {
+   width: 60px !important; 
+}
+
+#input_62_phone {
+    width: 200px !important;    
+}
+
+/*  Mobile Phone number + Code Area */
+
+#cid_63 .form-sub-label-container {
+    width: auto !important;
+}
+
+/*  Code Area field */
+
+#input_63_area {
+    width: 60px !important;    
+}
+
+#sublabel_area {
+   width: 60px !important; 
+}
+
+#input_63_phone {
+    width: 200px !important;    
+}
+
+/*  Mobile Phone number + Code Area */
+
+#cid_64 .form-sub-label-container {
+    width: auto !important;
+}
+
+/*  Code Area field */
+
+#input_64_area {
+    width: 60px !important;    
+}
+
+#sublabel_area {
+   width: 60px !important; 
+}
+
+#input_64_phone {
+    width: 200px !important;    
+}

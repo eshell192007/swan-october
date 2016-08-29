@@ -1,0 +1,20 @@
+[viewBag]
+
+[staticMenu mainMenu]
+code = "main-menu"
+==
+<div id="sidebar" class="layout__sidebar">
+    <div class="banner">
+        <a href="/formacion/">
+        <img src="http://cinefilia.org.co/storage/app/media/banners/cursos-2016-II-small.jpg">
+        </a>
+    </div>
+    <div class="panel">
+        <div class="panel-title">
+            <h3 class="to-center">Artículos relacionados<h3/>
+        </div>
+        <div class="panel-content">
+            {% partial 'actualidad/posts-listview' %}
+        </div>
+    </div>
+</div>

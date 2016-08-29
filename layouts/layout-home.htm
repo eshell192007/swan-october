@@ -1,0 +1,42 @@
+[staticPage]
+==
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en" ><![endif]-->
+<!--[if gt IE 8]><html class="no-js" lang="en" ><![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% partial 'layout/head' %}
+</head>
+{% if background == true %}
+    <body style="background: #000 url('http://cinefilia.org.co/storage/app/media/{{ background }}')no-repeat fixed center center;">  
+{% else %}
+    <body>
+{% endif %}  
+
+    {variable tab="Header" type="mediafinder" mode="image"  name="background" label="Background"}{/variable}
+
+    <div id="app" class="layout_main layout--centered">
+        <!-- Header :::::::::::::::::::::: -->
+        <div id="header" class="layout__header">
+            {% partial 'layout/header' %}
+        </div>
+        <div id="header-mobile" class="header__mobile">
+            {% partial 'layout/header-mobile' %}
+        </div>
+        <!-- Content Area :::::::::::::::::::::: --> 
+        <div id="contentarea" class="layout__contentarea">
+            {% partial "slideshow-home" %}
+            <div id="cards-home">
+                {% page %}
+            </div>
+        </div>
+        <!-- Footer :::::::::::::::::::::: -->        
+        <div id="footer" class="layout__footer">
+             {% partial "layout/footer" %}
+        </div>
+    </div>
+
+{% partial 'scripts' %}
+
+</body>
+</html>

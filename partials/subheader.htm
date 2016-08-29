@@ -1,0 +1,16 @@
+[viewBag]
+
+[siteSearchInclude]
+
+[searchResults]
+resultsPerPage = 10
+showProviderBadge = 1
+noResultsMessage = "Your search returned no results."
+visitPageMessage = "Visit page"
+==
+<div id="subheader" class="layout__subheader">
+  <div class="section-title">
+    <h2>{{ title ?: this.page.title }}</h2>
+  </div>
+  {% partial 'search' %}
+</div>

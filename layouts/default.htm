@@ -1,0 +1,45 @@
+==
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en" ><![endif]-->
+<!--[if gt IE 8]><html class="no-js" lang="en" ><![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Global --> 
+    <title>{{ title ?: this.page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- Favicon --> 
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon" />
+    <!-- Styles and fonts --> 
+    <link href="{{ 'assets/styles/css/styles.min.css'|theme }}" media="screen" rel="stylesheet" type="text/css">
+     {% styles %}
+</head>
+<body>
+{variable tab="Header" type="text" name="tagline" label="Tagline"}{/variable}
+{variable tab="Header" type="mediafinder" mode="image" name="banner" label="Banner image"}{/variable}
+
+    <div id="app" class="layout_main">
+        <!-- Header :::::::::::::::::::::: -->
+        <div id="header" class="layout_header">    
+            {% partial 'layout/header' %}
+        </div> 
+        <!-- Content Area :::::::::::::::::::::: --> 
+        <div id="contentarea" class="layout_content cd-main-content">
+            <!-- Subheader :::::::::::::::::::::: -->
+            {% partial 'layout/subheader' %}
+            <!-- Content :::::::::::::::::::::: -->
+            {% partial 'layout/content' %}
+            <!-- Sidebar :::::::::::::::::::::: -->
+            {% partial 'layout/sidebar' %}
+        </div>
+        <!-- Footer :::::::::::::::::::::: -->        
+        <div id="footer" class="layout_footer">
+             {% partial "layout/footer" %}
+        </div>
+    </div>
+
+{% partial 'scripts' %}
+
+</body>
+</html>
