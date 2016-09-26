@@ -1,0 +1,29 @@
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% partial 'master/head' %}
+</head>
+<body>
+<div class="layout">
+    <!-- Header :::::::::::::::::::::: -->
+    <header class="layout-header">
+        {% partial 'master/header' %}
+    </header>
+    <!-- Content Area :::::::::::::::::::::: --> 
+    <main class="layout-main" role="main">
+        <!-- Subheader :::::::::::::::::::::: -->
+        {% partial 'master/subheader' %}
+        <!-- Content :::::::::::::::::::::: -->
+        {% partial 'master/content' %}
+    </main>
+    <!-- Footer :::::::::::::::::::::: -->        
+    <footer class="layout-footer">
+         {% partial 'master/footer' %}
+    </footer>
+</div>
+
+{% partial 'master/scripts' %}
+
+</body>
+</html>

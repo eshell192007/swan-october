@@ -1,0 +1,17 @@
+[viewBag]
+
+[staticMenu mainMenu]
+code = "mainMenu"
+
+[staticPage]
+==
+<div class="navigation centered">
+    <!-- Logo -->
+    <a class="logo" href="{{ '/'|app }}"><img src="{{'assets/images/logo-white.png'|theme }}" alt="Swan"></a>
+    <nav id="menu-main" class="menu" role="navigation">
+      <!-- Menu -->
+      {% partial 'master/menu' items=mainMenu.menuItems %}
+    </nav>         
+    <button type="button" class="menu-mobile-open">☰</button> 
+</div>
+<div class="menu-mobile-fade-screen"></div>

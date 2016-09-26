@@ -1,0 +1,16 @@
+
+// -----------------------------------------------------------
+// SWAN MIXINS by Sebastian Serna - 2016
+// -----------------------------------------------------------
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+// Center content vertical and horizontal
+// Source: https://codepen.io/hced/pen/FbdqC/
+
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

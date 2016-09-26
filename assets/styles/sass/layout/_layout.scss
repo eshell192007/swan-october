@@ -1,0 +1,64 @@
+// -----------------------------------------------------------
+// BASE LAYOUT
+// -----------------------------------------------------------
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+// Containers
+
+.layout {
+	overflow: auto;
+  min-height: 100%; // Afecta la posición del footer
+  position: relative; // Afecta la posición del footer
+  color: $text-basic;
+  background: $layout-bg;
+}
+
+// Header section
+
+.layout-header {
+	@include span-columns(12);
+  color: $text-basic;
+  background: $header-bg;
+}
+
+// Main content section
+
+.layout-main {
+	@include span-columns(12);
+  padding-bottom: $footer-size; // Afecta la posición del footer
+  color: $text-basic;
+  background: $main-bg;
+}
+
+// Footer section
+
+.layout-footer {
+	@include span-columns(12);
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: em(30) em(10);
+  height: $footer-size;   // Tamaño del footer
+  color: $text-basic;
+  background: $footer-bg;
+}
+
+// Other classes
+
+.centered {
+  @include outer-container(980px);
+  @include media($mobile){ 
+    }
+}
+
+.heading {
+  padding-top: 1em; 
+  padding-bottom: 0.5em; 
+  @include media($mobile){
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 0.2em;   
+    }
+}
+

@@ -1,0 +1,56 @@
+name: 'Main Menu'
+items:
+    -
+        title: Overview
+        type: cms-page
+        code: ''
+        reference: ref/overview
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Text
+        type: cms-page
+        code: ''
+        reference: ref/text
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Multimedia
+        type: cms-page
+        code: ''
+        reference: ref/multimedia
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Controls
+        type: cms-page
+        code: ''
+        reference: ref/controls
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Patterns
+        type: cms-page
+        code: ''
+        reference: ref/patterns
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Color
+        type: cms-page
+        code: ''
+        reference: ref/color
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

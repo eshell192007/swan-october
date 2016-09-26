@@ -3,35 +3,30 @@
 [staticMenu]
 ==
 <!DOCTYPE html>
-<!--[if IE 8]> <html class="no-js lt-ie9" lang="en" ><![endif]-->
-<!--[if gt IE 8]><html class="no-js" lang="en" ><![endif]-->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    {% partial 'head' %}
+    {% partial 'master/head' %}
 </head>
 <body>
-    <div id="app" class="layout_main layout--centered">
-        <!-- Header :::::::::::::::::::::: -->
-        <div id="header" class="layout__header">
-            {% partial 'header' %}
-        </div>
-        <div id="header-mobile" class="header__mobile">
-            {% partial 'header-mobile' %}
-        </div>
-        <!-- Content Area :::::::::::::::::::::: --> 
-        <div id="contentarea" class="layout__contentarea">
-            <!-- Subheader :::::::::::::::::::::: -->
-            {% partial 'subheader' %}
-            <!-- Content :::::::::::::::::::::: -->
-            {% partial 'content' %}
-        </div>
-        <!-- Footer :::::::::::::::::::::: -->        
-        <div id="footer" class="layout__footer">
-             {% partial "footer" %}
-        </div>
-    </div>
+<div class="layout">
+    <!-- Header :::::::::::::::::::::: -->
+    <header class="layout-header">
+        {% partial 'master/header' %}
+    </header>
+    <!-- Content Area :::::::::::::::::::::: --> 
+    <main class="layout-main" role="main">
+        <!-- Subheader :::::::::::::::::::::: -->
+        {% partial 'master/subheader-hero' %}
+        <!-- Content :::::::::::::::::::::: -->
+        {% partial 'master/content' %}
+    </main>
+    <!-- Footer :::::::::::::::::::::: -->        
+    <footer class="layout-footer">
+         {% partial 'master/footer' %}
+    </footer>
+</div>
 
-{% partial 'scripts' %}
+{% partial 'master/scripts' %}
 
 </body>
 </html>
