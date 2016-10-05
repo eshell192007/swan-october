@@ -1491,13 +1491,25 @@ textarea:focus {
   .menu-mobile-open {
     display: inline-block;
     float: right;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    border: 1px solid #e6e6e6;
-    color: #262626;
-    background: #FFFFFF;
   }
+}
+
+.menu-mobile-open button {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  color: #262626;
+  background: #FFFFFF;
+}
+
+.menu-mobile-open button:hover {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #0d0d0d;
+  color: #FFFFFF;
+  background: #0d0d0d;
 }
 
 .hero {
