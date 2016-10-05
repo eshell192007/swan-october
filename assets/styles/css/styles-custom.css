@@ -1290,7 +1290,7 @@ input[type="email"] {
 
 input:focus {
   color: #4d4d4d;
-  border: gray solid 1px;
+  border: #019D90 solid 1px;
   background: #FFFFFF;
 }
 
@@ -1307,7 +1307,7 @@ textarea {
 
 textarea:focus {
   color: #4d4d4d;
-  border: gray solid 1px;
+  border: #019D90 solid 1px;
   background: #FFFFFF;
 }
 
@@ -1613,7 +1613,7 @@ textarea:focus {
   -webkit-transition: .2s;
   transition: .2s;
   color: #262626;
-  border-bottom: #e6e6e6 1px solid;
+  border-bottom: #019D90 2px solid;
   background: #fafafa;
 }
 
@@ -1749,7 +1749,7 @@ ul.listview {
   -webkit-transition: .2s;
   transition: .2s;
   color: #262626;
-  border-bottom: #e6e6e6 1px solid;
+  border-bottom: #019D90 2px solid;
   background: #fafafa;
 }
 
@@ -1826,7 +1826,7 @@ ul.listview {
   -webkit-transition: .2s;
   transition: .2s;
   color: #262626;
-  border-bottom: #e6e6e6 1px solid;
+  border-bottom: #019D90 2px solid;
   background: #fafafa;
 }
 

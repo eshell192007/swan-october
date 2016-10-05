@@ -7,16 +7,16 @@
 'use strict';
 
 var gulp = require( 'gulp' ),
-	plumber = require( 'gulp-plumber'),
-	sass = require( 'gulp-sass'),
-	sourcemaps = require('gulp-sourcemaps'),
-	autoprefixer = require('gulp-autoprefixer'),
+  plumber = require( 'gulp-plumber'),
+  sass = require( 'gulp-sass'),
+  sourcemaps = require('gulp-sourcemaps'),
+  autoprefixer = require('gulp-autoprefixer'),
   minifyCSS = require('gulp-minify-css'),
   rename = require('gulp-rename'),
-	uglify = require( 'gulp-uglify'),
-	concat = require( 'gulp-concat'),
-	sassdoc = require('sassdoc'),
-  browserSync = require('browser-sync');
+  uglify = require( 'gulp-uglify'),
+  concat = require( 'gulp-concat'),
+  sassdoc = require('sassdoc'),
+  browserSync = require('browser-sync').create();
 
 
 //-----------------------------------------------------
@@ -37,11 +37,11 @@ var sassOptions = {
 
 gulp.task ('sass' , function() {
      return gulp
-     	.src(input)
+      .src(input)
       .pipe(plumber())
-	    .pipe(sass(sassOptions).on('error', sass.logError))
-    	.pipe(autoprefixer())
-	    .pipe(gulp.dest(output))
+      .pipe(sass(sassOptions).on('error', sass.logError))
+      .pipe(autoprefixer())
+      .pipe(gulp.dest(output))
       .pipe(minifyCSS())
       .pipe(rename('styles.min.css'))
       .pipe(gulp.dest(output))
@@ -78,8 +78,8 @@ gulp.task('sassdoc', function () {
 //-----------------------------------------------------
 
 gulp.task ('mergejs' , function() {
-	gulp.src ('assets/scripts/all/*.js')
-	  .pipe(plumber())
+  gulp.src ('assets/scripts/all/*.js')
+    .pipe(plumber())
     .pipe(concat('scripts.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('assets/scripts/'));
@@ -101,8 +101,28 @@ gulp.task('prod', ['sassdoc'], function () {
 // Watch tasks
 //-----------------------------------------------------
 
-gulp.task('watch', ['sass'], function() {
+// Sass compiler
+
+gulp.task('sass-up', function() {
     gulp.watch(input, ['sass']);
+});
+
+// Watch main task
+
+gulp.task('watch', ['sass-up'], function() {
+    browserSync.init({
+        host: "localhost",
+        port: 8888
+    });
+    gulp.watch([
+      './layouts/*.htm',
+      './layouts/**/*.htm',
+      './partials/*.htm',
+      './partials/**/*.htm',
+      './pages/*.htm',
+      './pages/**/*.htm',
+      './assets/styles/css/*.css'
+      ]).on("change", browserSync.reload);
 });
 
 

@@ -83,7 +83,7 @@ $input-text-border:         $gray3 solid 1px ;
 $input-text-bg:             $white ;
 // Input text focus
 $input-text-focus:          $gray7 ;
-$input-text-focus-border:   $gray5 solid 1px ;
+$input-text-focus-border:   $primary solid 1px ;
 $input-text-focus-bg:       $white ;
 
 // Select (dropdown) styles
@@ -104,7 +104,7 @@ $view-item-image-bg:               none ;
 $view-item-bg:                     $white ;
 // Item hover
 $view-item-hover-text:             $gray9 ;
-$view-item-hover-bottom-border:    $gray2 1px solid ;
+$view-item-hover-bottom-border:    $primary 2px solid ;
 $view-item-hover-image-bg:         none ;
 $view-item-hover-bg:               darken($white, 2%) ;
 
