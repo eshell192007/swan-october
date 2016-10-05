@@ -1,15 +1,7 @@
 // -----------------------------------------------------------
-// MENU HORIZONTAL by Sebastian Serna - 2016
+// MENU by Sebastian Serna - 2016
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-.navigation {
-  overflow: auto;
-  //text-transform: uppercase;
-  font-size: 0.9em;
-  background: $navigation-bg;
-}
 
 
 .logo {
@@ -31,7 +23,6 @@
 .menu {
   @include span-columns(9 of 12);
   @include omega();
-  padding-right:em(20);
   background: $menu-bg;
   @include media($mobile){
     display: none;
@@ -94,6 +85,7 @@
   &.is-visible {
     @include transition(all 0.20s linear);
     @include transform(translateX(0));
+    z-index: 99999;
     }
 }
 
@@ -102,9 +94,8 @@
   @include transition;
   opacity: 0;
   visibility: hidden;
-  z-index: 9999;
-
   background: $menu-mobile-fade-screen-bg;
+  z-index: 88888;
 
   &.is-visible {
     @include transition(all 0.20s linear);

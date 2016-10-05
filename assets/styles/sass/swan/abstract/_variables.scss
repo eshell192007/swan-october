@@ -4,6 +4,21 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+@import "../vendor/neat/neat-helpers"; 
+
+// ::::: Start Neat override ::::::::::::::::
+
+// Visual Grid
+$visual-grid:         true;
+$visual-grid-color:   #d4d4d4;
+$visual-grid-opacity: 0.3;
+
+// Initial Grid Settings
+$max-width:     100%;
+$grid-columns:  12;
+$gutter:        0em ;
+
+// ::::: End Neat override ::::::::::::::::
 
 // ::::: Breakpoints
 
@@ -12,21 +27,19 @@ $tablet: new-breakpoint(max-width 980px 4);
 $desktop: new-breakpoint(max-width 1920px 4);
 
 $large-screen: 50em !default;
-
 $border-box-sizing: true !default;
+$add-gutter: 1em;
 
-$layout-border: none; // Development purposes only
+$layout-border: none !default; // Development purposes only
 
-// DIMENS
+// Dimensions
 
-$padd:      2em;
-
-$size-xs:   3em ;
-$size-s:    5em ;
-$size-m:    9em ;
-$size-l:    22em ;
-$size-xl:   32em ;
-$size-xxl:  45em ;
+$size-xs:    3em   !default;
+$size-s:     5em   !default;
+$size-m:     9em   !default;
+$size-l:     22em  !default;
+$size-xl:    32em  !default;
+$size-xxl:   45em  !default;
 
 $width-sidebar-tiny: 4em;
 
@@ -56,7 +69,7 @@ $gray8:             darken($white, 80%); // #333333
 $gray9:             darken($white, 85%); // #1A1A1A
 $black:             darken($white, 100%); // Black (HTML color: black) #000000
 
-$primary:           #000000 !default; // Bluemarine
+$primary:           #000000 !default; // Black
 
 // COLORS
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -64,6 +77,7 @@ $primary:           #000000 !default; // Bluemarine
 // General
 // ::::::::::::::::::::::::::::::::::::
 $body-bg:              $white !default;
+
 
 // Texts
 // ::::::::::::::::::::::::::::::::::::
@@ -76,19 +90,23 @@ $text-selection:       $gray6 !default;
 $text-selection-bg:    $gray2 !default;
 // Horizontal rule        
 $hr-color:             $gray3 !default;
-$hr-color-bg:          $gray3 !default;
+
 
 // Layout base styles 
 // ::::::::::::::::::::::::::::::::::::
 $layout-bg:            none !default;
-$header-bg:            $gray1 !default;
-$main-bg:              $white !default;
-$footer-bg:            $gray1 !default;
+$layout-header-bg:     $gray1 !default;
+$layout-main-bg:       $white !default;
+$layout-footer-bg:     $gray1 !default;
+$content-bg: 		   $white !default;
+$sidebar-bg: 		   $gray1 !default;
+
 
 // Hero styles 
 // ::::::::::::::::::::::::::::::::::::
 $hero-bg:              $gray2 !default;
 $hero-content-bg:      none !default;
+
 
 // Buttons base styles 
 // ::::::::::::::::::::::::::::::::::::
@@ -112,9 +130,10 @@ $btn-primary-hover-text:     $white !default;
 $btn-primary-hover-border:   $white solid 2px !default;
 $btn-primary-hover-bg:       $gray8 !default;
 
+
 // Input text and Textarea styles 
 // ::::::::::::::::::::::::::::::::::::
-// Input text (text, password, email)
+// Input text (text, password, email, textarea)
 $input-text:                $gray6 !default;
 $input-text-border:         $gray3 solid 1px !default;
 $input-text-bg:             $white !default;
@@ -123,20 +142,13 @@ $input-text-focus:          $gray7 !default;
 $input-text-focus-border:   $gray5 solid 1px !default;
 $input-text-focus-bg:       $white !default;
 
-// Input textarea
-$input-textarea:                $gray6 !default;
-$input-textarea-border:         $gray3 solid 1px !default;
-$input-textarea-bg:             $white !default;
-// Input textarea focus
-$input-textarea-focus:          $gray7 !default;
-$input-textarea-focus-border:   $gray5 solid 1px !default;
-$input-textarea-focus-bg:       $white !default;
 
 // Select (dropdown) styles
 // ::::::::::::::::::::::::::::::::::::
 $dropdown-text:             $gray8 !default;
 $dropdown-border:           $gray5 solid 1px !default;
-$dropdown-bg: url(../../images/ic-arrow-down.png) right no-repeat $gray1 !default;
+$dropdown-bg:               $gray1 url(../../images/ic-arrow-down.png) right no-repeat !default;
+
 
 // List, card, grid and article view styles
 // ::::::::::::::::::::::::::::::::::::  
@@ -151,25 +163,34 @@ $view-item-hover-bottom-border:    none !default;
 $view-item-hover-image-bg:         none !default;
 $view-item-hover-bg:               darken($white, 2%) !default;
 
+
 // Menu styles
 // ::::::::::::::::::::::::::::::::::::
 // Menu Basic
-$navigation-bg:           none !default;
-$menu-bg:                 none !default;
-$menu-item-text:          $gray6 !default;
-$menu-item-bg:            $gray1 !default;
-$menu-item-hover-text:    $gray9 !default;    
-$menu-item-hover-bg:      $gray2 !default;
-$menu-item-active-text:   $gray9 !default;
-$menu-item-active-bg:     $gray2 !default;
+$navigation-bg:                 none !default ;
+$menu-bg:                       none !default ;
+// Item
+$menu-item-text:                $gray6 !default ;
+$menu-item-bg:                  $gray1 !default ;
+// Item hover
+$menu-item-hover-text:          $gray9 !default ;    
+$menu-item-hover-bg:            $gray2 !default ;
+// Item active
+$menu-item-active-text:         $gray9 !default ;
+$menu-item-active-bg:           $gray2 !default ;
+
 // Menu Mobile
-$menu-mobile-bg:                 $gray1 !default;
-$menu-mobile-item-text:          $gray6 !default;
-$menu-mobile-item-bg:            $gray1 !default;
-$menu-mobile-item-hover-text:    $gray9 !default;
-$menu-mobile-item-hover-bg:      $gray2 !default;
-$menu-mobile-item-active-text:   $gray9 !default;
-$menu-mobile-item-active-bg:     $gray2 !default;
+$menu-mobile-bg:                $gray1 !default ;
+// Item
+$menu-mobile-item-text:         $gray6 !default ;
+$menu-mobile-item-bg:           $gray1 !default ;
+// Item hover
+$menu-mobile-item-hover-text:   $gray9 !default ;
+$menu-mobile-item-hover-bg:     $gray2 !default ;
+// Item active
+$menu-mobile-item-active-text:  $gray9 !default ;
+$menu-mobile-item-active-bg:    $gray2 !default ;
+
 // Menu Mobile hamburger btn
 $menu-mobile-btn-text:         $gray9 !default;
 $menu-mobile-btn-bg:           $white !default;
