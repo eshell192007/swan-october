@@ -101,7 +101,7 @@ gulp.task('prod', ['sassdoc'], function () {
 // Watch tasks
 //-----------------------------------------------------
 
-gulp.task('watch', ['sass' , 'browser-sync'], function() {
+gulp.task('watch', ['sass'], function() {
     gulp.watch(input, ['sass']);
 });
 

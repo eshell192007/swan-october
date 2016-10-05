@@ -8,14 +8,26 @@
 <div class="layout">
     <!-- Header :::::::::::::::::::::: -->
     <header class="layout-header">
-        {% partial 'master/header' %}
+        <section class="section">
+            <div class="section-content">          
+                {% partial 'master/header' %}
+            </div>
+        </section>
     </header>
     <!-- Content Area :::::::::::::::::::::: --> 
     <main class="layout-main" role="main">
-        <!-- Subheader :::::::::::::::::::::: -->
-        {% partial 'master/subheader' %}
-        <!-- Content :::::::::::::::::::::: -->
-        {% partial 'master/content' %}
+        <section class="section">
+            <div class="section-content">
+                <!-- Subheader :::::::::::::::::::::: -->
+                {% partial 'master/subheader' %}
+            </div>
+        </section>
+        <section class="section">
+            <div class="section-content">
+                <!-- Content :::::::::::::::::::::: -->
+                {% partial 'master/content' %}
+            </div>
+        </section>
     </main>
     <!-- Footer :::::::::::::::::::::: -->        
     <footer class="layout-footer">
