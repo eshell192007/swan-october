@@ -1,0 +1,23 @@
+title = "Herramienta"
+url = "/herramientas/:slug"
+layout = "layout-basic-full"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Swan\Reviews\Models\Tool"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "name"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+   <h2> {{ attribute(record, displayColumn) }}</h2>
+    
+    <a class="button primary rounded" href="{{ record.website|raw }}" target="_blank">Sitio oficial</a>
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}

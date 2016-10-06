@@ -1,0 +1,16 @@
+title = "Herramientas"
+url = "/herramientas"
+layout = "layout-basic-full"
+is_hidden = 0
+
+[builderList]
+modelClass = "Swan\Reviews\Models\Tool"
+scope = "-"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "herramienta"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+==
+{% component 'builderList' %}
