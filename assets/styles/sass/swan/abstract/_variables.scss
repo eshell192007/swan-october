@@ -4,7 +4,7 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-@import "../vendor/neat/neat-helpers"; 
+@import "../vendor/neat/neat-helpers";
 
 // ::::: Start Neat override ::::::::::::::::
 
@@ -50,8 +50,8 @@ $main-size: auto !default;
 $footer-size: $size-m !default;
 
 
-// INSPIRATION: ZONE SYSTEM 
-// Created by Ansel Adams and Fred Archer 
+// INSPIRATION: ZONE SYSTEM
+// Created by Ansel Adams and Fred Archer
 // -----------------------------------------------------------
 
 // GRAYSCALE PALETTE variables (white to black)
@@ -89,11 +89,11 @@ $text-link-hover:      $gray7 !default;
 $text-link-visited:    $gray9 !default;
 $text-selection:       $gray6 !default;
 $text-selection-bg:    $gray2 !default;
-// Horizontal rule        
+// Horizontal rule
 $hr-color:             $gray3 !default;
 
 
-// Layout base styles 
+// Layout base styles
 // ::::::::::::::::::::::::::::::::::::
 $layout-bg:            none !default;
 $layout-header-bg:     $gray1 !default;
@@ -103,13 +103,13 @@ $content-bg: 		   $white !default;
 $sidebar-bg: 		   $gray1 !default;
 
 
-// Hero styles 
+// Hero styles
 // ::::::::::::::::::::::::::::::::::::
 $hero-bg:              $gray2 !default;
 $hero-content-bg:      none !default;
 
 
-// Buttons base styles 
+// Buttons base styles
 // ::::::::::::::::::::::::::::::::::::
 // Btn
 $btn-text:           $gray7 !default;
@@ -132,7 +132,7 @@ $btn-primary-hover-border:   $white solid 2px !default;
 $btn-primary-hover-bg:       $gray8 !default;
 
 
-// Input text and Textarea styles 
+// Input text and Textarea styles
 // ::::::::::::::::::::::::::::::::::::
 // Input text (text, password, email, textarea)
 $input-text:                $gray6 !default;
@@ -152,7 +152,7 @@ $dropdown-bg:               $gray1 url(../../images/ic-arrow-down.png) right no-
 
 
 // List, card, grid and article view styles
-// ::::::::::::::::::::::::::::::::::::  
+// ::::::::::::::::::::::::::::::::::::
 // Item
 $view-item-text:                   $gray7 !default;
 $view-item-bottom-border:          $white 2px solid !default;
@@ -174,7 +174,7 @@ $menu-bg:                       none !default ;
 $menu-item-text:                $gray6 !default ;
 $menu-item-bg:                  $gray1 !default ;
 // Item hover
-$menu-item-hover-text:          $gray9 !default ;    
+$menu-item-hover-text:          $gray9 !default ;
 $menu-item-hover-bg:            $gray2 !default ;
 // Item active
 $menu-item-active-text:         $gray9 !default ;
@@ -206,4 +206,3 @@ $menu-mobile-btn-hover-border:   1px solid lighten($primary, 5%) !default ;
 // Menu Mobile fade screen
 $menu-mobile-fade-screen-bg:   $black !default;
 $menu-mobile-border:           2px solid $gray5 !default;
-

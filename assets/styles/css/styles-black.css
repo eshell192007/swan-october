@@ -1474,13 +1474,13 @@ textarea:focus {
 }
 
 .menu-mobile ul li a:hover {
-  color: #e6e6e6;
-  background: #262626;
+  color: #FFFFFF;
+  background: gray;
 }
 
 .menu-mobile ul li a.active {
   color: #FFFFFF;
-  background: #262626;
+  background: #4d4d4d;
 }
 
 .menu-mobile-open {
@@ -1565,7 +1565,6 @@ textarea:focus {
       -ms-flex-align: start;
           align-items: flex-start;
   color: #4d4d4d;
-  border-bottom: none;
   background: #262626;
 }
 
@@ -1606,6 +1605,7 @@ textarea:focus {
   display: flex;
   padding: 1em;
   cursor: pointer;
+  border-bottom: none;
 }
 
 .listview-item a:hover {
@@ -1696,7 +1696,6 @@ ul.listview {
           flex: 0 1 32%;
   margin-bottom: 1.2em;
   color: #4d4d4d;
-  border-bottom: none;
   background: #262626;
 }
 
@@ -1741,6 +1740,7 @@ ul.listview {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-bottom: none;
 }
 
 .cardview-item a:hover {
@@ -1773,7 +1773,6 @@ ul.listview {
           flex: 0 1 33%;
   margin-bottom: 0.5em;
   color: #4d4d4d;
-  border-bottom: none;
   background: #262626;
 }
 
@@ -1818,6 +1817,7 @@ ul.listview {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-bottom: none;
 }
 
 .gridview-item a:hover {

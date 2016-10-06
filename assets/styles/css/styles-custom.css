@@ -351,7 +351,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Tahoma, Geneva, sans-serif;
   font-weight: normal;
   margin: 1em 0 1em 0;
-  color: #813b9b;
+  color: #9142ae;
 }
 
 h1 {
@@ -370,7 +370,7 @@ p {
 
 a {
   text-decoration: none;
-  color: #262626;
+  color: #01b6a7;
   outline: 0;
 }
 
@@ -378,11 +378,11 @@ a:hover {
   text-decoration: none;
   -webkit-transition: .2s;
   transition: .2s;
-  color: #4d4d4d;
+  color: #018378;
 }
 
 a:visited {
-  color: #262626;
+  color: #01b6a7;
 }
 
 li {
@@ -711,7 +711,7 @@ td {
   margin-right: 0%;
   width: 100%;
   color: #595959;
-  background: #019D90;
+  background: #01b6a7;
   outline: none;
 }
 
@@ -747,7 +747,7 @@ td {
   padding: 1.875em 0.625em;
   height: 9em;
   color: #595959;
-  background: #019D90;
+  background: #01b6a7;
   outline: none;
 }
 
@@ -1181,14 +1181,14 @@ button:hover {
 
 .primary {
   color: #f2f2f2;
-  border: #FFFFFF solid 2px;
-  background: #019D90;
+  border: #01cfbe solid 2px;
+  background: #01b6a7;
 }
 
 .primary:hover {
   color: #FFFFFF;
-  border: #FFFFFF solid 2px;
-  background: #01b6a7;
+  border: #01b6a7 solid 2px;
+  background: #01cfbe;
 }
 
 .primary a:visited {
@@ -1290,7 +1290,7 @@ input[type="email"] {
 
 input:focus {
   color: #4d4d4d;
-  border: #019D90 solid 1px;
+  border: #01b6a7 solid 1px;
   background: #FFFFFF;
 }
 
@@ -1307,7 +1307,7 @@ textarea {
 
 textarea:focus {
   color: #4d4d4d;
-  border: #019D90 solid 1px;
+  border: #01b6a7 solid 1px;
   background: #FFFFFF;
 }
 
@@ -1392,7 +1392,7 @@ textarea:focus {
   text-decoration: none;
   padding: 1em 1.5em;
   color: #f2f2f2;
-  background: #019D90;
+  background: #01b6a7;
 }
 
 .menu ul li a:visited {
@@ -1401,12 +1401,12 @@ textarea:focus {
 
 .menu ul li a:hover {
   color: #FFFFFF;
-  background: #01a799;
+  background: #01c0b0;
 }
 
 .menu ul li a.active {
   color: #FFFFFF;
-  background: #01b6a7;
+  background: #01cfbe;
 }
 
 .menu-mobile {
@@ -1474,8 +1474,8 @@ textarea:focus {
 }
 
 .menu-mobile ul li a:hover {
-  color: #FFFFFF;
-  background: #01a799;
+  color: #262626;
+  background: #e6e6e6;
 }
 
 .menu-mobile ul li a.active {
@@ -1498,18 +1498,18 @@ textarea:focus {
   width: 50px;
   height: 50px;
   text-align: center;
-  border: 1px solid #01b6a7;
+  border: 1px solid #01cfbe;
   color: #FFFFFF;
-  background: #019D90;
+  background: #01b6a7;
 }
 
 .menu-mobile-open button:hover {
   width: 50px;
   height: 50px;
   text-align: center;
-  border: 1px solid #01b6a7;
+  border: 1px solid #01cfbe;
   color: #FFFFFF;
-  background: #01b6a7;
+  background: #01cfbe;
 }
 
 .hero {
@@ -1565,7 +1565,6 @@ textarea:focus {
       -ms-flex-align: start;
           align-items: flex-start;
   color: #4d4d4d;
-  border-bottom: #e6e6e6 2px solid;
   background: #FFFFFF;
 }
 
@@ -1606,6 +1605,7 @@ textarea:focus {
   display: flex;
   padding: 1em;
   cursor: pointer;
+  border-bottom: #e6e6e6 2px solid;
 }
 
 .listview-item a:hover {
@@ -1613,7 +1613,7 @@ textarea:focus {
   -webkit-transition: .2s;
   transition: .2s;
   color: #262626;
-  border-bottom: #019D90 2px solid;
+  border-bottom: #01b6a7 2px solid;
   background: #fafafa;
 }
 
@@ -1696,7 +1696,6 @@ ul.listview {
           flex: 0 1 32%;
   margin-bottom: 1.2em;
   color: #4d4d4d;
-  border-bottom: #e6e6e6 2px solid;
   background: #FFFFFF;
 }
 
@@ -1741,6 +1740,7 @@ ul.listview {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-bottom: #e6e6e6 2px solid;
 }
 
 .cardview-item a:hover {
@@ -1749,7 +1749,7 @@ ul.listview {
   -webkit-transition: .2s;
   transition: .2s;
   color: #262626;
-  border-bottom: #019D90 2px solid;
+  border-bottom: #01b6a7 2px solid;
   background: #fafafa;
 }
 
@@ -1773,7 +1773,6 @@ ul.listview {
           flex: 0 1 33%;
   margin-bottom: 0.5em;
   color: #4d4d4d;
-  border-bottom: #e6e6e6 2px solid;
   background: #FFFFFF;
 }
 
@@ -1818,6 +1817,7 @@ ul.listview {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-bottom: #e6e6e6 2px solid;
 }
 
 .gridview-item a:hover {
@@ -1826,7 +1826,7 @@ ul.listview {
   -webkit-transition: .2s;
   transition: .2s;
   color: #262626;
-  border-bottom: #019D90 2px solid;
+  border-bottom: #01b6a7 2px solid;
   background: #fafafa;
 }
 

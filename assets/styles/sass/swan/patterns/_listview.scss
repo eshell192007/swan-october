@@ -15,9 +15,7 @@
 .listview-item {
   flex: 0 1 50%;
   align-items: flex-start;
-  //padding: 1em;
   color: $view-item-text;
-  border-bottom: $view-item-bottom-border;
   background: $view-item-bg;
 
   @include media($mobile){ 
@@ -52,6 +50,7 @@
   display: flex;
   padding: 1em;
   cursor: pointer;
+  border-bottom: $view-item-bottom-border;
 }
  
 .listview-item a:hover {

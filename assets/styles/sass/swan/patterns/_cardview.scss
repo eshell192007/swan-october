@@ -16,7 +16,6 @@
   flex: 0 1 32%;
   margin-bottom: 1.2em;
   color: $view-item-text;
-  border-bottom: $view-item-bottom-border;
   background: $view-item-bg;
 
   @include media($mobile){ 
@@ -58,6 +57,7 @@
 .cardview-item a {
   display: flex;
   flex-direction: column;
+  border-bottom: $view-item-bottom-border;
 }
 
 .cardview-item a:hover {
