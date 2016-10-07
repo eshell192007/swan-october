@@ -3,31 +3,31 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-table {  
+table {
     border-collapse:collapse;
     width:100%;
     margin: 1em auto 1em auto;
     text-align: left;
     font-size:0.9em;
-    } 
+    }
 
-thead { 
+thead {
     height:2em;
     }
 
-tbody { 
+tbody {
     height:2em;
     }
 
-tfoot { 
+tfoot {
     height:2em;
     }
 
-table caption { 
-    font-size: 80%; 
-    margin:1em; 
-    } 
-	
+table caption {
+    font-size: 80%;
+    margin:1em;
+    }
+
 th {
     text-align: left;
     padding: 1em 0.8em;
@@ -35,8 +35,9 @@ th {
 
 td {
     padding: 1em 0.8em;
+    border-bottom: $table-td-border-bottom;
     }
 
-tr {
-    
-    }
+tr:hover {
+    background: $table-tr-hover-bg;
+  }

@@ -1,0 +1,82 @@
+title = "Herramientas"
+url = "/herramientas/:page?"
+layout = "layout-basic-full"
+is_hidden = 0
+
+[builderList]
+modelClass = "Swan\Reviews\Models\Tool"
+scope = "-"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "herramienta"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+recordsPerPage = 10
+pageNumber = "{{ :page }}"
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+<div>
+<table class="record-list">
+    <tbody>
+        <tr>
+            <th></th>
+            <th>Herramienta</th>
+            <th>Especialidad</th>
+            <th>Disponible</th>
+            <th>Costo / Licencia</th>
+            <th>Sitio Web</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+          <td>
+            <img class="listview-item-figure" src="{{'assets/images/thumb-square.png'|theme }}" alt="">
+          </td>
+          <td>
+            <p>{{ record.name|raw }}</p>
+          </td>
+          <td>
+            <p>{{ record.category|raw }}</p>
+          </td>
+          <td>
+            <p>{{ record.description|raw }}</p>
+          </td>
+          <td>
+            <p>{{ record.price|raw }}</p>
+          </td>
+          <td>
+            <a class="button primary rounded" href="{{ record.website|raw }}" target="_blank">
+              Sitio oficial
+            </a>
+          </td>
+        </tr>
+        {% else %}
+            <tr class="no-data">{{ noRecordsMessage }}</tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% if records.lastPage > 1 %}
+<div class="pagination">
+    <ul>
+        {% if records.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..records.lastPage %}
+            <li class="{{ records.currentPage == page ? 'page-active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+</div>
+{% endif %}
