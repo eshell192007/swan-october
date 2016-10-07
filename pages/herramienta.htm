@@ -16,8 +16,8 @@ notFoundMessage = "Record not found"
 
 {% if record %}
    <h2> {{ attribute(record, displayColumn) }}</h2>
-    
-    <a class="button primary rounded" href="{{ record.website|raw }}" target="_blank">Sitio oficial</a>
+
+    <a class="button rounded" href="{{ record.website|raw }}" target="_blank">Sitio oficial</a>
 {% else %}
     {{ notFoundMessage }}
 {% endif %}

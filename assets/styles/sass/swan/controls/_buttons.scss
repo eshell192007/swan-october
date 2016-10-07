@@ -140,24 +140,20 @@ button:hover {
 
 // Primary Button - Accent Color
 
-.primary {
-  color: $btn-primary-text;
+.primary, .primary a {
+  color: $btn-primary-text ;
   border: $btn-primary-border;
   background: $btn-primary-bg;
   }
 
-.primary:hover {
-  color: $btn-primary-hover-text;
+.primary:hover, .primary a:hover  {
+  color: $btn-primary-hover-text ;
   border: $btn-primary-hover-border;
   background: $btn-primary-hover-bg;
   }
 
-.primary a:visited {
+.primary:visited, .primary a:visited {
   color: $btn-primary-text ;
-  }
-
-.primary a {
-  color: $btn-primary-text;
   }
 
 // Shapes for Buttons
