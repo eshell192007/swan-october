@@ -37,11 +37,11 @@ $ gulp watch
 ```
 El comando gulp watch ejecuta unas tareas específicas para compilar el código de estilos del theme. Cualquier cambio realizado en los archivos ubicados en la carpeta assets/styles/sass se compilarán en la carpeta assets/styles/css y los cambios en los archivos .htm se reflejarán en el navegador de forma automática.
 
-### Sass Architecture v0.2.0 (Alpha)
+### Arquitectura Sass v0.2.0 (Alpha)
+
+La estructura de carpetas Sass se inspira en el [ patrón 7-1](https://sass-guidelin.es/#the-7-1-pattern) pero no lo sigue de forma literal, en Swan se suprimieron las carpetas "components" y "pages". En su lugar se crearon dos nuevas carpetas "patterns" y "controls".
 
 ```
-Swan core inspired by The 7-1 Pattern
-
 Estructura de la carpeta assets/styles
 
 sass/
