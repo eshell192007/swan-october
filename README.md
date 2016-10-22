@@ -37,6 +37,33 @@ $ gulp watch
 ```
 Con dicho comando se ejecuta el index.html en una ventana del navegador en un servidor local gestionado con Browser Sync y se observarán los archivos de estilo con el plugin gulp-sass. Cualquier cambio realizado en los archivos SCSS ubicados en la carpeta styles/sass se compilarán en la carpeta styles/css.
 
+Sass Architecture v0.2.0 (Alpha)
+Swan core inspired by The 7-1 Pattern
+
+```
+sass/
+|
+|– swan/
+|   |– abstract/           # Mixins & Variables
+|   |– base/               # Core styles
+|   |– controls/           # Interactive controls
+|   |– layout/             # Core layout
+|   |– patterns/           # Core patterns
+|   |– themes/             # Core themes (White / Black)
+|   |– vendor/             # Vendor libraries
+|   |– _core.scss          # Swan core Package
+| -------------------------------------------------
+`– styles.scss             # Styles Final Package
+  -------------------------------------------------
+
+css/
+|
+|– styles.min.css         # Compiled CSS (min)
+`– styles.css             # Compiled CSS
+  -------------------------------------------------
+
+```
+
 
 ## Estructura de archivos
 
