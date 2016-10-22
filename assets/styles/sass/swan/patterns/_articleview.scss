@@ -3,15 +3,13 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
 .articleview {
   display:flex;
   flex-wrap: wrap;
-  justify-content: space-between; 
-  @include media($mobile){ 
+  justify-content: space-between;
+  @include media($mobile){
     }
 }
-
 
 .articleview-item {
   display: flex;
@@ -22,7 +20,7 @@
   border-bottom: $view-item-bottom-border;
   background: $view-item-bg;
 
-  @include media($mobile){ 
+  @include media($mobile){
     flex: 0 1 100%;
     margin-bottom: 1em;
     }
@@ -31,13 +29,13 @@
 .articleview-item img {
   width: 100%;
   height: auto;
-  @include media($mobile){ 
+  @include media($mobile){
 
     }
 }
 
 .articleview-item-figure {
-  @include media($mobile){ 
+  @include media($mobile){
 
     }
 }
@@ -45,29 +43,30 @@
 .articleview-item-body {
   display: flex;
   flex-direction: column;
-  color: $text-basic;
+  color: $view-item-text;
 }
 
 .articleview-item-text {
   padding: 1em 2em;
   flex: 0 1 90%;
-  @include media($mobile){ 
+  @include media($mobile){
     padding: 1em 2em;
     }
 }
 
 .articleview-item-body h3 {
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
 .articleview-item-body p {
   font-size: 0.8em;
+  color: $view-item-text;
 }
 
 .articleview-item-footer {
   display:flex;
-  justify-content: flex-end; 
-  @include media($mobile){ 
+  justify-content: flex-end;
+  @include media($mobile){
 
     }
 }
@@ -75,14 +74,14 @@
 .land {
   flex-direction: row;
   flex: 0 1 100%;
-  @include media($mobile){ 
+  @include media($mobile){
     flex-direction: column;
     }
 }
 
 .land .articleview-item-text {
   padding: 4em 3em;
-  @include media($mobile){ 
+  @include media($mobile){
     padding: 1em 2em;
     }
 }
@@ -90,7 +89,7 @@
 .land .articleview-item-figure,
 .land .articleview-item-body {
   flex: 0 1 50%;
-  @include media($mobile){ 
+  @include media($mobile){
     flex: 0 1 100%;
     }
 }

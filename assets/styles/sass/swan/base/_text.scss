@@ -2,8 +2,8 @@
 // NATIVE TYPOGRAPHY STYLES
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    
-// TEXTS 
+
+// TEXTS
 // -----------------------------------------------------------+
 
 body {
@@ -25,7 +25,7 @@ h1 {
   margin: 0 0 0.2em 0;
   }
 
-p { 
+p {
   font-family: Tahoma, Geneva, sans-serif;
   line-height: 1.5em;
   font-size: 0.9em;
@@ -69,13 +69,13 @@ dl, dt, dd {
   line-height: 1.8em;
   }
 
-small { 
+small {
   font-size: 65%;
-  font-family: Tahoma, Geneva, sans-serif; 
+  font-family: Tahoma, Geneva, sans-serif;
   }
 
 blockquote {
-  line-height: 1.8em; 
+  line-height: 1.8em;
   padding: 1em 2em;
   font-style: italic;
   font-size: 90%;
@@ -141,4 +141,10 @@ input [type="checkbox"] {
 ::-moz-selection {
   color: $text-selection;
   background: $text-selection-bg;
+}
+
+.heading {
+  @include media($mobile){
+    margin-left:1em;
+    }
 }

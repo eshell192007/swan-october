@@ -6,8 +6,8 @@
 .listview {
   display:flex;
   flex-wrap: wrap;
-  justify-content: space-between; 
-  @include media($mobile){ 
+  justify-content: space-between;
+  @include media($mobile){
 
     }
 }
@@ -18,7 +18,7 @@
   color: $view-item-text;
   background: $view-item-bg;
 
-  @include media($mobile){ 
+  @include media($mobile){
     flex: 0 1 100%;
     }
 }
@@ -26,23 +26,24 @@
 .listview-item-figure {
   flex: 0 1 15%;
   margin-right: 1em;
-  @include media($mobile){ 
+  @include media($mobile){
 
     }
 }
 
 .listview-item-body {
   flex: 1;
-  color: $text-basic;
+  color: $view-item-text;
 }
 
 .listview-item-body h3 {
-  margin: 0 0 0.2em 0;
+  margin: 0 0 0.3em 0;
   font-size: 1em;
 }
 
 .listview-item-body p {
-  font-size: 0.8em;
+  font-size: 0.85em;
+  color: $view-item-text;
 }
 
 
@@ -52,7 +53,7 @@
   cursor: pointer;
   border-bottom: $view-item-bottom-border;
 }
- 
+
 .listview-item a:hover {
   cursor: pointer;
   // Transition
@@ -68,12 +69,12 @@
 }
 
  .listview li {
-  margin: 0; 
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 
- ul.listview { 
+ ul.listview {
   padding-left: 0;
   list-style: none;
 }
@@ -81,14 +82,14 @@
 
 // Styles for limit text with '...'
 // http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/
-// Based on http://codepen.io/natonischuk/pen/KpNKQZ 
+// Based on http://codepen.io/natonischuk/pen/KpNKQZ
 
 // 2 lines
 .maxlines-2 {
   overflow: hidden;
-  position: relative; 
+  position: relative;
   line-height: 1.5em;
-  max-height: 3em;  
+  max-height: 3em;
   margin-right: -1em;
   padding-right: 1em;
 }
@@ -113,11 +114,11 @@
 
 .maxlines-1 {
   overflow: hidden;
-  position: relative; 
-  line-height: 1em;
-  max-height: 1em;  
-  margin-right: -1em;
-  padding-right: 1em;
+  position: relative;
+  line-height: 1.5em;
+  max-height: 1.5em;
+  margin-right: -1.5em;
+  padding-right: 1.5em;
 }
 
 .maxlines-1:before {

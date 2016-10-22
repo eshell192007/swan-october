@@ -6,8 +6,8 @@
 .cardview {
   display:flex;
   flex-wrap: wrap;
-  justify-content: space-between; 
-  @include media($mobile){ 
+  justify-content: space-between;
+  @include media($mobile){
     }
 }
 
@@ -18,7 +18,7 @@
   color: $view-item-text;
   background: $view-item-bg;
 
-  @include media($mobile){ 
+  @include media($mobile){
     flex: 0 1 100%;
     margin-bottom: 1em;
     }
@@ -27,21 +27,21 @@
 .cardview-item img {
   width: 100%;
   height: auto;
-  @include media($mobile){ 
+  @include media($mobile){
 
     }
 }
 
 .cardview-item-figure {
-  @include media($mobile){ 
+  @include media($mobile){
 
     }
 }
 
 .cardview-item-body {
   padding: 1em;
-  color: $text-basic;
-  @include media($mobile){ 
+  color: $view-item-text;
+  @include media($mobile){
     padding: 1.5em;
     }
 }
@@ -52,6 +52,7 @@
 
 .cardview-item-body p {
   font-size: 0.8em;
+  color: $view-item-text;
 }
 
 .cardview-item a {
