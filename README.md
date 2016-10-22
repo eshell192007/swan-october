@@ -35,12 +35,15 @@ Las dependencias se instalan en la carpeta node_modules (creada automáticamente
 ```
 $ gulp watch
 ```
-Con dicho comando se ejecuta el index.html en una ventana del navegador en un servidor local gestionado con Browser Sync y se observarán los archivos de estilo con el plugin gulp-sass. Cualquier cambio realizado en los archivos SCSS ubicados en la carpeta styles/sass se compilarán en la carpeta styles/css.
+El comando gulp watch ejecuta unas tareas específicas para compilar el código de estilos del theme. Cualquier cambio realizado en los archivos ubicados en la carpeta assets/styles/sass se compilarán en la carpeta assets/styles/css y los cambios en los archivos .htm se reflejarán en el navegador de forma automática.
 
-Sass Architecture v0.2.0 (Alpha)
-Swan core inspired by The 7-1 Pattern
+### Sass Architecture v0.2.0 (Alpha)
 
 ```
+Swan core inspired by The 7-1 Pattern
+
+Estructura de la carpeta assets/styles
+
 sass/
 |
 |– swan/
