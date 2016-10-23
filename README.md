@@ -24,14 +24,14 @@ En la carpeta de nuestro sitio local en October CMS clonamos los archivos del re
 $ git clone https://github.com/acuariux/swan-october.git
 ```
 
-Luego abrimos con la terminal la carpeta creada (`swan-october`) y escribimos el comando:
+Luego abrimos con la terminal la carpeta creada `swan-october` y escribimos el comando:
 
 ```
 $ npm install
 ```
 Este comando instalará las dependencias de Node.js especificadas en el archivo `package.json` (en esencia se trata de [Gulp.js](http://gulpjs.com/) y una serie de plugins necesarios para automatizar algunas tareas de desarrollo).
 
-Las dependencias se instalan en la carpeta `node_modules` (creada automáticamente con el comando npm install) y luego de instaladas podemos utilizar Gulp para ejecutar nuestra página de prueba con:
+Las dependencias se instalan en la carpeta `node_modules` (creada automáticamente con el comando `npm install`) y luego de instaladas podemos utilizar Gulp para ejecutar nuestra página de prueba con:
 
 ```
 $ gulp watch
