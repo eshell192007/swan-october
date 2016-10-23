@@ -10,14 +10,15 @@ Este proyecto es una adaptación del framework Swan como theme multipropósito p
 
 ## Requisitos
 
-Para editar los archivos fuente del theme debemos tener previamente instalados:
+Para probar y editar los archivos fuente del theme debemos tener previamente instalados:
 
 - [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/)
+- [Node.js](https://nodejs.org/) (versión 4 o superior)
+- [October CMS](https://octobercms.com/docs/setup/installation)  (en servidor local con Mamp o Wamp)
 
 ## Instalación
 
-Clonamos los archivos del repositorio de Github en una carpeta local con el siguiente comando:
+En la carpeta de nuestro sitio local en October CMS clonamos los archivos del repositorio dentro de la carpeta themes:
 
 ```
 $ git clone https://github.com/acuariux/swan-october.git
@@ -94,7 +95,7 @@ styles/
 
 ## Módulos de Node.js
 
-Swan utiliza para el desarrollo los siguientes módulos de Node.js (la mayoría son plugins de Gulp).
+Swan utiliza los siguientes módulos de Node.js (la mayoría son plugins de Gulp).
 
 |Módulo|Versión|Descripción|
 |--- |--- |--- |
