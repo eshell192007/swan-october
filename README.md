@@ -18,25 +18,25 @@ Para probar y editar los archivos fuente del theme debemos tener previamente ins
 
 ## Instalación
 
-En la carpeta de nuestro sitio local en October CMS clonamos los archivos del repositorio dentro de la carpeta themes:
+En la carpeta de nuestro sitio local en October CMS clonamos los archivos del repositorio dentro de la carpeta `themes`:
 
 ```
 $ git clone https://github.com/acuariux/swan-october.git
 ```
 
-Luego abrimos con la terminal la carpeta creada (swan-october) y escribimos el comando:
+Luego abrimos con la terminal la carpeta creada (`swan-october`) y escribimos el comando:
 
 ```
 $ npm install
 ```
-Este comando instalará las dependencias de Node.js especificadas en el archivo package.json (en esencia se trata de [Gulp.js](http://gulpjs.com/) y una serie de plugins necesarios para automatizar algunas tareas de desarrollo).
+Este comando instalará las dependencias de Node.js especificadas en el archivo `package.json` (en esencia se trata de [Gulp.js](http://gulpjs.com/) y una serie de plugins necesarios para automatizar algunas tareas de desarrollo).
 
-Las dependencias se instalan en la carpeta node_modules (creada automáticamente con el comando npm install) y luego de instaladas podemos utilizar Gulp para ejecutar nuestra página de prueba con:
+Las dependencias se instalan en la carpeta `node_modules` (creada automáticamente con el comando npm install) y luego de instaladas podemos utilizar Gulp para ejecutar nuestra página de prueba con:
 
 ```
 $ gulp watch
 ```
-El comando gulp watch ejecuta unas tareas específicas para compilar el código de estilos CSS del theme y los cambios en los archivos HTML y Javascript.
+El comando `gulp watch` ejecuta unas tareas específicas para compilar el código de estilos CSS del theme y los cambios en los archivos HTML y Javascript.
 
 ## Estructura general del theme
 
@@ -64,11 +64,11 @@ swan-october/
 
 ### Arquitectura Sass (Alpha)
 
-La estructura de carpetas Sass se inspira en el [ patrón 7-1](https://sass-guidelin.es/#the-7-1-pattern) pero no lo sigue de forma literal, en Swan se suprimieron las carpetas "components" y "pages". En su lugar se crearon dos nuevas carpetas "patterns" y "controls".
+La estructura de carpetas Sass se inspira en el [ patrón 7-1](https://sass-guidelin.es/#the-7-1-pattern) pero no lo sigue de forma literal, en Swan se suprimieron las carpetas `components` y `pages`. En su lugar se crearon dos nuevas carpetas `patterns` y `controls`.
 
-Cuando ejecutamos el comando "gulp watch" cualquier cambio realizado en los archivos de la carpeta /styles/sass se compilarán en la carpeta /styles/css con el plugin gulp-sass.
+Cuando ejecutamos el comando `gulp watch` cualquier cambio realizado en los archivos de la carpeta `/styles/sass` se compilarán en la carpeta `/styles/css` con el plugin `gulp-sass`.
 
-Estructura de la carpeta assets/styles:
+Estructura de la carpeta `assets/styles`:
 
 ```
 styles/
