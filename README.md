@@ -41,25 +41,23 @@ El comando gulp watch ejecuta unas tareas específicas para compilar el código 
 ## Estructura general del theme
 
 ```
-┌┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
-│                   \
-swan-october/        \┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┐
-│                                                      ┆
-│── assets/           <-- Recursos globales            ┆
-│   ├── audio/                                         ┆
-│   ├── fonts/                                         ┆
-│   ├── images/                                        ┆
-│   ├── scripts/                                       ┆
-│   └── styles/                                        ┆
-│                                                      ┆
-│── layouts/          <-- Plantillas HTML              ┆
-│── meta/             <-- Metadatos y menús            ┆
-│── pages/            <-- Páginas estáticas            ┆
-│── partials/         <-- Código HTML reutilizable     ┆
-│── theme.yaml        <-- Descripción y dependencias   ┆
-│── version.yaml      <-- Versión del theme            ┆
-│                                                      ┆
-└┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┘
+swan-october/
+│
+├── assets/           <-- Recursos globales
+│   ├── audio/        
+│   ├── fonts/        
+│   ├── images/       
+│   ├── scripts/      
+│   └── styles/
+│       
+├── layouts/          <-- Plantillas HTML
+├── meta/             <-- Metadatos y menús
+├── pages/            <-- Páginas estáticas
+├── partials/         <-- Código HTML reutilizable
+├── theme.yaml        <-- Descripción y dependencias
+└── version.yaml      <-- Versión del theme
+│
+└---------------------------------------------------------
 
 ```
 
@@ -73,27 +71,25 @@ Cuando ejecutamos el comando "gulp watch" cualquier cambio realizado en los arch
 Estructura de la carpeta assets/styles:
 
 ```
-╔══════════════════╕
-║                   \
-styles/              ╲═══════════════════════════════════╗
-║                                                        ║
-║── sass/                                                ║
-║   ├── swan/                                            ║
-║   │   ├── abstract/       <-- Mixins & Variables       ║
-║   │   ├── base/           <-- Base styles              ║
-║   │   ├── controls/       <-- Interactive controls     ║
-║   │   ├── layout/         <-- Core layout              ║
-║   │   ├── patterns/       <-- Core patterns            ║
-║   │   ├── themes/         <-- Themes (White / Black)   ║
-║   │   ├── vendor/         <-- Vendor libraries         ║
-║   │   └── _core.scss      <-- Swan core Package        ║
-║   └── styles.scss         <-- Styles Final Package     ║
-║                                                        ║
-║── css/                                                 ║
-║   ├── styles.min.css      <-- Compiled CSS (min)       ║
-║   └── styles.css          <-- Compiled CSS             ║
-║                                                        ║
-╚════════════════════════════════════════════════════════╝
+styles/
+│
+├── sass/
+│   ├── swan/
+│   │   ├── abstract/       <-- Mixins & Variables
+│   │   ├── base/           <-- Base styles
+│   │   ├── controls/       <-- Interactive controls
+│   │   ├── layout/         <-- Core layout
+│   │   ├── patterns/       <-- Core patterns
+│   │   ├── themes/         <-- Themes (White / Black)
+│   │   ├── vendor/         <-- Vendor libraries
+│   │   └── _core.scss      <-- Swan core Package
+│   └── styles.scss         <-- Styles Final Package
+│
+├── css/
+│   ├── styles.min.css      <-- Compiled CSS (min)
+│   └── styles.css          <-- Compiled CSS
+│
+└---------------------------------------------------------
 
 ```
 
