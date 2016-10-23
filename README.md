@@ -35,49 +35,62 @@ Las dependencias se instalan en la carpeta node_modules (creada automáticamente
 ```
 $ gulp watch
 ```
-El comando gulp watch ejecuta unas tareas específicas para compilar el código de estilos del theme. Cualquier cambio realizado en los archivos ubicados en la carpeta assets/styles/sass se compilarán en la carpeta assets/styles/css y los cambios en los archivos .htm se reflejarán en el navegador de forma automática.
+El comando gulp watch ejecuta unas tareas específicas para compilar el código de estilos CSS del theme y los cambios en los archivos HTML y Javascript.
 
-### Arquitectura Sass v0.2.0 (Alpha)
+## Estructura general del theme
+
+```
+swan-october/
+│
+├── assets/           <-- Recursos globales
+│   ├── audio/        
+│   ├── fonts/        
+│   ├── images/       
+│   ├── scripts/      
+│   ├── styles/
+│       
+├── layouts/          <-- Plantillas HTML
+├── meta/             <-- Metadatos y menús
+├── pages/            <-- Páginas estáticas
+├── partials/         <-- Código HTML reutilizable
+├── theme.yaml        <-- Descripción y dependencias
+├── version.yaml      <-- Versión del theme
+│
+-----------------------------------------------
+
+```
+
+
+### Arquitectura Sass (Alpha)
 
 La estructura de carpetas Sass se inspira en el [ patrón 7-1](https://sass-guidelin.es/#the-7-1-pattern) pero no lo sigue de forma literal, en Swan se suprimieron las carpetas "components" y "pages". En su lugar se crearon dos nuevas carpetas "patterns" y "controls".
 
-```
-Estructura de la carpeta assets/styles
+Cuando ejecutamos el comando "gulp watch" cualquier cambio realizado en los archivos de la carpeta /styles/sass se compilarán en la carpeta /styles/css con el plugin gulp-sass.
 
-sass/
-|
-|– swan/
-|   |– abstract/           # Mixins & Variables
-|   |– base/               # Core styles
-|   |– controls/           # Interactive controls
-|   |– layout/             # Core layout
-|   |– patterns/           # Core patterns
-|   |– themes/             # Core themes (White / Black)
-|   |– vendor/             # Vendor libraries
-|   |– _core.scss          # Swan core Package
-| -------------------------------------------------
-`– styles.scss             # Styles Final Package
-  -------------------------------------------------
-
-css/
-|
-|– styles.min.css         # Compiled CSS (min)
-`– styles.css             # Compiled CSS
-  -------------------------------------------------
+Estructura de la carpeta assets/styles:
 
 ```
+styles/
+│
+├── sass/
+│   ├── swan/
+│   │   ├── abstract/       <-- Mixins & Variables
+│   │   ├── base/           <-- Base styles
+│   │   ├── controls/       <-- Interactive controls
+│   │   ├── layout/         <-- Core layout
+│   │   ├── patterns/       <-- Core patterns
+│   │   └── themes/         <-- Themes (White / Black)
+│   │   └── vendor/         <-- Vendor libraries
+│   │   └── _core.scss      <-- Swan core Package
+│   ├── styles.scss         <-- Styles Final Package
+│
+├── css/
+│   ├── styles.min.css      <-- Compiled CSS (min)
+│   ├── styles.css          <-- Compiled CSS
+│
+----------------------------------------------------------
 
-
-## Estructura de archivos
-
-|Nombre|Tipo|Descripción|
-|--- |--- |--- |
-|assets|Carpeta|Contiene archivos básicos de Swan (scripts, imágenes, estilos, fuentes, etc)|
-|layouts|Carpeta|Contiene las plantillas HTML del theme con estructuras definidas (se elige un layout o plantilla para cada página del CMS).|
-|pages|Carpeta|Contiene las páginas HTML estáticas generadas por October CMS.|
-|partials|Carpeta|Contiene los partials de código reutilizable en los layouts y las páginas estáticas.|
-
-
+```
 
 ## Módulos de Node.js
 
