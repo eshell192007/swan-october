@@ -23,7 +23,7 @@ Clonamos los archivos del repositorio de Github en una carpeta local con el sigu
 $ git clone https://github.com/acuariux/swan-october.git
 ```
 
-Luego abrimos la carpeta creada (swan-october) y escribimos en la terminal:
+Luego abrimos con la terminal la carpeta creada (swan-october) y escribimos el comando:
 
 ```
 $ npm install
