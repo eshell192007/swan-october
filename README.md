@@ -12,8 +12,8 @@ Este proyecto es una adaptación del framework Swan como theme multipropósito p
 
 Para editar los archivos fuente del theme debemos tener previamente instalados:
 
-- Git https://git-scm.com/
-- Node.js https://nodejs.org/
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/)
 
 ## Instalación
 
@@ -28,7 +28,7 @@ Luego abrimos la carpeta creada (swan-october) y escribimos en la terminal:
 ```
 $ npm install
 ```
-Este comando instalará las dependencias de Node.js especificadas en el archivo package.json (en esencia se trata de Gulp.js http://gulpjs.com/ y una serie de plugins necesarios para automatizar algunas tareas de desarrollo).
+Este comando instalará las dependencias de Node.js especificadas en el archivo package.json (en esencia se trata de [Gulp.js](http://gulpjs.com/) y una serie de plugins necesarios para automatizar algunas tareas de desarrollo).
 
 Las dependencias se instalan en la carpeta node_modules (creada automáticamente con el comando npm install) y luego de instaladas podemos utilizar Gulp para ejecutar nuestra página de prueba con:
 
@@ -94,7 +94,7 @@ styles/
 
 ## Módulos de Node.js
 
-El framework utiliza para el desarrollo los siguientes módulos de Node.js (la mayoría son plugins de Gulp).
+Swan utiliza para el desarrollo los siguientes módulos de Node.js (la mayoría son plugins de Gulp).
 
 |Módulo|Versión|Descripción|
 |--- |--- |--- |
