@@ -3,6 +3,3 @@ code: swan
 description: A Swan UI theme for OctoberCMS
 homepage: 'http://jsebastianserna.com'
 author: Sebastian Serna
-require:
-    - RainLab.Pages
-    - RainLab.Blog
