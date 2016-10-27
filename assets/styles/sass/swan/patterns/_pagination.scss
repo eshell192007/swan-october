@@ -6,19 +6,6 @@
 // Based on Refills
 
 .pagination {
-  $base-border-color: gainsboro !default;
-  $base-border-radius: 3px !default;
-  $base-spacing: 1.5em !default;
-  $action-color: #477DCA !default;
-  $dark-gray: #333 !default;
-  $large-screen: 53.75em !default;
-  $base-font-color: $dark-gray !default;
-  $pagination-border-color: $base-border-color;
-  $pagination-border: 1px solid $pagination-border-color;
-  $pagination-background: lighten($pagination-border-color, 10);
-  $pagination-hover-background: lighten($pagination-background, 5);
-  $pagination-color: $base-font-color;
-
   text-align: center;
 
   ul {
@@ -40,16 +27,13 @@
         display: inline;
       }
 
-      @include media($large-screen) {
-        display: inline-block;
-      }
     }
 
     li a {
-      background: $pagination-background;
-      border-radius: $base-border-radius;
-      border: $pagination-border;
-      color: $pagination-color;
+      background: $pag-item-bg;
+      border-radius: $pag-item-border-radius;
+      border: $pag-item-border;
+      color: $pag-item-text;
       outline: none;
       padding: 1em 1.5em ;
       text-decoration: none;
@@ -57,18 +41,20 @@
 
       &:hover,
       &:focus {
-        background: $pagination-hover-background;
-        color: $primary;
+        color: $pag-item-hover-text;
+        background: $pag-item-hover-bg;
+        border: $pag-item-hover-border;
       }
 
       &:active {
-        background: $pagination-background;
+        background: $pag-item-active-bg;
       }
     }
   }
 }
 
 li.page-active a {
-  background: $primary !important;
-  color: $white !important;
+  background: $pag-item-active-bg !important;
+  color: $pag-item-active-text !important;
+  border: $pag-item-active-border !important;
 }
