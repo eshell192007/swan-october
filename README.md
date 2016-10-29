@@ -38,7 +38,7 @@ $ gulp watch
 ```
 El comando `gulp watch` ejecuta unas tareas específicas para compilar el código de estilos CSS del theme y los cambios en los archivos HTML y Javascript.
 
-## Estructura general del theme
+## Estructura de Directorios
 
 ```
 swan-october/
@@ -92,6 +92,14 @@ styles/
 ```
 Cuando ejecutamos el comando `gulp watch` cualquier cambio realizado en los archivos de la carpeta `/styles/sass` se compilarán en la carpeta `/styles/css` con el plugin `gulp-sass`.
 
+## Librerías Sass (CSS)
+
+Swan utliza las siguientes librerías Sass:
+
+|Librería|Versión|Descripción|
+|--- |--- |--- |
+|Bourbon|4.2.7|Librería de Mixins para Sass|
+|Neat|1.8.0|Grid semántico basado en Bourbon|
 
 ## Módulos de Node.js
 
