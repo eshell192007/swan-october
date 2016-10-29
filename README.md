@@ -43,19 +43,19 @@ El comando `gulp watch` ejecuta unas tareas específicas para compilar el códig
 ```
 swan-october/
 │
-├── assets/           <-- Recursos globales
+├── assets/           # Recursos globales
 │   ├── audio/        
 │   ├── fonts/        
 │   ├── images/       
 │   ├── scripts/      
 │   └── styles/
 │       
-├── layouts/          <-- Plantillas HTML
-├── meta/             <-- Metadatos y menús
-├── pages/            <-- Páginas estáticas
-├── partials/         <-- Código HTML reutilizable
-├── theme.yaml        <-- Descripción y dependencias
-└── version.yaml      <-- Versión del theme
+├── layouts/          # Plantillas HTML
+├── meta/             # Metadatos y menús
+├── pages/            # Páginas estáticas
+├── partials/         # Código HTML reutilizable
+├── theme.yaml        # Descripción y dependencias
+└── version.yaml      # Versión del theme
 │
 └---------------------------------------------------------
 
@@ -64,9 +64,7 @@ swan-october/
 
 ### Arquitectura Sass (Alpha)
 
-La estructura de carpetas Sass se inspira en el [ patrón 7-1](https://sass-guidelin.es/#the-7-1-pattern) pero no lo sigue de forma literal, en Swan se suprimieron las carpetas `components` y `pages`. En su lugar se crearon dos nuevas carpetas `patterns` y `controls`.
-
-Cuando ejecutamos el comando `gulp watch` cualquier cambio realizado en los archivos de la carpeta `/styles/sass` se compilarán en la carpeta `/styles/css` con el plugin `gulp-sass`.
+La estructura de carpetas Sass sigue el [ patrón 7-1](https://sass-guidelin.es/#the-7-1-pattern) pero con leves variaciones. La principal es que en Swan los componentes se toman como módulos individuales y los elementos básicos de HTML (botones, textos, controles) se incluyen en la carpeta base.
 
 Estructura de la carpeta `assets/styles`:
 
@@ -74,24 +72,26 @@ Estructura de la carpeta `assets/styles`:
 styles/
 │
 ├── sass/
-│   ├── swan/
-│   │   ├── abstract/       <-- Mixins & Variables
-│   │   ├── base/           <-- Base styles
-│   │   ├── controls/       <-- Interactive controls
-│   │   ├── layout/         <-- Core layout
-│   │   ├── patterns/       <-- Core patterns
-│   │   ├── themes/         <-- Themes (White / Black)
-│   │   ├── vendor/         <-- Vendor libraries
-│   │   └── _core.scss      <-- Swan core Package
-│   └── styles.scss         <-- Styles Final Package
+│   ├── core/
+│   │   ├── abstract/       # Mixins & Variables
+│   │   ├── base/           # Base Elements
+│   │   ├── Pages/          # Individual Page Styles
+│   │   ├── layout/         # Layout & Structure
+│   │   ├── components/     # Components & Patterns
+│   │   ├── themes/         # Themes (White / Black)
+│   │   ├── vendors/        # Vendor Libraries
+│   │   └── _core.scss      # Swan Core Package
+│   └── styles.scss         # Styles Final Package
 │
 ├── css/
-│   ├── styles.min.css      <-- Compiled CSS (min)
-│   └── styles.css          <-- Compiled CSS
+│   ├── styles.min.css      # Compiled CSS (min)
+│   └── styles.css          # Compiled CSS
 │
 └---------------------------------------------------------
 
 ```
+Cuando ejecutamos el comando `gulp watch` cualquier cambio realizado en los archivos de la carpeta `/styles/sass` se compilarán en la carpeta `/styles/css` con el plugin `gulp-sass`.
+
 
 ## Módulos de Node.js
 

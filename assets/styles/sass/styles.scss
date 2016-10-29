@@ -3,7 +3,7 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-@import "swan/abstract/variables";
+@import "core/abstract/variables";
 
 //$layout-border: solid green 2px; // Development purposes only
 
@@ -146,4 +146,4 @@ $menu-mobile-fade-screen-bg:   $black ;
 $menu-mobile-border:           2px solid $white ;
 
 
-@import "swan/core";
+@import "core/core";
