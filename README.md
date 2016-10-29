@@ -64,7 +64,7 @@ swan-october/
 
 ### Arquitectura Sass (Alpha)
 
-La estructura de carpetas Sass sigue el [ patrón 7-1](https://sass-guidelin.es/#the-7-1-pattern) pero con leves variaciones. La principal es que en Swan los componentes se toman como módulos individuales y los elementos básicos de HTML (botones, textos, controles) se incluyen en la carpeta base.
+La estructura de carpetas Sass sigue el [ Patrón 7-1](https://sass-guidelin.es/#the-7-1-pattern).
 
 Estructura de la carpeta `assets/styles`:
 
@@ -92,12 +92,13 @@ styles/
 ```
 Cuando ejecutamos el comando `gulp watch` cualquier cambio realizado en los archivos de la carpeta `/styles/sass` se compilarán en la carpeta `/styles/css` con el plugin `gulp-sass`.
 
-## Librerías Sass (CSS)
+## Librerías CSS
 
-Swan utliza las siguientes librerías Sass:
+Swan utiliza las siguientes librerías de código CSS creadas por terceros:
 
 |Librería|Versión|Descripción|
 |--- |--- |--- |
+|Normalize|3.0.2|Permite normalizar estilos CSS por defecto entre navegadores|
 |Bourbon|4.2.7|Librería de Mixins para Sass|
 |Neat|1.8.0|Grid semántico basado en Bourbon|
 
