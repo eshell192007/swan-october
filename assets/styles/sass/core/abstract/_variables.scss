@@ -4,11 +4,31 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+@import "../vendors/neat/neat-helpers";
+
 // Breakpoints
 
 $mobile: new-breakpoint(max-width 768px 4);
 $tablet: new-breakpoint(max-width 980px 4);
 $desktop: new-breakpoint(max-width 1920px 4);
+
+// ::::: Start Neat override ::::::::::::::::
+
+// Visual Grid
+$visual-grid:         true;
+$visual-grid-color:   #d4d4d4;
+$visual-grid-opacity: 0.3;
+
+// Initial Grid Settings
+$max-width:     100%;
+$grid-columns:  12;
+$gutter:        0em ;
+
+// ::::: End Neat override ::::::::::::::::
+
+$large-screen: 50em !default;
+$border-box-sizing: true !default;
+$add-gutter: 1em;
 
 // Dimensions
 

@@ -46,6 +46,11 @@ $menu-mobile-fade-screen-bg:   $black !default;
 $menu-mobile-border:           2px solid $gray5 !default;
 
 
+.navigation {
+  overflow: auto;
+  background: $navigation-bg;
+}
+
 .logo {
   @include span-columns(3 of 12);
   @include media($mobile){
