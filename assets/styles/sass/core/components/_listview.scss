@@ -3,6 +3,20 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+// Listview styles
+// ::::::::::::::::::::::::::::::::::::
+// Item
+$listview-item-text:                   $gray5 !default;
+$listview-item-bottom-border:          $gray2 1px solid !default;
+$listview-item-image-bg:               none !default;
+$listview-item-bg:                     $white !default;
+// Item hover
+$listview-item-hover-text:             $gray9 !default;
+$listview-item-hover-bottom-border:    $gray3 1px solid !default;
+$listview-item-hover-image-bg:         none !default;
+$listview-item-hover-bg:               darken($white, 2%) !default;
+
+
 .listview {
   display:flex;
   flex-wrap: wrap;
@@ -15,8 +29,8 @@
 .listview-item {
   flex: 0 1 50%;
   align-items: flex-start;
-  color: $view-item-text;
-  background: $view-item-bg;
+  color: $listview-item-text;
+  background: $listview-item-bg;
 
   @include media($mobile){
     flex: 0 1 100%;
@@ -33,7 +47,7 @@
 
 .listview-item-body {
   flex: 1;
-  color: $view-item-text;
+  color: $listview-item-text;
 }
 
 .listview-item-body h3 {
@@ -43,7 +57,7 @@
 
 .listview-item-body p {
   font-size: 0.85em;
-  color: $view-item-text;
+  color: $listview-item-text;
 }
 
 
@@ -51,7 +65,7 @@
   display: flex;
   padding: 1em;
   cursor: pointer;
-  border-bottom: $view-item-bottom-border;
+  border-bottom: $listview-item-bottom-border;
 }
 
 .listview-item a:hover {
@@ -63,9 +77,9 @@
   -webkit-transition:.2s;
   transition:.2s;
   // End transition
-  color: $view-item-hover-text;
-  border-bottom: $view-item-hover-bottom-border;
-  background: $view-item-hover-bg;
+  color: $listview-item-hover-text;
+  border-bottom: $listview-item-hover-bottom-border;
+  background: $listview-item-hover-bg;
 }
 
  .listview li {

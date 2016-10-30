@@ -40,7 +40,7 @@ El comando `gulp watch` ejecuta unas tareas específicas para compilar el códig
 
 ## Estructura de Directorios
 
-```
+```sh
 swan-october/
 │
 ├── assets/           # Recursos globales
@@ -68,7 +68,7 @@ La estructura de carpetas Sass sigue el [ Patrón 7-1](https://sass-guidelin.es/
 
 Estructura de la carpeta `assets/styles`:
 
-```
+```sh
 styles/
 │
 ├── sass/

@@ -3,11 +3,25 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+// Gridview styles
+// ::::::::::::::::::::::::::::::::::::
+// Item
+$gridview-item-text:                   $gray5 !default;
+$gridview-item-bottom-border:          $gray2 1px solid !default;
+$gridview-item-image-bg:               none !default;
+$gridview-item-bg:                     $white !default;
+// Item hover
+$gridview-item-hover-text:             $gray9 !default;
+$gridview-item-hover-bottom-border:    $gray3 1px solid !default;
+$gridview-item-hover-image-bg:         none !default;
+$gridview-item-hover-bg:               darken($white, 2%) !default;
+
+
 .gridview {
   display:flex;
   flex-wrap: wrap;
-  justify-content: space-between; 
-  @include media($mobile){ 
+  justify-content: space-between;
+  @include media($mobile){
     }
 }
 
@@ -15,10 +29,10 @@
   display: flex;
   flex: 0 1 33%;
   margin-bottom: 0.5em;
-  color: $view-item-text;
-  background: $view-item-bg;
+  color: $gridview-item-text;
+  background: $gridview-item-bg;
 
-  @include media($mobile){ 
+  @include media($mobile){
     flex: 0 1 49%;
     margin-bottom: 0.5em;
     }
@@ -27,13 +41,13 @@
 .gridview-item img {
   width: 100%;
   height: auto;
-  @include media($mobile){ 
+  @include media($mobile){
 
     }
 }
 
 .gridview-item-figure {
-  @include media($mobile){ 
+  @include media($mobile){
 
     }
 }
@@ -42,7 +56,7 @@
   padding: 1em;
   color: $text-basic;
 
-  @include media($mobile){ 
+  @include media($mobile){
     padding: 1.5em;
     }
 }
@@ -58,7 +72,7 @@
 .gridview-item a {
   display: flex;
   flex-direction: column;
-  border-bottom: $view-item-bottom-border;
+  border-bottom: $gridview-item-bottom-border;
 }
 
 .gridview-item a:hover {
@@ -71,8 +85,7 @@
   -webkit-transition:.2s;
   transition:.2s;
   // End transition
-  color: $view-item-hover-text;
-  border-bottom: $view-item-hover-bottom-border;
-  background: $view-item-hover-bg;
+  color: $gridview-item-hover-text;
+  border-bottom: $gridview-item-hover-bottom-border;
+  background: $gridview-item-hover-bg;
 }
-

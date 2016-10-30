@@ -3,6 +3,20 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+// CardView styles
+// ::::::::::::::::::::::::::::::::::::
+// Item
+$cardview-item-text:                   $gray5 !default;
+$cardview-item-bottom-border:          $gray2 1px solid !default;
+$cardview-item-image-bg:               none !default;
+$cardview-item-bg:                     $white !default;
+// Item hover
+$cardview-item-hover-text:             $gray9 !default;
+$cardview-item-hover-bottom-border:    $gray3 1px solid !default;
+$cardview-item-hover-image-bg:         none !default;
+$cardview-item-hover-bg:               darken($white, 2%) !default;
+
+
 .cardview {
   display:flex;
   flex-wrap: wrap;
@@ -15,8 +29,8 @@
   display: flex;
   flex: 0 1 32%;
   margin-bottom: 1.2em;
-  color: $view-item-text;
-  background: $view-item-bg;
+  color: $cardview-item-text;
+  background: $cardview-item-bg;
 
   @include media($mobile){
     flex: 0 1 100%;
@@ -40,7 +54,7 @@
 
 .cardview-item-body {
   padding: 1em;
-  color: $view-item-text;
+  color: $cardview-item-text;
   @include media($mobile){
     padding: 1.5em;
     }
@@ -52,13 +66,13 @@
 
 .cardview-item-body p {
   font-size: 0.8em;
-  color: $view-item-text;
+  color: $cardview-item-text;
 }
 
 .cardview-item a {
   display: flex;
   flex-direction: column;
-  border-bottom: $view-item-bottom-border;
+  border-bottom: $cardview-item-bottom-border;
 }
 
 .cardview-item a:hover {
@@ -71,7 +85,7 @@
   -webkit-transition:.2s;
   transition:.2s;
   // End transition
-  color: $view-item-hover-text;
-  border-bottom: $view-item-hover-bottom-border;
-  background: $view-item-hover-bg;
+  color: $cardview-item-hover-text;
+  border-bottom: $cardview-item-hover-bottom-border;
+  background: $cardview-item-hover-bg;
 }

@@ -3,6 +3,11 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+// Hero styles
+// ::::::::::::::::::::::::::::::::::::
+$hero-bg:              $gray2 !default;
+$hero-content-bg:      none !default;
+
 .hero {
   background-size: none;
   text-align: center;
@@ -21,7 +26,7 @@
   background: $hero-content-bg;
 
   @include media($mobile){
-    
+
     }
 }
 
@@ -29,6 +34,6 @@
   width: 40%;
   margin: 0 auto;
   @include media($mobile){
-    width: 80%;  
+    width: 80%;
     }
 }

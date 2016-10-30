@@ -3,6 +3,48 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+// Menu styles
+// ::::::::::::::::::::::::::::::::::::
+// Menu Basic
+$navigation-bg:                 none !default ;
+$menu-bg:                       none !default ;
+// Item
+$menu-item-text:                $gray6 !default ;
+$menu-item-bg:                  $gray1 !default ;
+// Item hover
+$menu-item-hover-text:          $gray9 !default ;
+$menu-item-hover-bg:            $gray2 !default ;
+// Item active
+$menu-item-active-text:         $gray9 !default ;
+$menu-item-active-bg:           $gray2 !default ;
+
+// Menu Mobile
+$menu-mobile-bg:                $gray1 !default ;
+// Item
+$menu-mobile-item-text:         $gray6 !default ;
+$menu-mobile-item-bg:           $gray1 !default ;
+// Item hover
+$menu-mobile-item-hover-text:   $gray9 !default ;
+$menu-mobile-item-hover-bg:     $gray2 !default ;
+// Item active
+$menu-mobile-item-active-text:  $gray9 !default ;
+$menu-mobile-item-active-bg:    $gray2 !default ;
+
+// Menu Mobile hamburger
+
+//btn
+$menu-mobile-btn-text:         $gray9 !default;
+$menu-mobile-btn-bg:           $white !default;
+$menu-mobile-btn-border:       1px solid $gray2 !default;
+// btn hover
+$menu-mobile-btn-hover-text:     $white !default ;
+$menu-mobile-btn-hover-bg:       lighten($primary, 5%) !default ;
+$menu-mobile-btn-hover-border:   1px solid lighten($primary, 5%) !default ;
+
+// Menu Mobile fade screen
+$menu-mobile-fade-screen-bg:   $black !default;
+$menu-mobile-border:           2px solid $gray5 !default;
+
 
 .logo {
   @include span-columns(3 of 12);
@@ -30,7 +72,7 @@
 }
 
 .menu ul {
-  margin: 0; 
+  margin: 0;
   padding: 0;
   float: right;
   @include media($mobile){
@@ -46,17 +88,17 @@
 }
 
 .menu ul li a {
-  float: left; 
+  float: left;
   text-decoration: none;
   padding: 1em 1.5em;
   color: $menu-item-text;
   background: $menu-item-bg;
 }
- 
+
 .menu ul li a:visited {
   color: $menu-item-text;
 }
- 
+
 .menu ul li a:hover {
   color: $menu-item-hover-text;
   background: $menu-item-hover-bg;
@@ -70,7 +112,7 @@
 // MOBILE MENU
 // Based on Refills
 
-.menu-mobile {  
+.menu-mobile {
   $menu-mobile-width: em(250);
   @include position(fixed, 0 0 0 auto);
   @include size($menu-mobile-width 100%);
@@ -108,7 +150,7 @@
 // MENU ITEMS
 
 .menu-mobile ul {
-    margin: 0; 
+    margin: 0;
     padding: 0;
 }
 
@@ -118,13 +160,13 @@
 
 .menu-mobile ul li a {
   width: 100%;
-  float: left; 
+  float: left;
   text-decoration: none;
   padding: 1em 2em;
   color: $menu-mobile-item-text;
   background: $menu-mobile-item-bg;
 }
- 
+
 .menu-mobile ul li a:hover {
   color: $menu-mobile-item-hover-text;
   background: $menu-mobile-item-hover-bg;
@@ -162,6 +204,3 @@
   color: $menu-mobile-btn-hover-text;
   background: $menu-mobile-btn-hover-bg;
 }
-
-
-
