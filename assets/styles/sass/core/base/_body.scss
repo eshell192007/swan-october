@@ -8,17 +8,17 @@ body {
 	background: $body-bg;
 	}
 
-html, body {  
+html, body {
 	width: 100%;
 	height: 100%;
 	padding: 0;
 	}
-	
+
 html {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;	
+  -moz-osx-font-smoothing: grayscale;
 }
 
 main, header, section, footer {
-	overflow: auto;
+	//overflow: auto;
 }

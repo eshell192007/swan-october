@@ -94,6 +94,10 @@ button:hover {
   background: $btn-hover-bg;
   }
 
+  button:focus {
+    outline:0;
+  }
+
 // -----------------------------------------------------------
 // SPECIAL BUTTONS by Sebastian Serna - 2015
 // -----------------------------------------------------------

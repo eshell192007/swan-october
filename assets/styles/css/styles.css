@@ -667,10 +667,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-main, header, section, footer {
-  overflow: auto;
-}
-
 body {
   font-family: Tahoma, Geneva, sans-serif;
   color: #595959;
@@ -920,6 +916,10 @@ button:hover {
   color: #262626;
   border: #b3b3b3 solid 1px;
   background: #FFFFFF;
+}
+
+button:focus {
+  outline: 0;
 }
 
 .button {
