@@ -1,23 +1,9 @@
 [viewBag]
 ==
-<script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='http://HOST:8890/browser-sync/browser-sync-client.js?v=2.17.0'><\/script>".replace("HOST", location.hostname));
-//]]></script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="{{ 'assets/scripts/all/swan.js' |theme }}"></script>
 {% scripts %}
 {% framework %}
 
-<!-- Syntax -->
-
-<script src="{{ 'assets/scripts/all/syntax/shCore.js' |theme }}"></script>
-<script src="{{ 'assets/scripts/all/syntax/shBrushJScript.js' |theme }}"></script>
-<script src="{{ 'assets/scripts/all/syntax/shBrushXml.js' |theme }}"></script>
-<script src="{{ 'assets/scripts/all/syntax/shBrushSass.js' |theme }}"></script>
-<link href="{{ 'assets/scripts/all/syntax/shCore.css'|theme }}" media="screen" rel="stylesheet" type="text/css">
-<link href="{{ 'assets/scripts/all/syntax/shThemeSwan.css'|theme }}" media="screen" rel="stylesheet" type="text/css">
-
-<script type="text/javascript">
-     SyntaxHighlighter.all();
-</script>
+<!-- Development scripts -->
+{% partial 'master/scripts-dev' %}

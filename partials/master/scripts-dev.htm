@@ -1,0 +1,51 @@
+[viewBag]
+==
+<!-- Development scripts -->
+
+<script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:8890/browser-sync/browser-sync-client.js?v=2.17.0'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+
+<!-- Toggle button (show snippets) -->
+<script src="{{ 'assets/scripts/all/dev/toggle/jquery.declarativeToggle.min.js' |theme }}"></script>
+
+<!-- Syntax Highlighter -->
+<script src="{{ 'assets/scripts/all/dev/syntax/shCore.js' |theme }}"></script>
+<script src="{{ 'assets/scripts/all/dev/syntax/shBrushJScript.js' |theme }}"></script>
+<script src="{{ 'assets/scripts/all/dev/syntax/shBrushXml.js' |theme }}"></script>
+<script src="{{ 'assets/scripts/all/dev/syntax/shBrushSass.js' |theme }}"></script>
+<!-- CSS Styles -->
+<link href="{{ 'assets/scripts/all/dev/syntax/shCore.css'|theme }}" media="screen" rel="stylesheet" type="text/css">
+<link href="{{ 'assets/scripts/all/dev/syntax/shThemeSwan.css'|theme }}" media="screen" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+     SyntaxHighlighter.all();
+</script>
+
+<style>
+.syntaxhighlighter {height:300px;}
+
+.toggle-btn-visible {
+  position: static;
+  visibility: visible;
+}
+
+.toggle-target-hidden { display: none; }
+
+.toggle-target-expanded { display: block; }
+
+@media screen and (max-width: 767px) {
+
+.toggle-btn-visible {
+  position: static;
+  visibility: visible;
+}
+
+.toggle-target-hidden { display: none; }
+
+.toggle-target-expanded { display: block; }
+
+}
+
+
+</style>
