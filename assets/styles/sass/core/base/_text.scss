@@ -12,25 +12,26 @@ body {
   background: $body-bg;
   }
 
-
 h1, h2, h3, h4, h5, h6  {
   font-family: Tahoma, Geneva, sans-serif;
   font-weight: normal;
-  margin: 1em 0 1em 0;
+  margin: 1rem 0 1rem 0;
   color: $text-heading;
   }
 
-h1 {
-  font-size: 3.5em;
-  margin: 0 0 0.2em 0;
-  }
+h1 { font-size: 4.5rem; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 1.9rem; }
+h4 { font-size: 1.6rem; }
+h5 { font-size: 1.4rem; }
+h6 { font-size: 1.3rem; }
 
 p {
   font-family: Tahoma, Geneva, sans-serif;
-  line-height: 1.5em;
-  font-size: 0.9em;
+  font-size: $text-medium;
+  line-height: $text-baseline;
   margin: 0;
-  padding-bottom: 1.5em;
+  padding-bottom: 1.5rem;
   color: $text-basic;
   }
 
@@ -38,6 +39,7 @@ a {
   text-decoration: none;
   color: $text-link;
   outline: 0;
+  font-size: $text-medium;
   }
 
 a:hover {
@@ -60,13 +62,13 @@ ul, ol {
   }
 
 li {
-  font-size:0.9em;
-  line-height: 1.7em;
+  font-size: $text-medium;
+  line-height: $text-baseline;
   }
 
 dl, dt, dd {
-  font-size:1em;
-  line-height: 1.8em;
+  font-size: $text-medium;
+  line-height: $text-baseline;
   }
 
 small {
@@ -75,24 +77,24 @@ small {
   }
 
 blockquote {
-  line-height: 1.8em;
-  padding: 1em 2em;
+  padding: 1rem 2rem;
   font-style: italic;
-  font-size: 90%;
+  font-size: $text-medium;
+  line-height: $text-baseline;
   }
 
 q {
-  display:inline-block;
-  padding-left: 0.5em;
-  margin-left:0.5em;
+  display: inline-block;
+  padding-left: 0.5rem;
+  margin-left: 0.5rem;
   font-style: italic;
-  font-size: 90%;
+  font-size: $text-medium;
   }
 
 cite {
-  display:inline-block;
-  padding-left: 0.5em;
-  margin-left:0.5em;
+  display: inline-block;
+  padding-left: 0.5rem;
+  margin-left: 0.5rem;
   font-style: italic;
   }
 
@@ -101,13 +103,12 @@ pre, code, samp, kbd {
   }
 
 code {
-  font-family: monospace, monospace;
-  font-size: 0.8em;
   }
 
 pre {
-  padding: 1em 0;
-  line-height: 1.5em;
+  padding: 1rem 0;
+  font-size: $text-medium;
+  line-height: $text-baseline;
   }
 
 hr {
@@ -121,8 +122,9 @@ hr {
 
 label {
   display: inline-block;
-  margin-bottom: 0.3em;
+  margin-bottom: 1.5rem;
   color: $text-basic;
+  font-size: $text-medium;
   }
 
 optgroup, option {
@@ -145,6 +147,6 @@ input [type="checkbox"] {
 
 .heading {
   @include media($mobile){
-    margin-left:1em;
+    margin-left:1rem;
     }
 }

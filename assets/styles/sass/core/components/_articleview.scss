@@ -29,14 +29,14 @@ $articleview-item-hover-bg:               darken($white, 2%) !default;
   display: flex;
   flex-direction: column;
   flex: 0 1 49%;
-  margin-bottom: 1.2em;
+  margin-bottom: 1.2rem;
   color: $articleview-item-text;
   border-bottom: $articleview-item-bottom-border;
   background: $articleview-item-bg;
 
   @include media($mobile){
     flex: 0 1 100%;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
     }
 }
 
@@ -61,19 +61,20 @@ $articleview-item-hover-bg:               darken($white, 2%) !default;
 }
 
 .articleview-item-text {
-  padding: 1em 2em;
+  padding: 1rem 2rem;
   flex: 0 1 90%;
   @include media($mobile){
-    padding: 1em 2em;
+    padding: 1rem 2rem;
     }
 }
 
 .articleview-item-body h3 {
-  font-size: 1.2em;
+  font-size: $text-medium;
 }
 
 .articleview-item-body p {
-  font-size: 0.8em;
+  font-size: $text-small;
+  line-height: 2rem;  
   color: $articleview-item-text;
 }
 
@@ -94,9 +95,9 @@ $articleview-item-hover-bg:               darken($white, 2%) !default;
 }
 
 .land .articleview-item-text {
-  padding: 4em 3em;
+  padding: 4rem 3rem;
   @include media($mobile){
-    padding: 1em 2em;
+    padding: 1rem 2rem;
     }
 }
 

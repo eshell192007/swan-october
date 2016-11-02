@@ -3,6 +3,10 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+input {
+  font-size: $text-medium;
+}
+
 input[type="submit"] {
   vertical-align: middle;
   border: none;
@@ -78,6 +82,7 @@ button {
   color: $btn-text;
   border: $btn-border;
   background: $btn-bg;
+  font-size: $text-medium;
   }
 
 button:hover {

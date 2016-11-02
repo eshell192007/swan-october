@@ -59,11 +59,11 @@ $menu-mobile-border:           2px solid $gray5 !default;
 }
 
 .logo img {
-  max-height: em(38);
-  margin: em(8) em(0) em(0) em(10) ;
+  max-height: 4rem;
+  margin: 0.8rem 0 0 1rem;
   @include media($mobile){
-    max-height: em(40);
-    margin: em(5) em(0) em(0) em(5);
+    max-height: 4rem;
+    margin: 0.5rem 0 0 0.5rem;
     }
 }
 
@@ -95,7 +95,7 @@ $menu-mobile-border:           2px solid $gray5 !default;
 .menu ul li a {
   float: left;
   text-decoration: none;
-  padding: 1em 1.5em;
+  padding: 1.5rem 2.2rem;
   color: $menu-item-text;
   background: $menu-item-bg;
 }
@@ -118,7 +118,7 @@ $menu-mobile-border:           2px solid $gray5 !default;
 // Based on Refills
 
 .menu-mobile {
-  $menu-mobile-width: em(250);
+  $menu-mobile-width: rem(250);
   @include position(fixed, 0 0 0 auto);
   @include size($menu-mobile-width 100%);
   @include transform(translateX($menu-mobile-width));
@@ -167,7 +167,7 @@ $menu-mobile-border:           2px solid $gray5 !default;
   width: 100%;
   float: left;
   text-decoration: none;
-  padding: 1em 2em;
+  padding: 1rem 2rem;
   color: $menu-mobile-item-text;
   background: $menu-mobile-item-bg;
 }
@@ -193,8 +193,8 @@ $menu-mobile-border:           2px solid $gray5 !default;
 }
 
 .menu-mobile-open button {
-  width:50px;
-  height:50px;
+  width:5rem;
+  height:5rem;
   text-align: center;
   border: $menu-mobile-btn-border;
   color: $menu-mobile-btn-text;
@@ -202,8 +202,8 @@ $menu-mobile-border:           2px solid $gray5 !default;
 }
 
 .menu-mobile-open button:hover {
-  width:50px;
-  height:50px;
+  width:5rem;
+  height:5rem;
   text-align: center;
   border: $menu-mobile-btn-hover-border;
   color: $menu-mobile-btn-hover-text;

@@ -54,7 +54,7 @@ $sidebar-bg: 		   $gray1 !default;
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: em(30) em(10);
+  padding: 3rem 3rem;
   height: $footer-size;   // Tamaño del footer
   color: $text-basic;
   background: $layout-footer-bg;
@@ -174,17 +174,22 @@ $sidebar-bg: 		   $gray1 !default;
 // Padding
 
 .pad {
- padding: 1em 2em;
+ padding: 1rem 2rem;
   @include media($mobile){
-    padding: 0.5em 1em;
+    padding: 0.5rem 1rem;
     }
 }
 
 .gap-bottom {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 .inner-centered {
   @include vertical-align;
   text-align: center;
+}
+
+.heading {
+	margin-top: 10rem;
+	margin-bottom: 3rem;
 }

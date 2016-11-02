@@ -3,36 +3,33 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-input[type="text"] { 
+input[type="text"] {
   width:100%;
-  height:2em;
-  font-size:1em;
-  padding:0 0.5em;
+  font-size: $text-medium;
+  padding: 1rem 1rem;
   color: $input-text;
   border: $input-text-border;
   background: $input-text-bg;
   }
 
-input[type="text"]:disabled { 
+input[type="text"]:disabled {
 
   }
 
-input[type="password"] { 
+input[type="password"] {
   width:100%;
-  height:2em;
-  font-size:1em;
-  padding:0 0.5em;
+  font-size: $text-medium;
+  padding: 1rem 1rem;
   letter-spacing:3px;
   color: $input-text;
   border: $input-text-border;
   background: $input-text-bg;
   }
 
-input[type="email"] { 
+input[type="email"] {
   width:100%;
-  height:2em;
-  font-size:1em;
-  padding:0 0.5em;
+  font-size: $text-medium;
+  padding: 1rem 1rem;
   color: $input-text;
   border: $input-text-border;
   background: $input-text-bg;
@@ -48,12 +45,12 @@ input:focus {
 
 // Textarea
 
-textarea { 
+textarea {
   width:100%;
-  font-size:1em;
-  padding:0 0.5em;
+  font-size: $text-medium;
+  padding: 1rem 1rem;
   height: auto;
-  min-height: 5em;
+  min-height: 10rem;
   color: $input-text;
   border: $input-text-border;
   background: $input-text-bg;
@@ -64,7 +61,3 @@ textarea:focus {
   border: $input-text-focus-border;
   background: $input-text-focus-bg;
   }
-
-
-
-

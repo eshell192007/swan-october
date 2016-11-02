@@ -39,7 +39,7 @@ $listview-item-hover-bg:               darken($white, 2%) !default;
 
 .listview-item-figure {
   flex: 0 1 15%;
-  margin-right: 1em;
+  margin-right: 1rem;
   @include media($mobile){
 
     }
@@ -51,19 +51,19 @@ $listview-item-hover-bg:               darken($white, 2%) !default;
 }
 
 .listview-item-body h3 {
-  margin: 0 0 0.3em 0;
-  font-size: 1em;
+  margin: 0 0 0.3rem 0;
+  font-size: $text-medium;
 }
 
 .listview-item-body p {
-  font-size: 0.85em;
+  font-size: $text-small;
+  line-height: 2rem;
   color: $listview-item-text;
 }
 
-
 .listview-item a {
   display: flex;
-  padding: 1em;
+  padding: 1rem;
   cursor: pointer;
   border-bottom: $listview-item-bottom-border;
 }
@@ -102,10 +102,10 @@ $listview-item-hover-bg:               darken($white, 2%) !default;
 .maxlines-2 {
   overflow: hidden;
   position: relative;
-  line-height: 1.5em;
-  max-height: 3em;
-  margin-right: -1em;
-  padding-right: 1em;
+  line-height: 2rem;
+  max-height: 4rem;
+  margin-right: -1rem;
+  padding-right: 1rem;
 }
 
 .maxlines-2:before {
@@ -119,9 +119,9 @@ $listview-item-hover-bg:               darken($white, 2%) !default;
   content: '';
   position: relative;
   right: 0;
-  width: 1em;
-  height: 1em;
-  margin-top: 0.2em;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.5rem;
 }
 
 // 1 line
@@ -129,10 +129,10 @@ $listview-item-hover-bg:               darken($white, 2%) !default;
 .maxlines-1 {
   overflow: hidden;
   position: relative;
-  line-height: 1.5em;
-  max-height: 1.5em;
-  margin-right: -1.5em;
-  padding-right: 1.5em;
+  line-height: 2rem;
+  max-height: 2rem;
+  margin-right: -1.5rem;
+  padding-right: 1.5rem;
 }
 
 .maxlines-1:before {
@@ -146,7 +146,7 @@ $listview-item-hover-bg:               darken($white, 2%) !default;
   content: '';
   position: relative;
   right: 0;
-  width: 1em;
-  height: 1em;
-  margin-top: 0.2em;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.5rem;
 }

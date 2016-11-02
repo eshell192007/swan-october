@@ -28,13 +28,13 @@ $cardview-item-hover-bg:               darken($white, 2%) !default;
 .cardview-item {
   display: flex;
   flex: 0 1 32%;
-  margin-bottom: 1.2em;
+  margin-bottom: 1.2rem;
   color: $cardview-item-text;
   background: $cardview-item-bg;
 
   @include media($mobile){
     flex: 0 1 100%;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
     }
 }
 
@@ -53,19 +53,20 @@ $cardview-item-hover-bg:               darken($white, 2%) !default;
 }
 
 .cardview-item-body {
-  padding: 1em;
+  padding: 2rem;
   color: $cardview-item-text;
   @include media($mobile){
-    padding: 1.5em;
+    padding: 1.5rem;
     }
 }
 
 .cardview-item-body h3 {
-  font-size: 1em;
+  font-size: $text-medium;
 }
 
 .cardview-item-body p {
-  font-size: 0.8em;
+  font-size: $text-small;
+  line-height: 2rem;
   color: $cardview-item-text;
 }
 

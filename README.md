@@ -64,9 +64,7 @@ swan-october/
 
 ### Arquitectura Sass (Alpha)
 
-La estructura de carpetas Sass sigue el [ Patrón 7-1](https://sass-guidelin.es/#the-7-1-pattern).
-
-Estructura de la carpeta `assets/styles`:
+La estructura Sass del core de Swan sigue el [ Patrón 7-1](https://sass-guidelin.es/#the-7-1-pattern).
 
 ```sh
 styles/

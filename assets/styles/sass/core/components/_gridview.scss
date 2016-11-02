@@ -28,13 +28,13 @@ $gridview-item-hover-bg:               darken($white, 2%) !default;
 .gridview-item {
   display: flex;
   flex: 0 1 33%;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
   color: $gridview-item-text;
   background: $gridview-item-bg;
 
   @include media($mobile){
     flex: 0 1 49%;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
     }
 }
 
@@ -53,20 +53,20 @@ $gridview-item-hover-bg:               darken($white, 2%) !default;
 }
 
 .gridview-item-body {
-  padding: 1em;
+  padding: 1rem;
   color: $text-basic;
 
   @include media($mobile){
-    padding: 1.5em;
+    padding: 1.5rem;
     }
 }
 
 .gridview-item-body h3 {
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 .gridview-item-body p {
-  font-size: 0.8em;
+  font-size: 0.8rem;
 }
 
 .gridview-item a {
