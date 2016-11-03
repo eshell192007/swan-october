@@ -3,16 +3,6 @@ url = "/components"
 layout = "layout-basic-full"
 is_hidden = 0
 ==
-<h2 class="heading">Basic Menu</h2>
-{% partial 'components/menu' %}
-<!-- Code Example -->
-<button data-toggle-target="#snippet-menu" data-toggle-text="Hide Code">Show Code</button>
-<div id="snippet-menu">
-    <script type="syntaxhighlighter" class="brush: xml">
-    <![CDATA[ {% partial 'components/menu' %} ]]>
-    </script>
-</div>
-
 
 <h2 class="heading">List View</h2>
 {% partial 'components/listview' %}
@@ -61,6 +51,16 @@ is_hidden = 0
 <div id="snippet-articleview-land">
     <script type="syntaxhighlighter" class="brush: xml">
     <![CDATA[ {% partial 'components/articleview-land' %} ]]>
+    </script>
+</div>
+
+<h2 class="heading">Basic Menu</h2>
+{% partial 'components/menu' %}
+<!-- Code Example -->
+<button data-toggle-target="#snippet-menu" data-toggle-text="Hide Code">Show Code</button>
+<div id="snippet-menu">
+    <script type="syntaxhighlighter" class="brush: xml">
+    <![CDATA[ {% partial 'components/menu' %} ]]>
     </script>
 </div>
 

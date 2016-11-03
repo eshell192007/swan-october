@@ -118,7 +118,7 @@ $menu-mobile-border:           2px solid $gray5 !default;
 // Based on Refills
 
 .menu-mobile {
-  $menu-mobile-width: rem(250);
+  $menu-mobile-width: 25rem;
   @include position(fixed, 0 0 0 auto);
   @include size($menu-mobile-width 100%);
   @include transform(translateX($menu-mobile-width));

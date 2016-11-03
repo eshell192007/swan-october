@@ -11,8 +11,8 @@ $layout-bg:            none !default;
 $layout-header-bg:     $gray1 !default;
 $layout-main-bg:       $white !default;
 $layout-footer-bg:     $gray1 !default;
-$content-bg: 		   $white !default;
-$sidebar-bg: 		   $gray1 !default;
+$content-bg: 		       $white !default;
+$sidebar-bg: 		       $gray1 !default;
 
 // Master Containers
 
@@ -66,24 +66,25 @@ $sidebar-bg: 		   $gray1 !default;
 
 .section {
   @include row();
-  outline:$layout-border;
+  outline: $layout-border;
+	overflow: hidden; // Resuelve margin compartido con elementos H1
 }
 
 .section-content {
   @include outer-container(980px);
-  outline:$layout-border;
+  outline: $layout-border;
 }
 
 .section-content-full {
   @include outer-container(100%);
-  outline:$layout-border;
+  outline: $layout-border;
 }
 
 .content {
   @include span-columns(8);
   color: $text-basic;
   background: $content-bg;
-  outline:$layout-border;
+  outline: $layout-border;
   @include media($mobile){
     @include span-columns(12 of 12);
     }
@@ -93,14 +94,14 @@ $sidebar-bg: 		   $gray1 !default;
   @include span-columns(12);
   color: $text-basic;
   background: $content-bg;
-  outline:$layout-border;
+  outline: $layout-border;
 }
 
 .sidebar {
   @include span-columns(4);
   color: $text-basic;
   background: $sidebar-bg;
-  outline:$layout-border;
+  outline: $layout-border;
   @include media($mobile){
     @include span-columns(12 of 12);
     }
@@ -132,8 +133,6 @@ $sidebar-bg: 		   $gray1 !default;
     }
 
   }
-
-
 
 // Fixed positions
 
@@ -190,6 +189,6 @@ $sidebar-bg: 		   $gray1 !default;
 }
 
 .heading {
-	margin-top: 10rem;
+	margin-top: 6rem;
 	margin-bottom: 3rem;
 }

@@ -38,15 +38,15 @@ $listview-item-hover-bg:               darken($white, 2%) !default;
 }
 
 .listview-item-figure {
-  flex: 0 1 15%;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
+  flex: 0 1 auto;
+  height: 100%;
   @include media($mobile){
 
     }
 }
 
 .listview-item-body {
-  flex: 1;
   color: $listview-item-text;
 }
 
@@ -70,13 +70,7 @@ $listview-item-hover-bg:               darken($white, 2%) !default;
 
 .listview-item a:hover {
   cursor: pointer;
-  // Transition
-  -o-transition:.2s;
-  -ms-transition:.2s;
-  -moz-transition:.2s;
-  -webkit-transition:.2s;
   transition:.2s;
-  // End transition
   color: $listview-item-hover-text;
   border-bottom: $listview-item-hover-bottom-border;
   background: $listview-item-hover-bg;
