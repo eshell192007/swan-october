@@ -4,7 +4,7 @@
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-// FONT COLOR CLASSES 
+// FONT COLOR CLASSES
 
 .white   { color:   $white; } // White (HTML color: white)
 .gray1   { color:   $gray1; }
@@ -19,7 +19,7 @@
 .black   { color:   $black; } // Black (HTML color: black)
 
 
-// BG COLOR CLASSES 
+// BG COLOR CLASSES
 
 .bg-white   { background:   $white !important; color: $gray6; } // White (HTML color: white)
 .bg-gray1   { background:   $gray1 !important; color: $gray6; }
@@ -48,3 +48,53 @@
     display: none;
 }
 
+// Fixed positions
+
+.fixed-top {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    z-index: 20;
+}
+
+.fixed-left {
+    position: fixed;
+    top: 0;
+    z-index: 20;
+}
+
+.fixed-right {
+  position: fixed;
+  right: 0;
+  z-index: 20;
+}
+
+.hide {
+  display: none;
+}
+
+// ORDENAR
+
+.to-right {
+  float:right;
+}
+
+.to-left {
+  float:left;
+}
+
+.to-center {
+  text-align:center;
+}
+
+// -----------------------------------
+
+.pad-top {
+  padding-top: 1em;
+}

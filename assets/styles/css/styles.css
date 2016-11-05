@@ -876,77 +876,7 @@ fieldset {
   padding: 1em 2em;
 }
 
-input {
-  font-size: 1.4rem;
-}
-
-input[type="submit"] {
-  vertical-align: middle;
-  border: none;
-  -webkit-transition: .2s;
-  transition: .2s;
-  padding: 0.6em 1em;
-  color: #4d4d4d;
-  border: #e6e6e6 solid 1px;
-  background: #f2f2f2;
-}
-
-input[type="submit"]:hover {
-  vertical-align: middle;
-  border: none;
-  -webkit-transition: .2s;
-  transition: .2s;
-  color: #262626;
-  border: #b3b3b3 solid 1px;
-  background: #FFFFFF;
-}
-
-input[type="reset"] {
-  vertical-align: middle;
-  border: none;
-  -webkit-transition: .2s;
-  transition: .2s;
-  padding: 0.6em 1em;
-  color: #4d4d4d;
-  border: #e6e6e6 solid 1px;
-  background: #f2f2f2;
-}
-
-input[type="reset"]:hover {
-  vertical-align: middle;
-  border: none;
-  -webkit-transition: .2s;
-  transition: .2s;
-  color: #262626;
-  border: #b3b3b3 solid 1px;
-  background: #FFFFFF;
-}
-
-button {
-  vertical-align: middle;
-  -webkit-transition: .2s;
-  transition: .2s;
-  padding: 0.6em 1em;
-  color: #4d4d4d;
-  border: #e6e6e6 solid 1px;
-  background: #f2f2f2;
-  font-size: 1.4rem;
-}
-
-button:hover {
-  vertical-align: middle;
-  -webkit-transition: .2s;
-  transition: .2s;
-  color: #262626;
-  border: #b3b3b3 solid 1px;
-  background: #FFFFFF;
-}
-
-button:focus {
-  outline: 0;
-}
-
-.button {
+button, input[type="button"], input[type="reset"], input[type="submit"], .button {
   vertical-align: middle;
   -webkit-transition: .2s;
   transition: .2s;
@@ -955,9 +885,10 @@ button:focus {
   color: #4d4d4d;
   border: #e6e6e6 solid 1px;
   background: #f2f2f2;
+  font-size: 1.4rem;
 }
 
-.button:hover {
+button:hover, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover {
   vertical-align: middle;
   -webkit-transition: .2s;
   transition: .2s;
@@ -992,8 +923,6 @@ button:focus {
 
 .rounded {
   border-radius: 50px;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
   min-width: 100px;
 }
 
@@ -1002,8 +931,6 @@ button:focus {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
   text-align: center;
   border: 1px solid;
   padding: 0;
@@ -1226,14 +1153,6 @@ textarea:focus {
   display: none;
 }
 
-.themeselect {
-  width: 8.125em;
-}
-
-.object {
-  padding: 0.625em;
-}
-
 .fixed-top {
   width: 100%;
   position: fixed;
@@ -1273,10 +1192,6 @@ textarea:focus {
 
 .to-center {
   text-align: center;
-}
-
-.text-small {
-  font-size: 0.9em;
 }
 
 .pad-top {

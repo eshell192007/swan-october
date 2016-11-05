@@ -5,8 +5,8 @@
 
 // Vendor components
 @import "vendors/normalize";
-@import "vendors/bourbon/bourbon"; // Sass Mixins library
-@import "vendors/neat/neat"; // Sass Grid
+@import "vendors/bourbon/bourbon";
+@import "vendors/neat/neat";
 
 // Abstract components
 @import "abstract/variables";
@@ -35,7 +35,6 @@
 @import "base/text-input";
 // Temporal
 @import "base/classes";
-@import "base/shame";
 
 // Components & Patterns
 @import "components/menu";

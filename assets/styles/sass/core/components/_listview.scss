@@ -16,13 +16,11 @@ $listview-item-hover-bottom-border:    $gray3 1px solid !default;
 $listview-item-hover-image-bg:         none !default;
 $listview-item-hover-bg:               darken($white, 2%) !default;
 
+
 .listview {
   display:flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  @include media($mobile){
-
-    }
 }
 
 .listview-item {
@@ -40,9 +38,6 @@ $listview-item-hover-bg:               darken($white, 2%) !default;
   margin-right: 1.5rem;
   flex: 0 1 auto;
   height: 100%;
-  @include media($mobile){
-
-    }
 }
 
 .listview-item-body {
