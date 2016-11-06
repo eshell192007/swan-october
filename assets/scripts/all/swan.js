@@ -20,6 +20,7 @@ function showMobileBtn() {
     }
  }
 
+// Execute Function
 showMobileBtn();
 window.onresize = function() {
   showMobileBtn();
