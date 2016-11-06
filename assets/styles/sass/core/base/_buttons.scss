@@ -15,6 +15,7 @@
   border: $btn-border;
   background: $btn-bg;
   font-size: $text-medium;
+  outline:0; // Solves Chrome border focus
   }
 
 %button:hover {
@@ -23,6 +24,7 @@
   color: $btn-hover-text;
   border: $btn-hover-border;
   background: $btn-hover-bg;
+  outline:0; // Solves Chrome border focus
   }
 
 
