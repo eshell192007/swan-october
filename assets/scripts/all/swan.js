@@ -52,11 +52,10 @@ menuFadeBg.onclick = function(event){
 
 window.onload = function() {
     var menulinks = document.getElementById("menu-main").getElementsByTagName("a");
-    var i = 0 ;
+    var i = 0;
     var length = menulinks.length ;
     var fullpath = location.href.split("#")[0];
 
-    // Loop through each link
     for(; i < length; i++) {
         if(menulinks[i].href.split("#")[0] == fullpath) {
             menulinks[i].className += " active";
