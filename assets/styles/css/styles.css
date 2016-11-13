@@ -657,7 +657,7 @@ body:before {
   margin-bottom: 3rem;
 }
 
-html, body {
+html {
   font-size: 62.5%;
 }
 
@@ -1151,10 +1151,6 @@ textarea:focus {
   height: 70rem !important;
 }
 
-.hide {
-  display: none;
-}
-
 .fixed-top {
   width: 100%;
   position: fixed;
@@ -1180,8 +1176,18 @@ textarea:focus {
   z-index: 20;
 }
 
-.hide {
+.hidden {
   display: none;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.visible {
+  display: block;
+  opacity: 1;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 .to-right {
@@ -1198,6 +1204,20 @@ textarea:focus {
 
 .pad-top {
   padding-top: 1em;
+}
+
+.js-toggle-hidden {
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: height 0.15s ease-out;
+  transition: height 0.15s ease-out;
+}
+
+.js-toggle-visible {
+  height: 500px;
+  overflow: hidden;
+  -webkit-transition: height 0.20s ease-in;
+  transition: height 0.20s ease-in;
 }
 
 .navigation {

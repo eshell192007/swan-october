@@ -32,7 +32,7 @@ menuShow.onclick = function(event){
      menu.className += " is-visible";
      menuFadeBg.className += " is-visible";
      event.preventDefault();
-}
+};
 // Shame but works
 menuFadeBg.onclick = function(event){
      // Delete and Write menu classes
@@ -42,7 +42,7 @@ menuFadeBg.onclick = function(event){
      menuFadeBg.className = "";
      menuFadeBg.className = "menu-mobile-fade-screen";
      event.preventDefault();
-}
+};
 
 // --------------------------------------------------------------
 // ACTIVE MENU ITEM
@@ -51,13 +51,13 @@ menuFadeBg.onclick = function(event){
 // This function is very slow "thanks" to the native onload method
 
 window.onload = function() {
-    var menulinks = document.getElementById("menu-main").getElementsByTagName("a");
-    var i = 0;
-    var length = menulinks.length ;
-    var fullpath = location.href.split("#")[0];
+    var menulinks = document.getElementById("menu-main").getElementsByTagName("a"),
+        i = 0,
+        length = menulinks.length,
+        fullpath = location.href.split("#")[0];
 
     for(; i < length; i++) {
-        if(menulinks[i].href.split("#")[0] == fullpath) {
+        if(menulinks[i].href.split("#")[0] === fullpath) {
             menulinks[i].className += " active";
         }
     }
@@ -76,4 +76,24 @@ for (var i = 0; i < nullAnchors.length; i++) {
 
 function preventDefaultEvent(e) {
     e.preventDefault();
+}
+
+// --------------------------------------------------------------
+// TOGGLE (Hide / Show element)
+// --------------------------------------------------------------
+// This solution is temporal
+
+var toggleBtn = document.querySelectorAll('.js-toggle');
+
+for (var i = 0; i < toggleBtn.length; i++) {
+
+    toggleBtn[i].addEventListener('click', function (event) {
+      var nextEl = this.nextElementSibling;
+
+      if (nextEl.className === "js-toggle-hidden") {
+          nextEl.className = "js-toggle-visible";
+      } else {
+          nextEl.className = "js-toggle-hidden";
+      }
+  });
 }
