@@ -1206,20 +1206,6 @@ textarea:focus {
   padding-top: 1em;
 }
 
-.js-toggle-hidden {
-  height: 0px;
-  overflow: hidden;
-  -webkit-transition: height 0.15s ease-out;
-  transition: height 0.15s ease-out;
-}
-
-.js-toggle-visible {
-  height: 500px;
-  overflow: hidden;
-  -webkit-transition: height 0.20s ease-in;
-  transition: height 0.20s ease-in;
-}
-
 .navigation {
   overflow: auto;
   background: none;
@@ -1926,4 +1912,18 @@ li.page-active a {
   background: #000000 !important;
   color: #FFFFFF !important;
   border: #000000 1px solid !important;
+}
+
+.js-toggle-hidden {
+  max-height: 0px;
+  overflow: hidden;
+  -webkit-transition: max-height 0.20s ease-out;
+  transition: max-height 0.20s ease-out;
+}
+
+.js-toggle-visible {
+  max-height: 1000px;
+  overflow: hidden;
+  -webkit-transition: max-height 0.30s ease-in;
+  transition: max-height 0.30s ease-in;
 }

@@ -101,17 +101,3 @@
 .pad-top {
   padding-top: 1em;
 }
-
-// Toogle visibility
-
-.js-toggle-hidden {
-  height: 0px;
-  overflow: hidden;
-  transition: height 0.15s ease-out;
-}
-
-.js-toggle-visible {
-  height: 500px;
-  overflow: hidden;
-  transition: height 0.20s ease-in;
-}
