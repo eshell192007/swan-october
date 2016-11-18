@@ -20,7 +20,7 @@ var gulp = require( 'gulp' ),
 
 
 //-----------------------------------------------------
-// Sass compiler variables
+// Sass transpiler variables
 //-----------------------------------------------------
 
 var input = 'assets/styles/sass/**/*.scss';
@@ -32,7 +32,7 @@ var sassOptions = {
 };
 
 //-----------------------------------------------------
-// Sass compiler task
+// Sass transpiler task
 //-----------------------------------------------------
 
 gulp.task ('sass' , function() {
@@ -55,7 +55,7 @@ gulp.task ('sass' , function() {
 
 gulp.task ('browser-sync' , function() {
     browserSync.init([ output, projectroot ], {
-        server: { 
+        server: {
           baseDir: "./"
         }
     });
@@ -124,5 +124,3 @@ gulp.task('watch', ['sass-up'], function() {
       './assets/styles/css/*.css'
       ]).on("change", browserSync.reload);
 });
-
-

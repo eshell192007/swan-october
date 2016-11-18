@@ -13,26 +13,25 @@
 @import "abstract/mixins";
 @import "abstract/utilities"; // Generic classes
 
+// Base UI Elements
+@import "base/body";
+@import "base/media-image";
+@import "base/media-audio";
+@import "base/text";
+@import "base/text-tables";
+@import "base/control-basic-form";
+@import "base/control-buttons";
+@import "base/control-checkboxes";
+@import "base/control-progress";
+@import "base/control-radio-buttons";
+@import "base/control-scrollbars";
+@import "base/control-select";
+@import "base/control-sliders";
+@import "base/control-switches";
+@import "base/control-text-input";
+
 // Layout
 @import "layout/layout";
-
-// Base Elements
-@import "base/body";
-@import "base/text";
-@import "base/multimedia";
-@import "base/tables";
-// UI controls
-@import "base/base-form";
-@import "base/buttons";
-@import "base/checkboxes";
-@import "base/progress";
-@import "base/radio-buttons";
-@import "base/scrollbars";
-@import "base/select";
-@import "base/sliders";
-@import "base/switches";
-@import "base/text-input";
-
 
 // Components & Patterns
 @import "components/menu";
