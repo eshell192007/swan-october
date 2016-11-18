@@ -443,6 +443,10 @@ body:before {
   padding-top: 1em;
 }
 
+.full {
+  width: 100%;
+}
+
 .layout {
   overflow: auto;
   min-height: 100%;
@@ -922,7 +926,7 @@ dl, dt, dd {
 }
 
 small {
-  font-size: 65%;
+  font-size: 90%;
   font-family: Tahoma, Geneva, sans-serif;
 }
 
@@ -1127,24 +1131,21 @@ button:hover, button:focus, input[type="button"]:focus, input[type="reset"]:focu
   text-align: center;
 }
 
-.nano {
-  width: 100%;
-}
-
-.nano > .nano-content {
-  padding: none;
-}
-
+/*
 select {
   background: transparent;
-  max-width: 15.625em;
+  max-width: em(250);
   padding: 5px 35px 5px 5px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  color: #333333;
-  border: gray solid 1px;
-  background: #f2f2f2 url(../../images/ic-arrow-down.png) right no-repeat;
+  color: $dropdown-text;
+  border: $dropdown-border;
+  background: $dropdown-bg;
+	}
+*/
+select {
+  font-size: 1.4rem;
 }
 
 select option {

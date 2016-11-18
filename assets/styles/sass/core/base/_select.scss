@@ -3,6 +3,7 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+/*
 select {
   background: transparent;
   max-width: em(250);
@@ -12,13 +13,18 @@ select {
   appearance: none;
   color: $dropdown-text;
   border: $dropdown-border;
-  background: $dropdown-bg;    
+  background: $dropdown-bg;
 	}
+*/
+
+select {
+  font-size: $text-medium;
+}
 
 select option {
   color: $dropdown-text;
-  } 
+  }
 
 select optgroup {
   color: $dropdown-text;
-  } 
+  }
