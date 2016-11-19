@@ -51,7 +51,6 @@ swan-october/
 │   └── styles/
 │       
 ├── layouts/          # Plantillas HTML
-├── meta/             # Metadatos y menús
 ├── pages/            # Páginas estáticas
 ├── partials/         # Código HTML reutilizable
 ├── theme.yaml        # Descripción y dependencias
