@@ -8,9 +8,9 @@
 // --------------------------------------------------------------
 // This solution is temporal
 
-var menu = document.getElementById('menu-main');
-var menuShow = document.getElementById('btnMenu');
-var menuFadeBg = document.getElementById('fadeScreen');
+var menu = document.getElementById("menu-main");
+var menuShow = document.getElementById("btnMenu");
+var menuFadeBg = document.getElementById("fadeScreen");
 
 function showMobileBtn() {
     if (window.innerWidth <= 768) {
@@ -83,11 +83,11 @@ function preventDefaultEvent(e) {
 // --------------------------------------------------------------
 // This solution is temporal
 
-var toggleBtn = document.querySelectorAll('.js-toggle');
+var toggleBtn = document.querySelectorAll(".js-toggle");
 
 for (var i = 0; i < toggleBtn.length; i++) {
 
-    toggleBtn[i].addEventListener('click', function (event) {
+    toggleBtn[i].addEventListener("click", function (event) {
       var nextEl = this.nextElementSibling;
 
       if (nextEl.className === "js-toggle-hidden") {
