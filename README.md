@@ -63,7 +63,7 @@ swan-october/
 
 ### Arquitectura Sass (Alpha)
 
-La estructura Sass del core de Swan sigue el [ Patrón 7-1](https://sass-guidelin.es/#the-7-1-pattern).
+El core de Swan sigue el [ Patrón 7-1](https://sass-guidelin.es/#the-7-1-pattern).
 
 ```sh
 styles/
