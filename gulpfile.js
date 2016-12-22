@@ -7,16 +7,16 @@
 'use strict';
 
 var gulp = require( 'gulp' ),
-  plumber = require( 'gulp-plumber'),
-  sass = require( 'gulp-sass'),
-  sourcemaps = require('gulp-sourcemaps'),
-  autoprefixer = require('gulp-autoprefixer'),
-  minifyCSS = require('gulp-minify-css'),
-  rename = require('gulp-rename'),
-  uglify = require( 'gulp-uglify'),
-  concat = require( 'gulp-concat'),
-  sassdoc = require('sassdoc'),
-  browserSync = require('browser-sync').create();
+    plumber = require( 'gulp-plumber'),
+    sass = require( 'gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
+    autoprefixer = require('gulp-autoprefixer'),
+    minifyCSS = require('gulp-minify-css'),
+    rename = require('gulp-rename'),
+    uglify = require( 'gulp-uglify'),
+    concat = require( 'gulp-concat'),
+    sassdoc = require('sassdoc'),
+    browserSync = require('browser-sync').create();
 
 
 //-----------------------------------------------------

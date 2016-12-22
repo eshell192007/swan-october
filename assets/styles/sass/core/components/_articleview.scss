@@ -4,7 +4,7 @@
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 // ArticleView styles
-// ::::::::::::::::::::::::::::::::::::
+// ---------------------------------------------------
 // Item
 $articleview-item-text:                   $gray5 !default;
 $articleview-item-bottom-border:          $gray2 1px solid !default;
@@ -69,7 +69,7 @@ $articleview-item-hover-bg:               darken($white, 2%) !default;
 }
 
 .articleview-item-body h3 {
-  font-size: $text-medium;
+  font-size: $text-large - 0.2rem;
 }
 
 .articleview-item-body p {

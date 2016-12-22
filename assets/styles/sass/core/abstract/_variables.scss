@@ -4,6 +4,7 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+@import "../vendors/bourbon/bourbon";
 @import "../vendors/neat/neat-helpers";
 
 // Breakpoints
@@ -46,7 +47,8 @@ $width-sidebar-tiny: 4rem;
 $text-tiny:    0.6rem  !default;
 $text-small:   1.2rem  !default;
 $text-medium:  1.4rem  !default;
-$text-large:   2.4rem  !default;
+$text-large:   1.9rem  !default;
+$text-xlarge:  2.4rem  !default;
 $text-huge:    3.4rem  !default;
 
 $text-baseline: 2.5rem !default;
@@ -80,32 +82,39 @@ $black:             darken($white, 100%); // Black (HTML color: black) #000000
 $primary:           #000000 !default; // Black
 $secondary:         #999999 !default; // Gray
 
-// COLORS
-// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 // General
-// ::::::::::::::::::::::::::::::::::::
+// ----------------------------------------------
 $body-bg:              $white !default;
 
-
 // Texts
-// ::::::::::::::::::::::::::::::::::::
-$text-basic:           $gray6 !default;
-$text-heading:         $gray8 !default;
-$text-link:            $gray9 !default;
-$text-link-hover:      $gray7 !default;
-$text-link-visited:    $gray9 !default;
-$text-selection:       $gray6 !default;
-$text-selection-bg:    $gray2 !default;
+// ----------------------------------------------
+
+$text-font-heading:         Tahoma, Geneva, sans-serif !default;
+$text-font-heading-weight:  normal !default;
+$text-font-body:            Tahoma, Geneva, sans-serif !default;
+
+$text-basic:                $gray6 !default;
+$text-heading:              $gray8 !default;
+$text-link:                 $gray9 !default;
+$text-link-hover:           $gray7 !default;
+$text-link-visited:         $gray9 !default;
+$text-selection:            $gray6 !default;
+$text-selection-bg:         $gray2 !default;
 // Horizontal rule
-$hr-color:             $gray3 !default;
+$hr-color:                  $gray3 !default;
 
 // Tables
 $table-td-border-bottom: none !default;
 $table-tr-hover-bg:      $gray1 !default;
 
+// Forms
+// ----------------------------------------------
+$form-filedset-border:   $gray2 !default;
+
+
 // Buttons base styles
-// ::::::::::::::::::::::::::::::::::::
+// ----------------------------------------------
 // Btn
 $btn-text:           $gray7 !default;
 $btn-border:         $gray2 solid 1px !default;
@@ -115,7 +124,7 @@ $btn-hover-text:     $gray9 !default;
 $btn-hover-border:   $gray3 solid 1px !default;
 $btn-hover-bg:       $white !default;
 // Btn padding
-$btn-padding:        1rem 2rem !default;
+$btn-padding:        1rem 1rem !default;
 
 // Btn Primary
 $btn-primary-text:           $gray1 !default;
@@ -128,7 +137,7 @@ $btn-primary-hover-bg:       $gray8 !default;
 
 
 // Input text and Textarea styles
-// ::::::::::::::::::::::::::::::::::::
+// ----------------------------------------------
 // Input text (text, password, email, textarea)
 $input-text:                $gray6 !default;
 $input-text-border:         $gray3 solid 1px !default;
@@ -140,7 +149,7 @@ $input-text-focus-bg:       $white !default;
 
 
 // Select (dropdown) styles
-// ::::::::::::::::::::::::::::::::::::
+// ----------------------------------------------
 $dropdown-text:             $gray8 !default;
 $dropdown-border:           $gray5 solid 1px !default;
 $dropdown-bg:               $gray1 url(../../images/ic-arrow-down.png) right no-repeat !default;
