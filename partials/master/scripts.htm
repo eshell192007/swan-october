@@ -1,10 +1,19 @@
 [viewBag]
 ==
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script src="{{ 'assets/scripts/all/jquery/jquery-1.11.1.min.js' |theme }}"></script> -->
-<script src="{{ 'assets/scripts/all/swan.js' |theme }}"></script>
-<!-- {% scripts %}
-{% framework %} -->
+<!-- BrowserSync -->
+<script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:8888/browser-sync/browser-sync-client.js?v=2.17.0'><\/script>".replace("HOST", location.hostname));
+//]]></script>
 
-<!-- Development scripts -->
-{% partial 'master/scripts-dev' %}
+<!-- Scripts -->
+<script src="{{ 'assets/scripts/swan.min.js' |theme }}"></script>
+<!-- SVG Polyfill -->
+<script src="{{ 'assets/scripts/vendors/svg4everybody.min.js' |theme }}"></script>
+<!-- Syntax Highlighter -->
+<script src="{{ 'assets/scripts/vendors/syntax.min.js' |theme }}"></script>
+<link href="{{ 'assets/scripts/vendors/syntax.min.css' |theme }}" media="screen" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+     SyntaxHighlighter.all();
+     svg4everybody();
+</script>
