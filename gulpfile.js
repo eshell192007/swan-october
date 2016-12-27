@@ -15,7 +15,6 @@ var gulp = require( 'gulp' ),
     rename = require('gulp-rename'),
     uglify = require( 'gulp-uglify'),
     concat = require( 'gulp-concat'),
-    sassdoc = require('sassdoc'),
     browserSync = require('browser-sync').create();
 
 
@@ -61,41 +60,6 @@ gulp.task ('browser-sync' , function() {
     });
 });
 
-
-//-----------------------------------------------------
-// Sass Docs task
-//-----------------------------------------------------
-
-gulp.task('sassdoc', function () {
-  return gulp
-    .src(input)
-    .pipe(sassdoc())
-    .resume();
-});
-
-//-----------------------------------------------------
-// Scripts merge task
-//-----------------------------------------------------
-
-gulp.task ('mergejs' , function() {
-  gulp.src ('assets/scripts/all/*.js')
-    .pipe(plumber())
-    .pipe(concat('scripts.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('assets/scripts/'));
-});
-
-//-----------------------------------------------------
-// Production package tasks
-//-----------------------------------------------------
-
-gulp.task('prod', ['sassdoc'], function () {
-  return gulp
-    .src(input)
-    .pipe(sass({ outputStyle: 'compressed' }))
-    .pipe(autoprefixer(autoprefixerOptions))
-    .pipe(gulp.dest(output));
-});
 
 //-----------------------------------------------------
 // Watch tasks
