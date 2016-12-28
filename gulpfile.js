@@ -11,7 +11,7 @@ var gulp = require( 'gulp' ),
     sass = require( 'gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
-    minifyCSS = require('gulp-minify-css'),
+    cleanCSS = require('gulp-clean-css'),
     rename = require('gulp-rename'),
     uglify = require( 'gulp-uglify'),
     concat = require( 'gulp-concat'),
@@ -41,7 +41,7 @@ gulp.task ('sass' , function() {
       .pipe(sass(sassOptions).on('error', sass.logError))
       .pipe(autoprefixer())
       .pipe(gulp.dest(output))
-      .pipe(minifyCSS())
+      .pipe(cleanCSS())
       .pipe(rename('styles.min.css'))
       .pipe(gulp.dest(output))
       .pipe(browserSync.stream());

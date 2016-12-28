@@ -789,6 +789,7 @@ button:hover, button:focus, input[type="button"]:focus, input[type="reset"]:focu
 .rounded {
   border-radius: 50px;
   min-width: 100px;
+  padding: 1rem 2rem;
 }
 
 .circle {
