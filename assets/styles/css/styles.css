@@ -477,8 +477,8 @@ img {
   width: 2rem;
   height: 2rem;
   stroke-width: 0;
-  stroke: gray;
-  fill: gray;
+  stroke: #595959;
+  fill: #595959;
   vertical-align: middle;
   -webkit-transition: .2s;
   transition: .2s;
@@ -486,8 +486,8 @@ img {
 
 .icon:hover, .icon-medium:hover, .icon-large:hover, .icon-huge:hover, .icon-xhuge:hover {
   stroke-width: 0;
-  stroke: gray;
-  fill: gray;
+  stroke: #595959;
+  fill: #595959;
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -796,6 +796,51 @@ button:hover, button:focus, input[type="button"]:focus, input[type="reset"]:focu
 .fill {
   width: 100%;
   text-align: center;
+}
+
+.progress-bar {
+  background-color: #e6e6e6;
+  border: 1px solid #f2f2f2;
+  border-radius: 15px;
+  box-shadow: inset 0 0 3px 0 rgba(102, 102, 102, 0.15);
+  height: 20px;
+  margin: 0 auto;
+  padding: 2px;
+  width: 100%;
+}
+
+.progress-bar > span.meter {
+  -webkit-animation: progress 0.7s linear infinite;
+          animation: progress 0.7s linear infinite;
+  background-color: #333333;
+  background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%);
+  background-repeat: repeat-x;
+  background-size: 40px 40px;
+  border: 1px solid #0d0d0d;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 60%;
+}
+
+@-webkit-keyframes progress {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 0;
+  }
+}
+
+@keyframes progress {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 0;
+  }
 }
 
 /*

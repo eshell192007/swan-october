@@ -5,15 +5,15 @@ is_hidden = 0
 ==
 
 <!-- Templates :::::::::::::::::::::::::::: -->
-<h2 class="heading">Templates</h2>
+<h2 class="heading">Basic Layouts</h2>
 {% partial 'templates/basic-layouts' %}
 
 <!-- Grid Columns :::::::::::::::::::::::::::::::::: -->
 <h2 class="heading">Grid Columns</h2>
 {% partial 'templates/basic-columns' %}
 <!-- Code Example -->
-<button data-toggle-target="#snippet-basic-columns" data-toggle-text="Hide Code">&#60;&#47;&#62; Show Code</button>
-<div id="snippet-basic-columns">
+<button class="js-toggle">&#60;&#47;&#62; Show Code</button>
+<div class="js-toggle-hidden">
     <script type="syntaxhighlighter" class="brush: xml">
     <![CDATA[ {% partial 'templates/basic-columns' %} ]]>
     </script>
