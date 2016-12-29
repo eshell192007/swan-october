@@ -512,6 +512,23 @@ img {
   height: 30rem;
 }
 
+.video-wrapper {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.video-wrapper embed,
+.video-wrapper object,
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
 body {
   font-family: Tahoma, Geneva, sans-serif;
   color: #595959;
@@ -675,8 +692,24 @@ input [type="checkbox"] {
   background: #e6e6e6;
 }
 
+.heading {
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+}
+
 @media screen and (max-width: 768px) {
   .heading {
+    margin-left: 1rem;
+  }
+}
+
+h2.heading {
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  h2.heading {
     margin-left: 1rem;
   }
 }

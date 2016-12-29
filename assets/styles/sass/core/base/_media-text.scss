@@ -151,7 +151,18 @@ input [type="checkbox"] {
   background: $text-selection-bg;
 }
 
+
 .heading {
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  @include media($mobile){
+    margin-left:1rem;
+    }
+}
+
+h2.heading {
+  margin-top: 10rem;
+  margin-bottom: 3rem;
   @include media($mobile){
     margin-left:1rem;
     }
