@@ -198,7 +198,7 @@ function customMap() {
       	styles: style,
     }
     //inizialize the map
-	var map = new google.maps.Map(document.getElementById('google-container'), map_options);
+	var map = new google.maps.Map(document.querySelector(".mapview-canvas"), map_options);
 	//add a custom marker to the map				
 	var marker = new google.maps.Marker({
 	  	position: new google.maps.LatLng(latitude, longitude),
@@ -210,8 +210,8 @@ function customMap() {
 	//add custom buttons for the zoom-in/zoom-out on the map
 	function CustomZoomControl(controlDiv, map) {
 		//grap the zoom elements from the DOM and insert them in the map 
-	  	var controlUIzoomIn= document.getElementById('cd-zoom-in'),
-	  		controlUIzoomOut= document.getElementById('cd-zoom-out');
+	  	var controlUIzoomIn= document.querySelector(".mapview-zoom-in"),
+	  		controlUIzoomOut= document.querySelector(".mapview-zoom-out");
 	  	controlDiv.appendChild(controlUIzoomIn);
 	  	controlDiv.appendChild(controlUIzoomOut);
 
