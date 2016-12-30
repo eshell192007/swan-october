@@ -2103,13 +2103,11 @@ ul.listview {
   background-color: #333333;
   color: #FFFFFF;
   font-size: 13px;
-  font-size: 0.8125rem;
 }
 
 @media only screen and (min-width: 768px) {
   #cd-google-map address {
     font-size: 15px;
-    font-size: 0.9375rem;
     text-align: center;
   }
 }
@@ -2151,8 +2149,16 @@ ul.listview {
   background-position: 50% -32px;
 }
 
-.mapview-marker {
-  fill: red;
+.marker-base {
+  fill: green;
+}
+
+.marker-circle {
+  fill: white;
+}
+
+.marker-shadow {
+  opacity: 0.19;
 }
 
 .pagination {
