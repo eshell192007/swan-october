@@ -1,5 +1,48 @@
 // -----------------------------------------------------------
-// CHECKBOXES STYLES
+// CHECKBOXES by Sebastian Serna - 2016
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+// Based on Stephen Morley Resource
+// http://code.stephenmorley.org/html-and-css/styling-checkboxes-and-radio-buttons/
+
+input[type=checkbox]:not(old) {
+  width     : 2rem;
+  margin    : 0;
+  padding   : 0;
+  font-size : 1.5rem;
+  opacity   : 0;
+}
+
+input[type=checkbox]:not(old) + label {
+  display      : inline-block;
+  margin-left  : -2rem;
+  line-height  : 1.5rem;
+}
+
+input[type=checkbox]:not(old) + label > span {
+  display          : inline-block;
+  width            : 2rem;
+  height           : 2rem;
+  margin           : 0.2rem 1rem;
+  border           : 2px solid $gray3;
+  border-radius    : 0px;
+  background       : $gray2;
+  vertical-align   : middle;
+}
+
+input[type=checkbox]:not(old):checked + label > span {
+  background :    $white;
+  border     :    2px solid $gray9;
+}
+
+input[type=checkbox]:not(old):checked + label > span:before{
+  content     : '✓';
+  display     : block;
+  width       : 1.5rem;
+  color       : $black;
+  font-size   : 1.5rem;
+  line-height : 1em;
+  text-align  : center;
+  font-weight : bold;
+}

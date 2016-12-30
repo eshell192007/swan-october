@@ -1,4 +1,49 @@
 // -----------------------------------------------------------
-// RADIO BUTTONS STYLES
+// RADIO BUTTONS by Sebastian Serna - 2016
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+// Based on Stephen Morley Resource
+// http://code.stephenmorley.org/html-and-css/styling-checkboxes-and-radio-buttons/
+
+input[type=radio]:not(old){
+  width     : 2rem;
+  margin    : 0;
+  padding   : 0;
+  font-size : 1.5rem;
+  opacity   : 0;
+}
+
+input[type=radio]:not(old) + label{
+  display      : inline-block;
+  margin-left  : -2rem;
+  line-height  : 1.5rem;
+  border-radius    : 50%;
+}
+
+input[type=radio]:not(old) + label > span{
+  display          : inline-block;
+  width            : 2rem;
+  height           : 2rem;
+  margin           : 0.2rem 1rem;
+  border           : 2px solid $gray3;
+  border-radius    : 0px;
+  background       : $gray2;
+  vertical-align   : middle;
+  border-radius    : 50%;
+}
+
+input[type=radio]:not(old):checked + label > span{
+  background :    $white;
+  border     :    2px solid $gray9;
+}
+
+input[type=radio]:not(old):checked +  label > span > span{
+  display          : block;
+  width            : 1rem;
+  height           : 1rem;
+  margin           : 0.3rem;
+  border           : 0px solid $gray3;
+  border-radius    : 50%;
+  background       : $black;
+}
