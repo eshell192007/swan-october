@@ -3,8 +3,35 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+// Variables
+// ----------------------------------------------
+
+// Btn
+$btn-text:           $gray7 !default;
+$btn-border:         $gray2 solid 1px !default;
+$btn-bg:             $gray1 !default;
+// Btn hover
+$btn-hover-text:     $gray9 !default;
+$btn-hover-border:   $gray3 solid 1px !default;
+$btn-hover-bg:       $white !default;
+// Btn padding
+$btn-padding:        1rem 1rem !default;
+
+// Btn Primary
+$btn-primary-text:           $gray1 !default;
+$btn-primary-border:         $white solid 2px !default;
+$btn-primary-bg:             $primary !default;
+// Btn Primary hover
+$btn-primary-hover-text:     $white !default;
+$btn-primary-hover-border:   $white solid 2px !default;
+$btn-primary-hover-bg:       $gray8 !default;
+
+
+// Styles
+// ----------------------------------------------
+
 // Basic Button Placeholder
-// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ----------------------------------------------
 
 %button {
   vertical-align: middle;
@@ -30,6 +57,7 @@
 
 // styles using Bourbon Buttons (Variable)
 // http://bourbon.io/docs/#buttons-variable
+// ----------------------------------------------
 
 #{$all-buttons} {
   @extend %button;
@@ -45,7 +73,7 @@
   }
 
 // Button classes
-// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ----------------------------------------------
 
 .button {
   @extend %button;
@@ -82,7 +110,7 @@
   }
 
 // Shapes
-// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ----------------------------------------------
 
 .rounded {
     border-radius: 50px;

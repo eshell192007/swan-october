@@ -18,6 +18,16 @@ $secondary:           #999999 ; // Gray
 // ----------------------------------------------
 $body-bg:              $white ;
 
+// LAYOUT
+// ----------------------------------------------
+
+$layout-bg:            none ;
+$layout-header-bg:     $white ;
+$layout-main-bg:       $white ;
+$layout-footer-bg:     $gray1 ;
+$content-bg:           $white ;
+$sidebar-bg:           $gray1 ;
+
 // Icons
 // ----------------------------------------------
 // Icon
@@ -94,19 +104,33 @@ $input-text-focus-bg:       $white ;
 $dropdown-text:             $gray8 ;
 $dropdown-border:           $gray5 solid 1px ;
 $dropdown-bg:               $gray1 ;
+$dropdown-bg-arrow:         url('../../images/icon-arrow.svg') 90% 50% ;
 
 
-// LAYOUT
-// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-// Layout base styles
+// Input Checkboxes
 // ----------------------------------------------
-$layout-bg:            none ;
-$layout-header-bg:     $white ;
-$layout-main-bg:       $white ;
-$layout-footer-bg:     $gray1 ;
-$content-bg:           $white ;
-$sidebar-bg:           $gray1 ;
+// Input Checkbox
+$input-check:                $gray6 ;
+$input-check-border:         $gray3 solid 2px ;
+$input-check-border-radius:  0 ;
+$input-check-bg:             $gray2 ;
+// Input Checkbox active
+$input-check-active:          $black ;
+$input-check-active-border:   $gray9 solid 2px ;
+$input-check-active-bg:       $white ;
+
+
+// Input Radio Buttons
+// ----------------------------------------------
+// Input Radio Buttons
+$input-radio:                $gray6 !default;
+$input-radio-border:         $gray3 solid 2px !default;
+$input-radio-border-radius:  50% !default;
+$input-radio-bg:             $gray2 !default;
+// Input Radio Buttons active
+$input-radio-active:          $black !default;
+$input-radio-active-border:   $black solid 2px !default;
+$input-radio-active-bg:       $white !default;
 
 
 // COMPONENTS
@@ -235,5 +259,6 @@ $pag-item-active-border:       $primary 1px solid ;
 // ---------------------------------------------------
 $hero-bg:              $gray1 ;
 $hero-content-bg:      none ;
+
 
 @import "core/core";

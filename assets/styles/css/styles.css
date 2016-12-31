@@ -851,15 +851,15 @@ input[type=checkbox]:not(old) + label > span {
   width: 2rem;
   height: 2rem;
   margin: 0.2rem 1rem;
-  border: 2px solid #b3b3b3;
-  border-radius: 0px;
+  border: #b3b3b3 solid 2px;
+  border-radius: 0;
   background: #e6e6e6;
   vertical-align: middle;
 }
 
 input[type=checkbox]:not(old):checked + label > span {
   background: #FFFFFF;
-  border: 2px solid #262626;
+  border: #262626 solid 2px;
 }
 
 input[type=checkbox]:not(old):checked + label > span:before {
@@ -930,7 +930,6 @@ input[type=radio]:not(old) + label {
   display: inline-block;
   margin-left: -2rem;
   line-height: 1.5rem;
-  border-radius: 50%;
 }
 
 input[type=radio]:not(old) + label > span {
@@ -938,16 +937,15 @@ input[type=radio]:not(old) + label > span {
   width: 2rem;
   height: 2rem;
   margin: 0.2rem 1rem;
-  border: 2px solid #b3b3b3;
-  border-radius: 0px;
   background: #e6e6e6;
-  vertical-align: middle;
+  border: #b3b3b3 solid 2px;
   border-radius: 50%;
+  vertical-align: middle;
 }
 
 input[type=radio]:not(old):checked + label > span {
   background: #FFFFFF;
-  border: 2px solid #262626;
+  border: black solid 2px;
 }
 
 input[type=radio]:not(old):checked + label > span > span {
@@ -955,24 +953,25 @@ input[type=radio]:not(old):checked + label > span > span {
   width: 1rem;
   height: 1rem;
   margin: 0.3rem;
-  border: 0px solid #b3b3b3;
   border-radius: 50%;
   background: black;
 }
 
-/*
 select {
   background: transparent;
-  max-width: em(250);
+  max-width: 25rem;
   padding: 5px 35px 5px 5px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  color: $dropdown-text;
-  border: $dropdown-border;
-  background: $dropdown-bg;
-	}
-*/
+  color: #333333;
+  border: gray solid 1px;
+  background: #f2f2f2;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-image: url("../../images/icon-arrow.svg") 90% 50%;
+}
+
 select {
   font-size: 1.4rem;
 }

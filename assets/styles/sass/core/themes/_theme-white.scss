@@ -73,7 +73,8 @@ $input-text-focus-bg:       $white ;
 // ----------------------------------------------
 $dropdown-text:             $gray8 ;
 $dropdown-border:           $gray5 solid 1px ;
-$dropdown-bg:               $gray1 url(../../images/ic-arrow-down.png) right no-repeat ;
+$dropdown-bg:               $gray1 ;
+$dropdown-bg-arrow:         url('../../images/icon-arrow.svg') 90% 50% ;
 
 
 // LAYOUT

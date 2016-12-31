@@ -3,7 +3,25 @@
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-// TEXTS
+// Variables
+// ----------------------------------------------
+
+$text-font-heading:         Tahoma, Geneva, sans-serif !default;
+$text-font-heading-weight:  normal !default;
+$text-font-body:            Tahoma, Geneva, sans-serif !default;
+
+$text-basic:                $gray6 !default;
+$text-heading:              $gray8 !default;
+$text-link:                 $gray9 !default;
+$text-link-hover:           $gray7 !default;
+$text-link-visited:         $gray9 !default;
+$text-selection:            $gray6 !default;
+$text-selection-bg:         $gray2 !default;
+// Horizontal rule
+$hr-color:                  $gray3 !default;
+
+
+// Styles
 // -----------------------------------------------------------+
 
 body {

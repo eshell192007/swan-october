@@ -18,6 +18,15 @@ $secondary:           #999999 ; // Gray
 // ----------------------------------------------
 $body-bg:              $black ;
 
+// LAYOUT
+// ----------------------------------------------
+$layout-bg:            none ;
+$layout-header-bg:     none ;
+$layout-main-bg:       darken($gray9, 5%);
+$layout-footer-bg:     $black ;
+$content-bg: 		   $gray8 ;
+$sidebar-bg: 		   $gray7 ;
+
 // Icons
 // ----------------------------------------------
 // Icon
@@ -93,20 +102,9 @@ $input-text-focus-bg:       $gray8 ;
 // ----------------------------------------------
 $dropdown-text:             $gray8 ;
 $dropdown-border:           $gray5 solid 1px ;
-$dropdown-bg:               $gray9 right no-repeat ;
+$dropdown-bg:               $gray1 ;
+$dropdown-bg-arrow:         url('../../images/icon-arrow.svg') 90% 50% ;
 
-
-// LAYOUT
-// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-// Layout base styles
-// ----------------------------------------------
-$layout-bg:            none ;
-$layout-header-bg:     none ;
-$layout-main-bg:       darken($gray9, 5%);
-$layout-footer-bg:     $black ;
-$content-bg: 		   $gray8 ;
-$sidebar-bg: 		   $gray7 ;
 
 
 // COMPONENTS
