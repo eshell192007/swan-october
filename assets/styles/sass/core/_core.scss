@@ -13,6 +13,10 @@
 @import "abstract/mixins";
 @import "abstract/utilities"; // Generic classes
 
+// Layout
+@import "layout/layout";
+@import "layout/grid";
+
 // Base UI Elements
 @import "base/body";
 @import "base/media-image";
@@ -31,9 +35,6 @@
 @import "base/control-sliders";
 @import "base/control-switches";
 @import "base/control-text-input";
-
-// Layout
-@import "layout/layout";
 
 // Components & Patterns
 @import "components/menu";

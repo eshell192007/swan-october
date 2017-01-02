@@ -59,10 +59,6 @@ $main-size: auto !default;
 $footer-size: $size-m !default;
 
 
-// INSPIRATION: ZONE SYSTEM
-// Created by Ansel Adams and Fred Archer
-// -----------------------------------------------------------
-
 // GRAYSCALE PALETTE variables (white to black)
 
 
@@ -80,6 +76,3 @@ $black:             darken($white, 100%); // Black (HTML color: black) #000000
 
 $primary:           #000000 !default; // Black
 $secondary:         #999999 !default; // Gray
-
-
-
