@@ -1,19 +1,13 @@
 // -----------------------------------------------------------
 // SWITCHES by Sebastian Serna - 2016
 // -----------------------------------------------------------
+// Based on Refills http://refills.bourbon.io/components/
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-// Variables
-// ----------------------------------------------
 
+// VARIABLES
+// -----------------------------------------------------------
 
-
-// Styles
-// ----------------------------------------------
-
-// Based on Refills http://refills.bourbon.io/components/
-
-.label-switch {
   $action-color: $gray8 !default;
   $base-background-color: white !default;
   $switch-width: 52px;
@@ -27,6 +21,11 @@
   $switch-border-background: darken($base-background-color, 9%);
   $switch-shadow: 0 2px 5px transparentize(black, 0.6);
 
+
+// STYLES
+// -----------------------------------------------------------
+
+.label-switch {
   border-radius: $switch-radius;
   cursor: pointer;
   display: inline-block;

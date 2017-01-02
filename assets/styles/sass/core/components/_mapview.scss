@@ -1,24 +1,22 @@
 // -----------------------------------------------------------
 // MAP VIEW by Sebastian Serna - 2016
 // -----------------------------------------------------------
+// Based on CodyHouse https://codyhouse.co/gem/custom-google-map/
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-// Based on CodyHouse
-// https://codyhouse.co/gem/custom-google-map/
 
-// colors
+// VARIABLES
+// -----------------------------------------------------------
 
 $background: $gray2; // body background color
-
 // breakpoints
-  
 $S:     320px;   
 $M:     768px;     
 $L:     1170px;         
 
 
-
-// Global UI Styles
+// STYLES
+// -----------------------------------------------------------
 
 .mapview-canvas  {
     position: relative;

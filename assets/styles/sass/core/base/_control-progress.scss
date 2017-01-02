@@ -1,33 +1,31 @@
 // -----------------------------------------------------------
 // PROGRESS INDICATOR by Sebastian Serna - 2016
 // -----------------------------------------------------------
+// Based on Refills http://refills.bourbon.io/components/
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-// Variables
+
+// VARIABLES
 // ----------------------------------------------
 
+$base-border-color: $gray1 !default;
+$base-background-color: $gray1 !default;
+$base-border-radius: 15px !default;
+$action-color: $gray8 !default;
+$progress-border-color: $base-border-color !default;
+$progress-border: 1px solid $progress-border-color !default;
+$progress-meter-border-color: $action-color !default;
+$progress-meter-border: 1px solid darken($progress-meter-border-color, 15%) !default;
+$progress-meter-color: $progress-meter-border-color !default;
+$progress-background: darken($base-background-color, 5) !default;
+$progress-animation-duration: 0.7s !default;
+$progress-height: 20px !default;
 
-// Styles
+
+// STYLES
 // ----------------------------------------------
-
-// Based on Refills
-// http://refills.bourbon.io/components/
 
 .progress-bar {
-
-  $base-border-color: $gray1 !default;
-  $base-background-color: $gray1 !default;
-  $base-border-radius: 15px !default;
-  $action-color: $gray8 !default;
-  $progress-border-color: $base-border-color;
-  $progress-border: 1px solid $progress-border-color;
-  $progress-meter-border-color: $action-color;
-  $progress-meter-border: 1px solid darken($progress-meter-border-color, 15%);
-  $progress-meter-color: $progress-meter-border-color;
-  $progress-background: darken($base-background-color, 5);
-  $progress-animation-duration: 0.7s;
-  $progress-height: 20px;
-
   background-color: $progress-background;
   border: $progress-border;
   border-radius: $base-border-radius;

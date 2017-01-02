@@ -998,7 +998,7 @@ select optgroup {
 }
 
 .label-switch input[type="checkbox"] + .checkbox {
-  background: #e8e8e8;
+  background: #dbdbdb;
   border: 0;
   border-radius: 25px;
   cursor: pointer;
@@ -1018,7 +1018,7 @@ select optgroup {
   right: 0;
   bottom: 0;
   left: 2px;
-  background: white;
+  background: #f2f2f2;
   border-radius: 25px;
   content: "";
   height: 21px;
@@ -1038,7 +1038,7 @@ select optgroup {
   left: 2px;
   height: 21px;
   width: 21px;
-  background: white;
+  background: #f2f2f2;
   border-radius: 21px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   content: "";
@@ -1979,7 +1979,8 @@ ul.listview {
   }
 }
 
-.gridview-item img {
+.gridview-item img,
+.gridview-item a {
   width: 100%;
   height: auto;
 }

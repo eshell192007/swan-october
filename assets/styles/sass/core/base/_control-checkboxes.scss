@@ -1,10 +1,12 @@
 // -----------------------------------------------------------
 // CHECKBOXES by Sebastian Serna - 2016
 // -----------------------------------------------------------
+// Based on Stephen Morley http://code.stephenmorley.org/html-and-css/styling-checkboxes-and-radio-buttons/
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-// Variables
-// ----------------------------------------------
+
+// VARIABLES
+// -----------------------------------------------------------
 
 // Input Checkbox
 $input-check:                $gray6 !default;
@@ -17,11 +19,8 @@ $input-check-active-border:   $black solid 2px !default;
 $input-check-active-bg:       $white !default;
 
 
-// Styles
+// STYLES
 // ----------------------------------------------
-
-// Based on Stephen Morley Resource
-// http://code.stephenmorley.org/html-and-css/styling-checkboxes-and-radio-buttons/
 
 input[type=checkbox]:not(old) {
   width     : 2rem;
