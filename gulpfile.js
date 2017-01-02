@@ -19,61 +19,63 @@ var gulp = require( 'gulp' ),
 
 
 //-----------------------------------------------------
-// Sass transpiler variables
+// Global variables
 //-----------------------------------------------------
 
-var input = 'assets/styles/sass/**/*.scss';
-var output = 'assets/styles/css/';
-var projectroot = './*.html';
+// JS
+var inputJs = 'assets/scripts/src/**/*.js';
+var outputJs = 'assets/scripts/';
+// Sass
+var inputSass = 'assets/styles/sass/**/*.scss';
+var outputSass = 'assets/styles/css/';
 var sassOptions = {
   errLogToConsole: true,
   outputStyle: 'expanded'
 };
 
+
 //-----------------------------------------------------
-// Sass transpiler task
+// Sass compiler task
 //-----------------------------------------------------
 
 gulp.task ('sass' , function() {
      return gulp
-      .src(input)
+      .src(inputSass)
       .pipe(plumber())
       .pipe(sass(sassOptions).on('error', sass.logError))
       .pipe(autoprefixer())
-      .pipe(gulp.dest(output))
+      .pipe(gulp.dest(outputSass))
       .pipe(cleanCSS())
       .pipe(rename('styles.min.css'))
-      .pipe(gulp.dest(output))
+      .pipe(gulp.dest(outputSass))
       .pipe(browserSync.stream());
 });
+
+//-----------------------------------------------------
+// Scripts merge task
+//-----------------------------------------------------
+
+gulp.task ('minjs' , function() {
+    return gulp
+      .src (inputJs)
+      .pipe(plumber())
+      .pipe(concat('scripts.js'))
+      .pipe(gulp.dest(outputJs))
+      .pipe(uglify())
+      .pipe(rename('scripts.min.js'))
+      .pipe(gulp.dest(outputJs))
+      .pipe(browserSync.stream());
+});
+
 
 
 //-----------------------------------------------------
 // Browser Sync task (static server)
 //-----------------------------------------------------
 
-gulp.task ('browser-sync' , function() {
-    browserSync.init([ output, projectroot ], {
-        server: {
-          baseDir: "./"
-        }
-    });
-});
-
-
-//-----------------------------------------------------
-// Watch tasks
-//-----------------------------------------------------
-
-// Sass compiler
-
-gulp.task('sass-up', function() {
-    gulp.watch(input, ['sass']);
-});
-
 // Watch main task
 
-gulp.task('watch', ['sass-up'], function() {
+gulp.task('browser-sync' , function() {
     browserSync.init({
         host: "localhost",
         port: 8888
@@ -87,4 +89,13 @@ gulp.task('watch', ['sass-up'], function() {
       './pages/**/*.htm',
       './assets/styles/css/*.css'
       ]).on("change", browserSync.reload);
+});
+
+//-----------------------------------------------------
+// Watch tasks
+//-----------------------------------------------------
+
+gulp.task('watch', ['minjs', 'sass', 'browser-sync'] , function() {
+      gulp.watch(inputJs, ['minjs']);
+      gulp.watch(inputSass, ['sass']);
 });

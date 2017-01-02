@@ -1,12 +1,14 @@
+// -----------------------------------------------------------
+// MAP VIEW  by Sebastian Serna - 2016
+// -----------------------------------------------------------
+// Based on CodyHouse https://codyhouse.co/gem/custom-google-map/
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-// Based on CodyHouse
-// https://codyhouse.co/gem/custom-google-map/
 
 document.addEventListener("DOMContentLoaded", customMap);
 
 var markerSvgPath = "/themes/swan-october/assets/images/icon-location.svg";
 var markerPngPath = "/themes/swan-october/assets/images/icon-location.png";
-
 
 function customMap() {
 	//set your google maps parameters
@@ -17,7 +19,7 @@ function customMap() {
 	//google map custom marker icon - .png fallback for IE11
 	var is_internetExplorer11= navigator.userAgent.toLowerCase().indexOf('trident') > -1;
 	var marker_url = ( is_internetExplorer11 ) ? markerPngPath : markerSvgPath ;
-		
+
 	//define the basic color of your map, plus a value for saturation and brightness
 	var	main_color = '#2d313f',
 		saturation_value= -20,
@@ -184,7 +186,7 @@ function customMap() {
 	    ]
 	  }
 	];
-		
+
 	//set google map options
 	var map_options = {
       	center: new google.maps.LatLng(latitude, longitude),
@@ -199,7 +201,7 @@ function customMap() {
     }
     //inizialize the map
 	var map = new google.maps.Map(document.querySelector(".mapview-canvas"), map_options);
-	//add a custom marker to the map				
+	//add a custom marker to the map
 	var marker = new google.maps.Marker({
 	  	position: new google.maps.LatLng(latitude, longitude),
 	    map: map,
@@ -209,7 +211,7 @@ function customMap() {
 
 	//add custom buttons for the zoom-in/zoom-out on the map
 	function CustomZoomControl(controlDiv, map) {
-		//grap the zoom elements from the DOM and insert them in the map 
+		//grap the zoom elements from the DOM and insert them in the map
 	  	var controlUIzoomIn= document.querySelector(".mapview-zoom-in"),
 	  		controlUIzoomOut= document.querySelector(".mapview-zoom-out");
 	  	controlDiv.appendChild(controlUIzoomIn);
@@ -230,5 +232,3 @@ function customMap() {
   	//insert the zoom div on the top left of the map
   	map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
 }
-
-  
