@@ -23,16 +23,28 @@ var gulp = require( 'gulp' ),
 //-----------------------------------------------------
 
 // JS
-var inputJs = 'assets/scripts/src/**/*.js';
-var outputJs = 'assets/scripts/';
-// Sass
-var inputSass = 'assets/styles/sass/**/*.scss';
-var outputSass = 'assets/styles/css/';
-var sassOptions = {
-  errLogToConsole: true,
-  outputStyle: 'expanded'
-};
+var outputJs = 'assets/scripts/',
+    inputJs = [
+      // Native and adapted
+      'assets/scripts/src/components/core.js',
+      'assets/scripts/src/components/menu.js',
+      'assets/scripts/src/components/switch-theme.js',
+      'assets/scripts/src/components/toggle.js',
+      'assets/scripts/src/components/mapview.js',
+      'assets/scripts/src/components/dialog.js',
+      'assets/scripts/src/components/slideshow.js',
+      // Vendors
+      'assets/scripts/src/vendors/svg4everybody.js',
+      'assets/scripts/src/vendors/syntax-xml.js'
+    ];
 
+// Sass
+var outputSass = 'assets/styles/css/',
+    inputSass = 'assets/styles/sass/**/*.scss',
+    sassOptions = {
+      errLogToConsole: true,
+      outputStyle: 'expanded'
+    };
 
 //-----------------------------------------------------
 // Sass compiler task

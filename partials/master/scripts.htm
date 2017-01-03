@@ -10,13 +10,23 @@
 <!-- Scripts -->
 <script src="{{ 'assets/scripts/scripts.min.js' |theme }}"></script>
 
-<script type="text/javascript">
+<script>
+    // Slideshow
+    document.addEventListener('DOMContentLoaded', function () {
+        var simple = document.querySelector('.js_simple');
+
+        lory(simple, {
+            infinite: 1
+        });
+    });
+</script>
+<script>
      SyntaxHighlighter.all();
      svg4everybody();
 </script>
 
-<!-- Modal Dialog -->
-<script type="text/javascript">
+<script>
+    // Modal Dialog
     var modalDialog = new tingle.modal();
     var modalDialogBtn = document.querySelector('.js-modal');
     modalDialogBtn.addEventListener('click', function(){

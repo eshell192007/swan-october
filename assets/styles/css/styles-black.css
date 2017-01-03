@@ -2155,6 +2155,49 @@ ul.listview {
   }
 }
 
+.slider {
+  background: #333333;
+}
+
+.frame {
+  width: 980px;
+  position: relative;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slides {
+  display: inline-block;
+}
+
+.slider li {
+  position: relative;
+  display: inline-block;
+  width: 980px;
+}
+
+.slider.prev, .slider.next {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  display: block;
+  cursor: pointer;
+}
+
+.slider.next {
+  right: 0;
+}
+
+.slider.prev {
+  left: 0;
+}
+
+.slider .next svg, .slider .prev svg {
+  width: 25px;
+}
+
 .mapview-canvas {
   position: relative;
   width: 100%;

@@ -19,7 +19,369 @@ function preventDefaultEvent(event) {
 }
 
 // -----------------------------------------------------------
-// DIALOG by Sebastian Serna - 2016
+// MENU by Sebastian Serna - 2016
+// -----------------------------------------------------------
+// Provisional vanilla code // This solution is temporal
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+// MENU RESPONSIVE
+// -----------------------------------------------------------
+
+var menu = document.querySelector(".menu"),
+    menuShow = document.querySelector(".btnMenu"),
+    menuFadeBg = document.querySelector(".menu-modal-bg");
+
+function showMobileBtn() {
+    if (window.innerWidth <= 768) {
+        menu.className = "menu-mobile";
+    } else {
+        menu.className = "menu";
+    }
+ }
+
+// On click Events
+menuShow.onclick = function(event){
+     menu.className += " is-visible";
+     menuFadeBg.className += " is-visible";
+     event.preventDefault();
+};
+// Shame but works
+menuFadeBg.onclick = function(event){
+     // Delete and Write menu classes
+     menu.className = "";
+     menu.className = "menu-mobile";
+     // Delete and Write fade screen classes
+     menuFadeBg.className = "";
+     menuFadeBg.className = "menu-modal-bg";
+     event.preventDefault();
+};
+
+// ACTIVE MENU ITEM
+// -----------------------------------------------------------
+
+  function activeMenuItem() {
+    var menulinks = document.querySelector(".menu, .menu-mobile").getElementsByTagName("a"),
+        i = 0,
+        length = menulinks.length,
+        fullpath = location.href.split("#")[0];
+
+    for(; i < length; i++) {
+        if(menulinks[i].href.split("#")[0] === fullpath) {
+            menulinks[i].className += " active";
+        }
+    }
+}
+
+// Execute Functions
+document.addEventListener("DOMContentLoaded", activeMenuItem);
+showMobileBtn();
+window.onresize = function() {
+  showMobileBtn();
+}
+
+// -----------------------------------------------------------
+// SWITCH THEME  by Sebastian Serna - 2016
+// -----------------------------------------------------------
+// Provisional vanilla code // This solution is temporal
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+// SWITCH STYLESHEET (Black Swan / White Swan)
+// -----------------------------------------------------------
+
+// Execute Function
+document.addEventListener("DOMContentLoaded", currentThemeValue);
+
+var btnSwapTheme = document.getElementById("swap-theme"),
+    blackSwan = document.styleSheets[0],
+    whiteSwan = document.styleSheets[1];
+
+btnSwapTheme.onchange = function() {
+  if (whiteSwan.disabled === false) {
+      whiteSwan.disabled = true;
+      btnSwapTheme.checked = true;
+      localStorage.setItem("currentTheme", "black");
+  } else {
+      whiteSwan.disabled = false;
+      btnSwapTheme.checked = false;
+      localStorage.setItem("currentTheme", "white");
+  }
+
+}
+
+function currentThemeValue() {
+    if (localStorage.getItem("currentTheme") === "black" ) {
+        whiteSwan.disabled = true;
+        btnSwapTheme.checked = true;
+    } else {
+        whiteSwan.disabled = false;
+        btnSwapTheme.checked = false;
+    }
+}
+
+// -----------------------------------------------------------
+// TOGGLE  by Sebastian Serna - 2016
+// -----------------------------------------------------------
+// Provisional vanilla code // This solution is temporal
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+// TOGGLE (Hide / Show element)
+// -----------------------------------------------------------
+
+var toggleBtn = document.querySelectorAll(".js-toggle");
+
+for (var i = 0; i < toggleBtn.length; i++) {
+
+    toggleBtn[i].addEventListener("click", function (event) {
+      var nextEl = this.nextElementSibling;
+
+      if (nextEl.className === "js-toggle-hidden") {
+          nextEl.className = "js-toggle-visible";
+      } else {
+          nextEl.className = "js-toggle-hidden";
+      }
+  });
+}
+
+// -----------------------------------------------------------
+// MAP VIEW  by Sebastian Serna - 2016
+// -----------------------------------------------------------
+// Based on CodyHouse https://codyhouse.co/gem/custom-google-map/
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+document.addEventListener("DOMContentLoaded", customMap);
+
+var markerSvgPath = "/themes/swan-october/assets/images/icon-location.svg";
+var markerPngPath = "/themes/swan-october/assets/images/icon-location.png";
+
+function customMap() {
+	//set your google maps parameters
+	var latitude = 51.5255069,
+		longitude = -0.0836207,
+		map_zoom = 14;
+
+	//google map custom marker icon - .png fallback for IE11
+	var is_internetExplorer11= navigator.userAgent.toLowerCase().indexOf('trident') > -1;
+	var marker_url = ( is_internetExplorer11 ) ? markerPngPath : markerSvgPath ;
+
+	//define the basic color of your map, plus a value for saturation and brightness
+	var	main_color = '#2d313f',
+		saturation_value= -20,
+		brightness_value= 5;
+
+	//we define here the style of the map
+	var style= [
+	  {
+	    "elementType": "geometry",
+	    "stylers": [
+	      {
+	        "color": "#f5f5f5"
+	      }
+	    ]
+	  },
+	  {
+	    "elementType": "labels.icon",
+	    "stylers": [
+	      {
+	        "visibility": "off"
+	      }
+	    ]
+	  },
+	  {
+	    "elementType": "labels.text.fill",
+	    "stylers": [
+	      {
+	        "color": "#616161"
+	      }
+	    ]
+	  },
+	  {
+	    "elementType": "labels.text.stroke",
+	    "stylers": [
+	      {
+	        "color": "#f5f5f5"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "administrative.land_parcel",
+	    "elementType": "labels.text.fill",
+	    "stylers": [
+	      {
+	        "color": "#bdbdbd"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "poi",
+	    "elementType": "geometry",
+	    "stylers": [
+	      {
+	        "color": "#eeeeee"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "poi",
+	    "elementType": "labels.text.fill",
+	    "stylers": [
+	      {
+	        "color": "#757575"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "poi.park",
+	    "elementType": "geometry",
+	    "stylers": [
+	      {
+	        "color": "#e5e5e5"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "poi.park",
+	    "elementType": "labels.text.fill",
+	    "stylers": [
+	      {
+	        "color": "#9e9e9e"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "road",
+	    "elementType": "geometry",
+	    "stylers": [
+	      {
+	        "color": "#ffffff"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "road.arterial",
+	    "elementType": "labels.text.fill",
+	    "stylers": [
+	      {
+	        "color": "#757575"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "road.highway",
+	    "elementType": "geometry",
+	    "stylers": [
+	      {
+	        "color": "#dadada"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "road.highway",
+	    "elementType": "labels.text.fill",
+	    "stylers": [
+	      {
+	        "color": "#616161"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "road.local",
+	    "elementType": "labels.text.fill",
+	    "stylers": [
+	      {
+	        "color": "#9e9e9e"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "transit.line",
+	    "elementType": "geometry",
+	    "stylers": [
+	      {
+	        "color": "#e5e5e5"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "transit.station",
+	    "elementType": "geometry",
+	    "stylers": [
+	      {
+	        "color": "#eeeeee"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "water",
+	    "elementType": "geometry",
+	    "stylers": [
+	      {
+	        "color": "#c9c9c9"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "water",
+	    "elementType": "labels.text.fill",
+	    "stylers": [
+	      {
+	        "color": "#9e9e9e"
+	      }
+	    ]
+	  }
+	];
+
+	//set google map options
+	var map_options = {
+      	center: new google.maps.LatLng(latitude, longitude),
+      	zoom: map_zoom,
+      	panControl: false,
+      	zoomControl: false,
+      	mapTypeControl: false,
+      	streetViewControl: false,
+      	mapTypeId: google.maps.MapTypeId.ROADMAP,
+      	scrollwheel: false,
+      	styles: style,
+    }
+    //inizialize the map
+	var map = new google.maps.Map(document.querySelector(".mapview-canvas"), map_options);
+	//add a custom marker to the map
+	var marker = new google.maps.Marker({
+	  	position: new google.maps.LatLng(latitude, longitude),
+	    map: map,
+	    visible: true,
+	 	icon: marker_url,
+	});
+
+	//add custom buttons for the zoom-in/zoom-out on the map
+	function CustomZoomControl(controlDiv, map) {
+		//grap the zoom elements from the DOM and insert them in the map
+	  	var controlUIzoomIn= document.querySelector(".mapview-zoom-in"),
+	  		controlUIzoomOut= document.querySelector(".mapview-zoom-out");
+	  	controlDiv.appendChild(controlUIzoomIn);
+	  	controlDiv.appendChild(controlUIzoomOut);
+
+		// Setup the click event listeners and zoom-in or out according to the clicked element
+		google.maps.event.addDomListener(controlUIzoomIn, 'click', function() {
+		    map.setZoom(map.getZoom()+1)
+		});
+		google.maps.event.addDomListener(controlUIzoomOut, 'click', function() {
+		    map.setZoom(map.getZoom()-1)
+		});
+	}
+
+	var zoomControlDiv = document.createElement('div');
+ 	var zoomControl = new CustomZoomControl(zoomControlDiv, map);
+
+  	//insert the zoom div on the top left of the map
+  	map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
+}
+
+// -----------------------------------------------------------
+// DIALOG
 // -----------------------------------------------------------
 // Based on Tingle.js v0.8.5 http://robinparisi.github.io/tingle/
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -429,366 +791,893 @@ function preventDefaultEvent(event) {
 }));
 
 // -----------------------------------------------------------
-// MAP VIEW  by Sebastian Serna - 2016
+// SLIDESHOW
 // -----------------------------------------------------------
-// Based on CodyHouse https://codyhouse.co/gem/custom-google-map/
+// Based on Lory http://meandmax.github.io/lory/
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+/******/
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
 
-document.addEventListener("DOMContentLoaded", customMap);
+	module.exports = __webpack_require__(1);
 
-var markerSvgPath = "/themes/swan-october/assets/images/icon-location.svg";
-var markerPngPath = "/themes/swan-october/assets/images/icon-location.png";
 
-function customMap() {
-	//set your google maps parameters
-	var latitude = 51.5255069,
-		longitude = -0.0836207,
-		map_zoom = 14;
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
 
-	//google map custom marker icon - .png fallback for IE11
-	var is_internetExplorer11= navigator.userAgent.toLowerCase().indexOf('trident') > -1;
-	var marker_url = ( is_internetExplorer11 ) ? markerPngPath : markerSvgPath ;
+	'use strict';
 
-	//define the basic color of your map, plus a value for saturation and brightness
-	var	main_color = '#2d313f',
-		saturation_value= -20,
-		brightness_value= 5;
-
-	//we define here the style of the map
-	var style= [
-	  {
-	    "elementType": "geometry",
-	    "stylers": [
-	      {
-	        "color": "#f5f5f5"
-	      }
-	    ]
-	  },
-	  {
-	    "elementType": "labels.icon",
-	    "stylers": [
-	      {
-	        "visibility": "off"
-	      }
-	    ]
-	  },
-	  {
-	    "elementType": "labels.text.fill",
-	    "stylers": [
-	      {
-	        "color": "#616161"
-	      }
-	    ]
-	  },
-	  {
-	    "elementType": "labels.text.stroke",
-	    "stylers": [
-	      {
-	        "color": "#f5f5f5"
-	      }
-	    ]
-	  },
-	  {
-	    "featureType": "administrative.land_parcel",
-	    "elementType": "labels.text.fill",
-	    "stylers": [
-	      {
-	        "color": "#bdbdbd"
-	      }
-	    ]
-	  },
-	  {
-	    "featureType": "poi",
-	    "elementType": "geometry",
-	    "stylers": [
-	      {
-	        "color": "#eeeeee"
-	      }
-	    ]
-	  },
-	  {
-	    "featureType": "poi",
-	    "elementType": "labels.text.fill",
-	    "stylers": [
-	      {
-	        "color": "#757575"
-	      }
-	    ]
-	  },
-	  {
-	    "featureType": "poi.park",
-	    "elementType": "geometry",
-	    "stylers": [
-	      {
-	        "color": "#e5e5e5"
-	      }
-	    ]
-	  },
-	  {
-	    "featureType": "poi.park",
-	    "elementType": "labels.text.fill",
-	    "stylers": [
-	      {
-	        "color": "#9e9e9e"
-	      }
-	    ]
-	  },
-	  {
-	    "featureType": "road",
-	    "elementType": "geometry",
-	    "stylers": [
-	      {
-	        "color": "#ffffff"
-	      }
-	    ]
-	  },
-	  {
-	    "featureType": "road.arterial",
-	    "elementType": "labels.text.fill",
-	    "stylers": [
-	      {
-	        "color": "#757575"
-	      }
-	    ]
-	  },
-	  {
-	    "featureType": "road.highway",
-	    "elementType": "geometry",
-	    "stylers": [
-	      {
-	        "color": "#dadada"
-	      }
-	    ]
-	  },
-	  {
-	    "featureType": "road.highway",
-	    "elementType": "labels.text.fill",
-	    "stylers": [
-	      {
-	        "color": "#616161"
-	      }
-	    ]
-	  },
-	  {
-	    "featureType": "road.local",
-	    "elementType": "labels.text.fill",
-	    "stylers": [
-	      {
-	        "color": "#9e9e9e"
-	      }
-	    ]
-	  },
-	  {
-	    "featureType": "transit.line",
-	    "elementType": "geometry",
-	    "stylers": [
-	      {
-	        "color": "#e5e5e5"
-	      }
-	    ]
-	  },
-	  {
-	    "featureType": "transit.station",
-	    "elementType": "geometry",
-	    "stylers": [
-	      {
-	        "color": "#eeeeee"
-	      }
-	    ]
-	  },
-	  {
-	    "featureType": "water",
-	    "elementType": "geometry",
-	    "stylers": [
-	      {
-	        "color": "#c9c9c9"
-	      }
-	    ]
-	  },
-	  {
-	    "featureType": "water",
-	    "elementType": "labels.text.fill",
-	    "stylers": [
-	      {
-	        "color": "#9e9e9e"
-	      }
-	    ]
-	  }
-	];
-
-	//set google map options
-	var map_options = {
-      	center: new google.maps.LatLng(latitude, longitude),
-      	zoom: map_zoom,
-      	panControl: false,
-      	zoomControl: false,
-      	mapTypeControl: false,
-      	streetViewControl: false,
-      	mapTypeId: google.maps.MapTypeId.ROADMAP,
-      	scrollwheel: false,
-      	styles: style,
-    }
-    //inizialize the map
-	var map = new google.maps.Map(document.querySelector(".mapview-canvas"), map_options);
-	//add a custom marker to the map
-	var marker = new google.maps.Marker({
-	  	position: new google.maps.LatLng(latitude, longitude),
-	    map: map,
-	    visible: true,
-	 	icon: marker_url,
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
 	});
 
-	//add custom buttons for the zoom-in/zoom-out on the map
-	function CustomZoomControl(controlDiv, map) {
-		//grap the zoom elements from the DOM and insert them in the map
-	  	var controlUIzoomIn= document.querySelector(".mapview-zoom-in"),
-	  		controlUIzoomOut= document.querySelector(".mapview-zoom-out");
-	  	controlDiv.appendChild(controlUIzoomIn);
-	  	controlDiv.appendChild(controlUIzoomOut);
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /* globals jQuery */
 
-		// Setup the click event listeners and zoom-in or out according to the clicked element
-		google.maps.event.addDomListener(controlUIzoomIn, 'click', function() {
-		    map.setZoom(map.getZoom()+1)
-		});
-		google.maps.event.addDomListener(controlUIzoomOut, 'click', function() {
-		    map.setZoom(map.getZoom()-1)
-		});
+	exports.lory = lory;
+
+	var _detectPrefixes = __webpack_require__(2);
+
+	var _detectPrefixes2 = _interopRequireDefault(_detectPrefixes);
+
+	var _dispatchEvent = __webpack_require__(3);
+
+	var _dispatchEvent2 = _interopRequireDefault(_dispatchEvent);
+
+	var _defaults = __webpack_require__(5);
+
+	var _defaults2 = _interopRequireDefault(_defaults);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var slice = Array.prototype.slice;
+
+	function lory(slider, opts) {
+	    var position = void 0;
+	    var slidesWidth = void 0;
+	    var frameWidth = void 0;
+	    var slides = void 0;
+
+	    /**
+	     * slider DOM elements
+	     */
+	    var frame = void 0;
+	    var slideContainer = void 0;
+	    var prevCtrl = void 0;
+	    var nextCtrl = void 0;
+	    var prefixes = void 0;
+	    var transitionEndCallback = void 0;
+
+	    var index = 0;
+	    var options = {};
+
+	    /**
+	     * if object is jQuery convert to native DOM element
+	     */
+	    if (typeof jQuery !== 'undefined' && slider instanceof jQuery) {
+	        slider = slider[0];
+	    }
+
+	    /**
+	     * private
+	     * set active class to element which is the current slide
+	     */
+	    function setActiveElement(slides, currentIndex) {
+	        var _options = options;
+	        var classNameActiveSlide = _options.classNameActiveSlide;
+
+
+	        slides.forEach(function (element, index) {
+	            if (element.classList.contains(classNameActiveSlide)) {
+	                element.classList.remove(classNameActiveSlide);
+	            }
+	        });
+
+	        slides[currentIndex].classList.add(classNameActiveSlide);
+	    }
+
+	    /**
+	     * private
+	     * setupInfinite: function to setup if infinite is set
+	     *
+	     * @param  {array} slideArray
+	     * @return {array} array of updated slideContainer elements
+	     */
+	    function setupInfinite(slideArray) {
+	        var _options2 = options;
+	        var infinite = _options2.infinite;
+
+
+	        var front = slideArray.slice(0, infinite);
+	        var back = slideArray.slice(slideArray.length - infinite, slideArray.length);
+
+	        front.forEach(function (element) {
+	            var cloned = element.cloneNode(true);
+
+	            slideContainer.appendChild(cloned);
+	        });
+
+	        back.reverse().forEach(function (element) {
+	            var cloned = element.cloneNode(true);
+
+	            slideContainer.insertBefore(cloned, slideContainer.firstChild);
+	        });
+
+	        slideContainer.addEventListener(prefixes.transitionEnd, onTransitionEnd);
+
+	        return slice.call(slideContainer.children);
+	    }
+
+	    /**
+	     * [dispatchSliderEvent description]
+	     * @return {[type]} [description]
+	     */
+	    function dispatchSliderEvent(phase, type, detail) {
+	        (0, _dispatchEvent2.default)(slider, phase + '.lory.' + type, detail);
+	    }
+
+	    /**
+	     * translates to a given position in a given time in milliseconds
+	     *
+	     * @to        {number} number in pixels where to translate to
+	     * @duration  {number} time in milliseconds for the transistion
+	     * @ease      {string} easing css property
+	     */
+	    function translate(to, duration, ease) {
+	        var style = slideContainer && slideContainer.style;
+
+	        if (style) {
+	            style[prefixes.transition + 'TimingFunction'] = ease;
+	            style[prefixes.transition + 'Duration'] = duration + 'ms';
+
+	            if (prefixes.hasTranslate3d) {
+	                style[prefixes.transform] = 'translate3d(' + to + 'px, 0, 0)';
+	            } else {
+	                style[prefixes.transform] = 'translate(' + to + 'px, 0)';
+	            }
+	        }
+	    }
+
+	    /**
+	     * slidefunction called by prev, next & touchend
+	     *
+	     * determine nextIndex and slide to next postion
+	     * under restrictions of the defined options
+	     *
+	     * @direction  {boolean}
+	     */
+	    function slide(nextIndex, direction) {
+	        var _options3 = options;
+	        var slideSpeed = _options3.slideSpeed;
+	        var slidesToScroll = _options3.slidesToScroll;
+	        var infinite = _options3.infinite;
+	        var rewind = _options3.rewind;
+	        var rewindSpeed = _options3.rewindSpeed;
+	        var ease = _options3.ease;
+	        var classNameActiveSlide = _options3.classNameActiveSlide;
+
+
+	        var duration = slideSpeed;
+
+	        var nextSlide = direction ? index + 1 : index - 1;
+	        var maxOffset = Math.round(slidesWidth - frameWidth);
+
+	        dispatchSliderEvent('before', 'slide', {
+	            index: index,
+	            nextSlide: nextSlide
+	        });
+
+	        if (typeof nextIndex !== 'number') {
+	            if (direction) {
+	                nextIndex = index + slidesToScroll;
+	            } else {
+	                nextIndex = index - slidesToScroll;
+	            }
+	        }
+
+	        nextIndex = Math.min(Math.max(nextIndex, 0), slides.length - 1);
+
+	        if (infinite && direction === undefined) {
+	            nextIndex += infinite;
+	        }
+
+	        var nextOffset = Math.min(Math.max(slides[nextIndex].offsetLeft * -1, maxOffset * -1), 0);
+
+	        if (rewind && Math.abs(position.x) === maxOffset && direction) {
+	            nextOffset = 0;
+	            nextIndex = 0;
+	            duration = rewindSpeed;
+	        }
+
+	        /**
+	         * translate to the nextOffset by a defined duration and ease function
+	         */
+	        translate(nextOffset, duration, ease);
+
+	        /**
+	         * update the position with the next position
+	         */
+	        position.x = nextOffset;
+
+	        /**
+	         * update the index with the nextIndex only if
+	         * the offset of the nextIndex is in the range of the maxOffset
+	         */
+	        if (slides[nextIndex].offsetLeft <= maxOffset) {
+	            index = nextIndex;
+	        }
+
+	        if (infinite && (nextIndex === slides.length - infinite || nextIndex === 0)) {
+	            if (direction) {
+	                index = infinite;
+	            }
+
+	            if (!direction) {
+	                index = slides.length - infinite * 2;
+	            }
+
+	            position.x = slides[index].offsetLeft * -1;
+
+	            transitionEndCallback = function transitionEndCallback() {
+	                translate(slides[index].offsetLeft * -1, 0, undefined);
+	            };
+	        }
+
+	        if (classNameActiveSlide) {
+	            setActiveElement(slice.call(slides), index);
+	        }
+
+	        dispatchSliderEvent('after', 'slide', {
+	            currentSlide: index
+	        });
+	    }
+
+	    /**
+	     * public
+	     * setup function
+	     */
+	    function setup() {
+	        dispatchSliderEvent('before', 'init');
+
+	        prefixes = (0, _detectPrefixes2.default)();
+	        options = _extends({}, _defaults2.default, opts);
+
+	        var _options4 = options;
+	        var classNameFrame = _options4.classNameFrame;
+	        var classNameSlideContainer = _options4.classNameSlideContainer;
+	        var classNamePrevCtrl = _options4.classNamePrevCtrl;
+	        var classNameNextCtrl = _options4.classNameNextCtrl;
+	        var enableMouseEvents = _options4.enableMouseEvents;
+	        var classNameActiveSlide = _options4.classNameActiveSlide;
+
+
+	        frame = slider.getElementsByClassName(classNameFrame)[0];
+	        slideContainer = frame.getElementsByClassName(classNameSlideContainer)[0];
+	        prevCtrl = slider.getElementsByClassName(classNamePrevCtrl)[0];
+	        nextCtrl = slider.getElementsByClassName(classNameNextCtrl)[0];
+
+	        position = {
+	            x: slideContainer.offsetLeft,
+	            y: slideContainer.offsetTop
+	        };
+
+	        if (options.infinite) {
+	            slides = setupInfinite(slice.call(slideContainer.children));
+	        } else {
+	            slides = slice.call(slideContainer.children);
+	        }
+
+	        reset();
+
+	        if (classNameActiveSlide) {
+	            setActiveElement(slides, index);
+	        }
+
+	        if (prevCtrl && nextCtrl) {
+	            prevCtrl.addEventListener('click', prev);
+	            nextCtrl.addEventListener('click', next);
+	        }
+
+	        frame.addEventListener('touchstart', onTouchstart);
+
+	        if (enableMouseEvents) {
+	            frame.addEventListener('mousedown', onTouchstart);
+	            frame.addEventListener('click', onClick);
+	        }
+
+	        options.window.addEventListener('resize', onResize);
+
+	        dispatchSliderEvent('after', 'init');
+	    }
+
+	    /**
+	     * public
+	     * reset function: called on resize
+	     */
+	    function reset() {
+	        var _options5 = options;
+	        var infinite = _options5.infinite;
+	        var ease = _options5.ease;
+	        var rewindSpeed = _options5.rewindSpeed;
+	        var rewindOnResize = _options5.rewindOnResize;
+	        var classNameActiveSlide = _options5.classNameActiveSlide;
+
+
+	        slidesWidth = slideContainer.getBoundingClientRect().width || slideContainer.offsetWidth;
+	        frameWidth = frame.getBoundingClientRect().width || frame.offsetWidth;
+
+	        if (frameWidth === slidesWidth) {
+	            slidesWidth = slides.reduce(function (previousValue, slide) {
+	                return previousValue + slide.getBoundingClientRect().width || slide.offsetWidth;
+	            }, 0);
+	        }
+
+	        if (rewindOnResize) {
+	            index = 0;
+	        } else {
+	            ease = null;
+	            rewindSpeed = 0;
+	        }
+
+	        if (infinite) {
+	            translate(slides[index + infinite].offsetLeft * -1, 0, null);
+
+	            index = index + infinite;
+	            position.x = slides[index].offsetLeft * -1;
+	        } else {
+	            translate(slides[index].offsetLeft * -1, rewindSpeed, ease);
+	            position.x = slides[index].offsetLeft * -1;
+	        }
+
+	        if (classNameActiveSlide) {
+	            setActiveElement(slice.call(slides), index);
+	        }
+	    }
+
+	    /**
+	     * public
+	     * slideTo: called on clickhandler
+	     */
+	    function slideTo(index) {
+	        slide(index);
+	    }
+
+	    /**
+	     * public
+	     * returnIndex function: called on clickhandler
+	     */
+	    function returnIndex() {
+	        return index - options.infinite || 0;
+	    }
+
+	    /**
+	     * public
+	     * prev function: called on clickhandler
+	     */
+	    function prev() {
+	        slide(false, false);
+	    }
+
+	    /**
+	     * public
+	     * next function: called on clickhandler
+	     */
+	    function next() {
+	        slide(false, true);
+	    }
+
+	    /**
+	     * public
+	     * destroy function: called to gracefully destroy the lory instance
+	     */
+	    function destroy() {
+	        dispatchSliderEvent('before', 'destroy');
+
+	        // remove event listeners
+	        frame.removeEventListener(prefixes.transitionEnd, onTransitionEnd);
+	        frame.removeEventListener('touchstart', onTouchstart);
+	        frame.removeEventListener('touchmove', onTouchmove);
+	        frame.removeEventListener('touchend', onTouchend);
+	        frame.removeEventListener('mousemove', onTouchmove);
+	        frame.removeEventListener('mousedown', onTouchstart);
+	        frame.removeEventListener('mouseup', onTouchend);
+	        frame.removeEventListener('mouseleave', onTouchend);
+	        frame.removeEventListener('click', onClick);
+
+	        options.window.removeEventListener('resize', onResize);
+
+	        if (prevCtrl) {
+	            prevCtrl.removeEventListener('click', prev);
+	        }
+
+	        if (nextCtrl) {
+	            nextCtrl.removeEventListener('click', next);
+	        }
+
+	        // remove cloned slides if infinite is set
+	        if (options.infinite) {
+	            Array.apply(null, Array(options.infinite)).forEach(function () {
+	                slideContainer.removeChild(slideContainer.firstChild);
+	                slideContainer.removeChild(slideContainer.lastChild);
+	            });
+	        }
+
+	        dispatchSliderEvent('after', 'destroy');
+	    }
+
+	    // event handling
+
+	    var touchOffset = void 0;
+	    var delta = void 0;
+	    var isScrolling = void 0;
+
+	    function onTransitionEnd() {
+	        if (transitionEndCallback) {
+	            transitionEndCallback();
+
+	            transitionEndCallback = undefined;
+	        }
+	    }
+
+	    function onTouchstart(event) {
+	        var _options6 = options;
+	        var enableMouseEvents = _options6.enableMouseEvents;
+
+	        var touches = event.touches ? event.touches[0] : event;
+
+	        if (enableMouseEvents) {
+	            frame.addEventListener('mousemove', onTouchmove);
+	            frame.addEventListener('mouseup', onTouchend);
+	            frame.addEventListener('mouseleave', onTouchend);
+	        }
+
+	        frame.addEventListener('touchmove', onTouchmove);
+	        frame.addEventListener('touchend', onTouchend);
+
+	        var pageX = touches.pageX;
+	        var pageY = touches.pageY;
+
+
+	        touchOffset = {
+	            x: pageX,
+	            y: pageY,
+	            time: Date.now()
+	        };
+
+	        isScrolling = undefined;
+
+	        delta = {};
+
+	        dispatchSliderEvent('on', 'touchstart', {
+	            event: event
+	        });
+	    }
+
+	    function onTouchmove(event) {
+	        var touches = event.touches ? event.touches[0] : event;
+	        var pageX = touches.pageX;
+	        var pageY = touches.pageY;
+
+
+	        delta = {
+	            x: pageX - touchOffset.x,
+	            y: pageY - touchOffset.y
+	        };
+
+	        if (typeof isScrolling === 'undefined') {
+	            isScrolling = !!(isScrolling || Math.abs(delta.x) < Math.abs(delta.y));
+	        }
+
+	        if (!isScrolling && touchOffset) {
+	            event.preventDefault();
+	            translate(position.x + delta.x, 0, null);
+	        }
+
+	        // may be
+	        dispatchSliderEvent('on', 'touchmove', {
+	            event: event
+	        });
+	    }
+
+	    function onTouchend(event) {
+	        /**
+	         * time between touchstart and touchend in milliseconds
+	         * @duration {number}
+	         */
+	        var duration = touchOffset ? Date.now() - touchOffset.time : undefined;
+
+	        /**
+	         * is valid if:
+	         *
+	         * -> swipe attempt time is over 300 ms
+	         * and
+	         * -> swipe distance is greater than 25px
+	         * or
+	         * -> swipe distance is more then a third of the swipe area
+	         *
+	         * @isValidSlide {Boolean}
+	         */
+	        var isValid = Number(duration) < 300 && Math.abs(delta.x) > 25 || Math.abs(delta.x) > frameWidth / 3;
+
+	        /**
+	         * is out of bounds if:
+	         *
+	         * -> index is 0 and delta x is greater than 0
+	         * or
+	         * -> index is the last slide and delta is smaller than 0
+	         *
+	         * @isOutOfBounds {Boolean}
+	         */
+	        var isOutOfBounds = !index && delta.x > 0 || index === slides.length - 1 && delta.x < 0;
+
+	        var direction = delta.x < 0;
+
+	        if (!isScrolling) {
+	            if (isValid && !isOutOfBounds) {
+	                slide(false, direction);
+	            } else {
+	                translate(position.x, options.snapBackSpeed);
+	            }
+	        }
+
+	        touchOffset = undefined;
+
+	        /**
+	         * remove eventlisteners after swipe attempt
+	         */
+	        frame.removeEventListener('touchmove', onTouchmove);
+	        frame.removeEventListener('touchend', onTouchend);
+	        frame.removeEventListener('mousemove', onTouchmove);
+	        frame.removeEventListener('mouseup', onTouchend);
+	        frame.removeEventListener('mouseleave', onTouchend);
+
+	        dispatchSliderEvent('on', 'touchend', {
+	            event: event
+	        });
+	    }
+
+	    function onClick(event) {
+	        if (delta.x) {
+	            event.preventDefault();
+	        }
+	    }
+
+	    function onResize(event) {
+	        reset();
+
+	        dispatchSliderEvent('on', 'resize', {
+	            event: event
+	        });
+	    }
+
+	    // trigger initial setup
+	    setup();
+
+	    // expose public api
+	    return {
+	        setup: setup,
+	        reset: reset,
+	        slideTo: slideTo,
+	        returnIndex: returnIndex,
+	        prev: prev,
+	        next: next,
+	        destroy: destroy
+	    };
 	}
 
-	var zoomControlDiv = document.createElement('div');
- 	var zoomControl = new CustomZoomControl(zoomControlDiv, map);
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
 
-  	//insert the zoom div on the top left of the map
-  	map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
-}
+	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 
-// -----------------------------------------------------------
-// MENU by Sebastian Serna - 2016
-// -----------------------------------------------------------
-// Provisional vanilla code // This solution is temporal
-// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = detectPrefixes;
+	/**
+	 * Detecting prefixes for saving time and bytes
+	 */
+	function detectPrefixes() {
+	    var transform = void 0;
+	    var transition = void 0;
+	    var transitionEnd = void 0;
+	    var hasTranslate3d = void 0;
 
+	    (function () {
+	        var el = document.createElement('_');
+	        var style = el.style;
 
-// MENU RESPONSIVE
-// -----------------------------------------------------------
+	        var prop = void 0;
 
-var menu = document.querySelector(".menu"),
-    menuShow = document.querySelector(".btnMenu"),
-    menuFadeBg = document.querySelector(".menu-modal-bg");
+	        if (style[prop = 'webkitTransition'] === '') {
+	            transitionEnd = 'webkitTransitionEnd';
+	            transition = prop;
+	        }
 
-function showMobileBtn() {
-    if (window.innerWidth <= 768) {
-        menu.className = "menu-mobile";
-    } else {
-        menu.className = "menu";
-    }
- }
+	        if (style[prop = 'transition'] === '') {
+	            transitionEnd = 'transitionend';
+	            transition = prop;
+	        }
 
-// On click Events
-menuShow.onclick = function(event){
-     menu.className += " is-visible";
-     menuFadeBg.className += " is-visible";
-     event.preventDefault();
-};
-// Shame but works
-menuFadeBg.onclick = function(event){
-     // Delete and Write menu classes
-     menu.className = "";
-     menu.className = "menu-mobile";
-     // Delete and Write fade screen classes
-     menuFadeBg.className = "";
-     menuFadeBg.className = "menu-modal-bg";
-     event.preventDefault();
-};
+	        if (style[prop = 'webkitTransform'] === '') {
+	            transform = prop;
+	        }
 
-// ACTIVE MENU ITEM
-// -----------------------------------------------------------
+	        if (style[prop = 'msTransform'] === '') {
+	            transform = prop;
+	        }
 
-  function activeMenuItem() {
-    var menulinks = document.querySelector(".menu, .menu-mobile").getElementsByTagName("a"),
-        i = 0,
-        length = menulinks.length,
-        fullpath = location.href.split("#")[0];
+	        if (style[prop = 'transform'] === '') {
+	            transform = prop;
+	        }
 
-    for(; i < length; i++) {
-        if(menulinks[i].href.split("#")[0] === fullpath) {
-            menulinks[i].className += " active";
-        }
-    }
-}
+	        document.body.insertBefore(el, null);
+	        style[transform] = 'translate3d(0, 0, 0)';
+	        hasTranslate3d = !!global.getComputedStyle(el).getPropertyValue(transform);
+	        document.body.removeChild(el);
+	    })();
 
-// Execute Functions
-document.addEventListener("DOMContentLoaded", activeMenuItem);
-showMobileBtn();
-window.onresize = function() {
-  showMobileBtn();
-}
+	    return {
+	        transform: transform,
+	        transition: transition,
+	        transitionEnd: transitionEnd,
+	        hasTranslate3d: hasTranslate3d
+	    };
+	}
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
-// -----------------------------------------------------------
-// SWITCH THEME  by Sebastian Serna - 2016
-// -----------------------------------------------------------
-// Provisional vanilla code // This solution is temporal
-// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
 
-// SWITCH STYLESHEET (Black Swan / White Swan)
-// -----------------------------------------------------------
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = dispatchEvent;
 
-// Execute Function
-document.addEventListener("DOMContentLoaded", currentThemeValue);
+	var _customEvent = __webpack_require__(4);
 
-var btnSwapTheme = document.getElementById("swap-theme"),
-    blackSwan = document.styleSheets[0],
-    whiteSwan = document.styleSheets[1];
+	var _customEvent2 = _interopRequireDefault(_customEvent);
 
-btnSwapTheme.onchange = function() {
-  if (whiteSwan.disabled === false) {
-      whiteSwan.disabled = true;
-      btnSwapTheme.checked = true;
-      localStorage.setItem("currentTheme", "black");
-  } else {
-      whiteSwan.disabled = false;
-      btnSwapTheme.checked = false;
-      localStorage.setItem("currentTheme", "white");
-  }
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-}
+	/**
+	 * dispatch custom events
+	 *
+	 * @param  {element} el         slideshow element
+	 * @param  {string}  type       custom event name
+	 * @param  {object}  detail     custom detail information
+	 */
+	function dispatchEvent(target, type, detail) {
+	    var event = new _customEvent2.default(type, {
+	        bubbles: true,
+	        cancelable: true,
+	        detail: detail
+	    });
 
-function currentThemeValue() {
-    if (localStorage.getItem("currentTheme") === "black" ) {
-        whiteSwan.disabled = true;
-        btnSwapTheme.checked = true;
-    } else {
-        whiteSwan.disabled = false;
-        btnSwapTheme.checked = false;
-    }
-}
+	    target.dispatchEvent(event);
+	}
 
-// -----------------------------------------------------------
-// TOGGLE  by Sebastian Serna - 2016
-// -----------------------------------------------------------
-// Provisional vanilla code // This solution is temporal
-// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
 
+	/* WEBPACK VAR INJECTION */(function(global) {
+	var NativeCustomEvent = global.CustomEvent;
 
-// TOGGLE (Hide / Show element)
-// -----------------------------------------------------------
+	function useNative () {
+	  try {
+	    var p = new NativeCustomEvent('cat', { detail: { foo: 'bar' } });
+	    return  'cat' === p.type && 'bar' === p.detail.foo;
+	  } catch (e) {
+	  }
+	  return false;
+	}
 
-var toggleBtn = document.querySelectorAll(".js-toggle");
+	/**
+	 * Cross-browser `CustomEvent` constructor.
+	 *
+	 * https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent.CustomEvent
+	 *
+	 * @public
+	 */
 
-for (var i = 0; i < toggleBtn.length; i++) {
+	module.exports = useNative() ? NativeCustomEvent :
 
-    toggleBtn[i].addEventListener("click", function (event) {
-      var nextEl = this.nextElementSibling;
+	// IE >= 9
+	'function' === typeof document.createEvent ? function CustomEvent (type, params) {
+	  var e = document.createEvent('CustomEvent');
+	  if (params) {
+	    e.initCustomEvent(type, params.bubbles, params.cancelable, params.detail);
+	  } else {
+	    e.initCustomEvent(type, false, false, void 0);
+	  }
+	  return e;
+	} :
 
-      if (nextEl.className === "js-toggle-hidden") {
-          nextEl.className = "js-toggle-visible";
-      } else {
-          nextEl.className = "js-toggle-hidden";
-      }
-  });
-}
+	// IE <= 8
+	function CustomEvent (type, params) {
+	  var e = document.createEventObject();
+	  e.type = type;
+	  if (params) {
+	    e.bubbles = Boolean(params.bubbles);
+	    e.cancelable = Boolean(params.cancelable);
+	    e.detail = params.detail;
+	  } else {
+	    e.bubbles = false;
+	    e.cancelable = false;
+	    e.detail = void 0;
+	  }
+	  return e;
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  /**
+	   * slides scrolled at once
+	   * @slidesToScroll {Number}
+	   */
+	  slidesToScroll: 1,
+
+	  /**
+	   * time in milliseconds for the animation of a valid slide attempt
+	   * @slideSpeed {Number}
+	   */
+	  slideSpeed: 300,
+
+	  /**
+	   * time in milliseconds for the animation of the rewind after the last slide
+	   * @rewindSpeed {Number}
+	   */
+	  rewindSpeed: 600,
+
+	  /**
+	   * time for the snapBack of the slider if the slide attempt was not valid
+	   * @snapBackSpeed {Number}
+	   */
+	  snapBackSpeed: 200,
+
+	  /**
+	   * Basic easing functions: https://developer.mozilla.org/de/docs/Web/CSS/transition-timing-function
+	   * cubic bezier easing functions: http://easings.net/de
+	   * @ease {String}
+	   */
+	  ease: 'ease',
+
+	  /**
+	   * if slider reached the last slide, with next click the slider goes back to the startindex.
+	   * use infinite or rewind, not both
+	   * @rewind {Boolean}
+	   */
+	  rewind: false,
+
+	  /**
+	   * number of visible slides or false
+	   * use infinite or rewind, not both
+	   * @infinite {number}
+	   */
+	  infinite: false,
+
+	  /**
+	   * class name for slider frame
+	   * @classNameFrame {string}
+	   */
+	  classNameFrame: 'js_frame',
+
+	  /**
+	   * class name for slides container
+	   * @classNameSlideContainer {string}
+	   */
+	  classNameSlideContainer: 'js_slides',
+
+	  /**
+	   * class name for slider prev control
+	   * @classNamePrevCtrl {string}
+	   */
+	  classNamePrevCtrl: 'js_prev',
+
+	  /**
+	   * class name for slider next control
+	   * @classNameNextCtrl {string}
+	   */
+	  classNameNextCtrl: 'js_next',
+
+	  /**
+	   * class name for current active slide
+	   * if emptyString then no class is set
+	   * @classNameActiveSlide {string}
+	   */
+	  classNameActiveSlide: 'active',
+
+	  /**
+	   * enables mouse events for swiping on desktop devices
+	   * @enableMouseEvents {boolean}
+	   */
+	  enableMouseEvents: false,
+
+	  /**
+	   * window instance
+	   * @window {object}
+	   */
+	  window: window,
+
+	  /**
+	   * If false, slides lory to the first slide on window resize.
+	   * @rewindOnResize {boolean}
+	   */
+	  rewindOnResize: true
+	};
+
+/***/ }
+/******/ ])
+});
+;
 
 // -----------------------------------------------------------
 // Svg4Everyone version	2.1.4
