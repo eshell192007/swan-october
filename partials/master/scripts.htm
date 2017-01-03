@@ -14,3 +14,13 @@
      SyntaxHighlighter.all();
      svg4everybody();
 </script>
+
+<!-- Modal Dialog -->
+<script type="text/javascript">
+    var modalDialog = new tingle.modal();
+    var modalDialogBtn = document.querySelector('.js-modal');
+    modalDialogBtn.addEventListener('click', function(){
+        modalDialog.open();
+    });
+    modalDialog.setContent(document.querySelector('.modal-content').innerHTML);
+</script>

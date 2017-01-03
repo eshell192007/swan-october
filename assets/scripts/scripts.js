@@ -19,6 +19,416 @@ function preventDefaultEvent(event) {
 }
 
 // -----------------------------------------------------------
+// DIALOG by Sebastian Serna - 2016
+// -----------------------------------------------------------
+// Based on Tingle.js v0.8.5 http://robinparisi.github.io/tingle/
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+(function(root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(factory);
+    } else if (typeof exports === 'object') {
+        module.exports = factory();
+    } else {
+        root.tingle = factory();
+    }
+}(this, function() {
+
+    /* ----------------------------------------------------------- */
+    /* == modal */
+    /* ----------------------------------------------------------- */
+
+    var transitionEvent = whichTransitionEvent();
+
+
+    function Modal(options) {
+        this.modal;
+        this.modalCloseBtn;
+        this.modalWrapper;
+        this.modalBox;
+        this.modalBoxContent
+        this.modalBoxFooter;
+        this.modalContent;
+
+        var defaults = {
+            onClose: null,
+            onOpen: null,
+            beforeClose: null,
+            stickyFooter: false,
+            footer: false,
+            cssClass: [],
+            closeLabel: 'Close'
+        }
+
+        // extends config
+        this.opts = extend({}, defaults, options);
+
+        // init modal
+        this.init();
+    }
+
+    Modal.prototype.init = function() {
+        if (this.modal) {
+            return;
+        }
+
+        _build.call(this);
+        _bindEvents.call(this);
+
+        // insert modal in dom
+        document.body.insertBefore(this.modal, document.body.firstChild);
+
+        if (this.opts.footer) {
+            this.addFooter();
+        }
+    };
+
+    Modal.prototype.destroy = function() {
+        if (this.modal === null) {
+            return;
+        }
+
+        // unbind all events
+        _unbindEvents.call(this);
+
+        // remove modal from dom
+        this.modal.parentNode.removeChild(this.modal);
+
+        this.modal = null;
+    };
+
+
+    Modal.prototype.open = function(options) {
+
+        if (this.modal.style.removeProperty) {
+            this.modal.style.removeProperty('display');
+        } else {
+            this.modal.style.removeAttribute('display');
+        }
+
+        // prevent double scroll
+        document.body.classList.add('tingle-enabled');
+
+        // sticky footer
+        this.setStickyFooter(this.opts.stickyFooter);
+
+        // show modal
+        this.modal.classList.add('tingle-modal--visible');
+
+        // onOpen event
+        var self = this;
+
+        if (transitionEvent) {
+            this.modal.addEventListener(transitionEvent, function handler() {
+                if (typeof self.opts.onOpen === 'function') {
+                    self.opts.onOpen.call(self);
+                }
+
+                // detach event after transition end (so it doesn't fire multiple onOpen)
+                self.modal.removeEventListener(transitionEvent, handler, false);
+
+            }, false);
+        }
+
+        // check if modal is bigger than screen height
+        _checkOverflow.call(this);
+
+    };
+
+    Modal.prototype.isOpen = function() {
+        var isOpen = this.modal.classList.contains("tingle-modal--visible") ? true :
+            false;
+        return isOpen;
+    }
+
+    Modal.prototype.close = function(e) {
+
+        //  before close
+        if (typeof this.opts.beforeClose === "function") {
+            var close = this.opts.beforeClose.call(this);
+            if(!close) return;
+        }
+
+        this.modal.style.display = 'none';
+        document.body.classList.remove('tingle-enabled');
+
+        this.modal.classList.remove('tingle-modal--visible');
+
+        // on close callback
+        if (typeof this.opts.onClose === "function") {
+            this.opts.onClose.call(this);
+        }
+    };
+
+    Modal.prototype.setContent = function(content) {
+        // check type of content : String or Node
+        if (typeof content === 'string') {
+            this.modalBoxContent.innerHTML = content;
+        } else {
+            this.modalBoxContent.innerHTML = "";
+            this.modalBoxContent.appendChild(content);
+        }
+    };
+
+    Modal.prototype.getContent = function() {
+        return this.modalBoxContent;
+    };
+
+    Modal.prototype.addFooter = function() {
+        // add footer to modal
+        _buildFooter.call(this);
+    }
+
+    Modal.prototype.setFooterContent = function(content) {
+        // set footer content
+        this.modalBoxFooter.innerHTML = content;
+    };
+
+    Modal.prototype.getFooterContent = function() {
+        return this.modalBoxFooter;
+    };
+
+    Modal.prototype.setStickyFooter = function(isSticky) {
+        // if the modal is smaller than the viewport height, we don't need sticky
+        if (!this.isOverflow()) {
+            isSticky = false;
+        }
+
+        if (isSticky) {
+            if (this.modalBox.contains(this.modalBoxFooter)) {
+                this.modalBox.removeChild(this.modalBoxFooter);
+                this.modal.appendChild(this.modalBoxFooter);
+                this.modalBoxFooter.classList.add('tingle-modal-box__footer--sticky');
+                _recalculateFooterPosition.call(this);
+                this.modalBoxContent.style['padding-bottom'] = this.modalBoxFooter.clientHeight +
+                    20 + 'px';
+            }
+        } else if (this.modalBoxFooter) {
+            if (!this.modalBox.contains(this.modalBoxFooter)) {
+                this.modal.removeChild(this.modalBoxFooter);
+                this.modalBox.appendChild(this.modalBoxFooter);
+                this.modalBoxFooter.style.width = 'auto';
+                this.modalBoxFooter.style.left = '';
+                this.modalBoxContent.style['padding-bottom'] = '';
+                this.modalBoxFooter.classList.remove('tingle-modal-box__footer--sticky');
+            }
+        }
+    }
+
+
+    Modal.prototype.addFooterBtn = function(label, cssClass, callback) {
+        var btn = document.createElement("button");
+
+        // set label
+        btn.innerHTML = label;
+
+        // bind callback
+        btn.addEventListener('click', callback);
+
+        if (typeof cssClass === 'string' && cssClass.length) {
+            // add classes to btn
+            cssClass.split(" ").forEach(function(item) {
+                btn.classList.add(item);
+            });
+        }
+
+        this.modalBoxFooter.appendChild(btn);
+
+        return btn;
+    }
+
+    Modal.prototype.resize = function() {
+        console.warn('Resize is deprecated and will be removed in version 1.0');
+    };
+
+
+    Modal.prototype.isOverflow = function() {
+        var viewportHeight = window.innerHeight;
+        var modalHeight = this.modalBox.clientHeight;
+
+        var isOverflow = modalHeight < viewportHeight ? false : true;
+        return isOverflow;
+    }
+
+
+    /* ----------------------------------------------------------- */
+    /* == private methods */
+    /* ----------------------------------------------------------- */
+
+
+    function _checkOverflow() {
+        // only if the modal is currently shown
+        if (this.modal.classList.contains('tingle-modal--visible')) {
+            if (this.isOverflow()) {
+                this.modal.classList.add('tingle-modal--overflow');
+            } else {
+                this.modal.classList.remove('tingle-modal--overflow');
+            }
+
+            // TODO: remove offset
+            //_offset.call(this);
+            if (!this.isOverflow() && this.opts.stickyFooter) {
+                this.setStickyFooter(false);
+            } else if (this.isOverflow() && this.opts.stickyFooter) {
+                _recalculateFooterPosition.call(this);
+                this.setStickyFooter(true);
+            }
+        }
+    };
+
+    function _recalculateFooterPosition() {
+        if (!this.modalBoxFooter) {
+            return;
+        }
+        this.modalBoxFooter.style.width = this.modalBox.clientWidth + 'px';
+        this.modalBoxFooter.style.left = this.modalBox.offsetLeft + 'px';
+    }
+
+    function _build() {
+
+        // wrapper
+        this.modal = document.createElement('div')
+        this.modal.classList.add('tingle-modal');
+        this.modal.style.display = 'none';
+
+        // custom class
+        this.opts.cssClass.forEach(function(item) {
+            if (typeof item === 'string') {
+                this.modal.classList.add(item);
+            }
+        }, this);
+
+        // close btn
+        this.modalCloseBtn = document.createElement('button');
+        this.modalCloseBtn.classList.add('tingle-modal__close');
+
+        this.modalCloseBtnIcon = document.createElement('span');
+        this.modalCloseBtnIcon.classList.add('tingle-modal__closeIcon');
+        this.modalCloseBtnIcon.innerHTML = '×';
+
+        this.modalCloseBtnLabel = document.createElement('span');
+        this.modalCloseBtnLabel.classList.add('tingle-modal__closeLabel');
+        this.modalCloseBtnLabel.innerHTML = this.opts.closeLabel;
+
+        this.modalCloseBtn.appendChild(this.modalCloseBtnIcon);
+        this.modalCloseBtn.appendChild(this.modalCloseBtnLabel);
+
+        // modal
+        this.modalBox = document.createElement('div');
+        this.modalBox.classList.add('tingle-modal-box');
+
+        // modal box content
+        this.modalBoxContent = document.createElement('div');
+        this.modalBoxContent.classList.add('tingle-modal-box__content');
+
+        this.modalBox.appendChild(this.modalBoxContent);
+        this.modal.appendChild(this.modalCloseBtn);
+        this.modal.appendChild(this.modalBox);
+
+    };
+
+    function _buildFooter() {
+        this.modalBoxFooter = document.createElement('div');
+        this.modalBoxFooter.classList.add('tingle-modal-box__footer');
+        this.modalBox.appendChild(this.modalBoxFooter);
+    }
+
+    function _bindEvents() {
+
+        this._events = {
+            clickCloseBtn: this.close.bind(this),
+            clickOverlay: _handleClickOutside.bind(this),
+            resize: _checkOverflow.bind(this),
+            keyboardNav: _handleKeyboardNav.bind(this)
+        }
+
+        this.modalCloseBtn.addEventListener('click', this._events.clickCloseBtn);
+        this.modal.addEventListener('mousedown', this._events.clickOverlay);
+        window.addEventListener('resize', this._events.resize);
+        document.addEventListener("keydown", this._events.keyboardNav);
+    };
+
+    function _handleKeyboardNav(event) {
+        // escape key
+        if (event.which === 27 && this.isOpen()) {
+            this.close();
+        }
+    }
+
+    function _handleClickOutside(event) {
+        // if click is outside the modal
+        if (!_findAncestor(event.target, 'tingle-modal') && event.clientX < this.modal.clientWidth) {
+            this.close();
+        }
+    }
+
+    function _findAncestor(el, cls) {
+        while ((el = el.parentElement) && !el.classList.contains(cls));
+        return el;
+    }
+
+    function _unbindEvents() {
+        this.modalCloseBtn.removeEventListener('click', this._events.clickCloseBtn);
+        this.modal.removeEventListener('mousedown', this._events.clickOverlay);
+        window.removeEventListener('resize', this._events.resize);
+        document.removeEventListener("keydown", this._events.keyboardNav);
+    };
+
+    /* ----------------------------------------------------------- */
+    /* == confirm */
+    /* ----------------------------------------------------------- */
+
+    // coming soon
+
+    /* ----------------------------------------------------------- */
+    /* == alert */
+    /* ----------------------------------------------------------- */
+
+    // coming soon
+
+    /* ----------------------------------------------------------- */
+    /* == helpers */
+    /* ----------------------------------------------------------- */
+
+    function extend() {
+        for (var i = 1; i < arguments.length; i++) {
+            for (var key in arguments[i]) {
+                if (arguments[i].hasOwnProperty(key)) {
+                    arguments[0][key] = arguments[i][key];
+                }
+            }
+        }
+        return arguments[0];
+    }
+
+    function whichTransitionEvent() {
+        var t;
+        var el = document.createElement('tingle-test-transition');
+        var transitions = {
+            'transition': 'transitionend',
+            'OTransition': 'oTransitionEnd',
+            'MozTransition': 'transitionend',
+            'WebkitTransition': 'webkitTransitionEnd'
+        }
+
+        for (t in transitions) {
+            if (el.style[t] !== undefined) {
+                return transitions[t];
+            }
+        }
+    }
+
+    /* ----------------------------------------------------------- */
+    /* == return */
+    /* ----------------------------------------------------------- */
+
+    return {
+        modal: Modal
+    };
+
+}));
+
+// -----------------------------------------------------------
 // MAP VIEW  by Sebastian Serna - 2016
 // -----------------------------------------------------------
 // Based on CodyHouse https://codyhouse.co/gem/custom-google-map/
@@ -380,8 +790,114 @@ for (var i = 0; i < toggleBtn.length; i++) {
   });
 }
 
-!function(a,b){"function"==typeof define&&define.amd?define([],function(){return a.svg4everybody=b()}):"object"==typeof exports?module.exports=b():a.svg4everybody=b()}(this,function(){/*! svg4everybody v2.0.0 | github.com/jonathantneal/svg4everybody */
-function a(a,b){if(b){var c=!a.getAttribute("viewBox")&&b.getAttribute("viewBox"),d=document.createDocumentFragment(),e=b.cloneNode(!0);for(c&&a.setAttribute("viewBox",c);e.childNodes.length;)d.appendChild(e.firstChild);a.appendChild(d)}}function b(b){b.onreadystatechange=function(){if(4===b.readyState){var c=document.createElement("x");c.innerHTML=b.responseText,b.s.splice(0).map(function(b){a(b[0],c.querySelector("#"+b[1].replace(/(\W)/g,"\\$1")))})}},b.onreadystatechange()}function c(c){function d(){for(var c;c=e[0];){var j=c.parentNode;if(j&&/svg/i.test(j.nodeName)){var k=c.getAttribute("xlink:href");if(f&&(!g||g(k,j,c))){var l=k.split("#"),m=l[0],n=l[1];if(j.removeChild(c),m.length){var o=i[m]=i[m]||new XMLHttpRequest;o.s||(o.s=[],o.open("GET",m),o.send()),o.s.push([j,n]),b(o)}else a(j,document.getElementById(n))}}}h(d,17)}c=c||{};var e=document.getElementsByTagName("use"),f="shim"in c?c.shim:/\bEdge\/12\b|\bTrident\/[567]\b|\bVersion\/7.0 Safari\b/.test(navigator.userAgent)||(navigator.userAgent.match(/AppleWebKit\/(\d+)/)||[])[1]<537,g=c.validate,h=window.requestAnimationFrame||setTimeout,i={};f&&d()}return c});
+// -----------------------------------------------------------
+// Svg4Everyone version	2.1.4
+// -----------------------------------------------------------
+// https://github.com/jonathantneal/svg4everybody/blob/master/dist/svg4everybody.js
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+!function(root, factory) {
+    "function" == typeof define && define.amd ? // AMD. Register as an anonymous module unless amdModuleId is set
+    define([], function() {
+        return root.svg4everybody = factory();
+    }) : "object" == typeof module && module.exports ? // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    module.exports = factory() : root.svg4everybody = factory();
+}(this, function() {
+    /*! svg4everybody v2.1.4 | github.com/jonathantneal/svg4everybody */
+    function embed(parent, svg, target) {
+        // if the target exists
+        if (target) {
+            // create a document fragment to hold the contents of the target
+            var fragment = document.createDocumentFragment(), viewBox = !svg.hasAttribute("viewBox") && target.getAttribute("viewBox");
+            // conditionally set the viewBox on the svg
+            viewBox && svg.setAttribute("viewBox", viewBox);
+            // copy the contents of the clone into the fragment
+            for (// clone the target
+            var clone = target.cloneNode(!0); clone.childNodes.length; ) {
+                fragment.appendChild(clone.firstChild);
+            }
+            // append the fragment into the svg
+            parent.appendChild(fragment);
+        }
+    }
+    function loadreadystatechange(xhr) {
+        // listen to changes in the request
+        xhr.onreadystatechange = function() {
+            // if the request is ready
+            if (4 === xhr.readyState) {
+                // get the cached html document
+                var cachedDocument = xhr._cachedDocument;
+                // ensure the cached html document based on the xhr response
+                cachedDocument || (cachedDocument = xhr._cachedDocument = document.implementation.createHTMLDocument(""),
+                cachedDocument.body.innerHTML = xhr.responseText, xhr._cachedTarget = {}), // clear the xhr embeds list and embed each item
+                xhr._embeds.splice(0).map(function(item) {
+                    // get the cached target
+                    var target = xhr._cachedTarget[item.id];
+                    // ensure the cached target
+                    target || (target = xhr._cachedTarget[item.id] = cachedDocument.getElementById(item.id)),
+                    // embed the target into the svg
+                    embed(item.parent, item.svg, target);
+                });
+            }
+        }, // test the ready state change immediately
+        xhr.onreadystatechange();
+    }
+    function svg4everybody(rawopts) {
+        function oninterval() {
+            // while the index exists in the live <use> collection
+            for (// get the cached <use> index
+            var index = 0; index < uses.length; ) {
+                // get the current <use>
+                var use = uses[index], parent = use.parentNode, svg = getSVGAncestor(parent);
+                if (svg) {
+                    var src = use.getAttribute("xlink:href") || use.getAttribute("href");
+                    if (polyfill && (!opts.validate || opts.validate(src, svg, use))) {
+                        // remove the <use> element
+                        parent.removeChild(use);
+                        // parse the src and get the url and id
+                        var srcSplit = src.split("#"), url = srcSplit.shift(), id = srcSplit.join("#");
+                        // if the link is external
+                        if (url.length) {
+                            // get the cached xhr request
+                            var xhr = requests[url];
+                            // ensure the xhr request exists
+                            xhr || (xhr = requests[url] = new XMLHttpRequest(), xhr.open("GET", url), xhr.send(),
+                            xhr._embeds = []), // add the svg and id as an item to the xhr embeds list
+                            xhr._embeds.push({
+                                parent: parent,
+                                svg: svg,
+                                id: id
+                            }), // prepare the xhr ready state change event
+                            loadreadystatechange(xhr);
+                        } else {
+                            // embed the local id into the svg
+                            embed(parent, document.getElementById(id));
+                        }
+                    }
+                } else {
+                    // increase the index when the previous value was not "valid"
+                    ++index;
+                }
+            }
+            // continue the interval
+            requestAnimationFrame(oninterval, 67);
+        }
+        var polyfill, opts = Object(rawopts), newerIEUA = /\bTrident\/[567]\b|\bMSIE (?:9|10)\.0\b/, webkitUA = /\bAppleWebKit\/(\d+)\b/, olderEdgeUA = /\bEdge\/12\.(\d+)\b/;
+        polyfill = "polyfill" in opts ? opts.polyfill : newerIEUA.test(navigator.userAgent) || (navigator.userAgent.match(olderEdgeUA) || [])[1] < 10547 || (navigator.userAgent.match(webkitUA) || [])[1] < 537;
+        // create xhr requests object
+        var requests = {}, requestAnimationFrame = window.requestAnimationFrame || setTimeout, uses = document.getElementsByTagName("use");
+        // conditionally start the interval if the polyfill is active
+        polyfill && oninterval();
+    }
+    function getSVGAncestor(node) {
+        for (var svg = node; "svg" !== svg.nodeName.toLowerCase() && (svg = svg.parentNode); ) {}
+        return svg;
+    }
+    return svg4everybody;
+});
+
 /**
  * SyntaxHighlighter
  * http://alexgorbatchev.com/SyntaxHighlighter

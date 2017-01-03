@@ -52,7 +52,7 @@ gulp.task ('sass' , function() {
 });
 
 //-----------------------------------------------------
-// Scripts merge task
+// Scripts minification and concat task
 //-----------------------------------------------------
 
 gulp.task ('minjs' , function() {
@@ -72,8 +72,6 @@ gulp.task ('minjs' , function() {
 //-----------------------------------------------------
 // Browser Sync task (static server)
 //-----------------------------------------------------
-
-// Watch main task
 
 gulp.task('browser-sync' , function() {
     browserSync.init({
