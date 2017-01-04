@@ -793,7 +793,7 @@ function customMap() {
 // -----------------------------------------------------------
 // SLIDESHOW
 // -----------------------------------------------------------
-// Based on Swipe v2.2.3 https://github.com/lyfeyaj/swipe/blob/master/swipe.js
+// Based on Swipe v2.2.3 https://github.com/lyfeyaj/swipe/
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 // if the module has no dependencies, the above pattern can be simplified to

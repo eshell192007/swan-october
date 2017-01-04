@@ -17,19 +17,22 @@
 <script>
     // Slideshow
     var element = document.querySelector('.slideshow'),
-        prevBtn = document.getElementById('prev'),
-        nextBtn = document.getElementById('next');
+        prevBtn = document.querySelector('.js-slideshow-prev'),
+        nextBtn = document.querySelector('.js-slideshow-next');
     window.mySwipe = new Swipe(element, {
       startSlide: 0,
-      //auto: 3000,
+      auto: 3000,
       draggable: true,
-      autoRestart: false,
+      autoRestart: true,
       continuous: true,
       disableScroll: true,
       stopPropagation: true,
       callback: function(index, element) {},
       transitionEnd: function(index, element) {}
     });
+    prevBtn.onclick = mySwipe.prev;
+    nextBtn.onclick = mySwipe.next;
+
     // Modal Dialog
     var modalDialog = new tingle.modal(),
         modalDialogBtn = document.querySelector('.js-modal');
