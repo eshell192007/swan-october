@@ -2,3 +2,11 @@
 // SCROLLBAR by Sebastian Serna - 2016
 // -----------------------------------------------------------
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+body, .smooth-container {
+  scroll-behavior: smooth;
+}
+
+.anchor {
+  padding-top: 20px;
+}

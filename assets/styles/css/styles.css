@@ -1344,6 +1344,14 @@ input[type=radio]:not(old):checked + label > span > span {
   background: black;
 }
 
+body, .smooth-container {
+  scroll-behavior: smooth;
+}
+
+.anchor {
+  padding-top: 20px;
+}
+
 select {
   background: transparent;
   max-width: 25rem;
