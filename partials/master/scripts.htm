@@ -34,10 +34,7 @@
     nextBtn.onclick = mySwipe.next;
 
     // Modal Dialog
-    var modalDialog = new tingle.modal(),
-        modalDialogBtn = document.querySelector('.js-modal');
-    modalDialogBtn.addEventListener('click', function(){
-        modalDialog.open();
-    });
-    modalDialog.setContent(document.querySelector('.modal-content').innerHTML);
+
+    const modal = new VanillaModal();
+
 </script>

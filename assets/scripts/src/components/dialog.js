@@ -1,409 +1,365 @@
 // -----------------------------------------------------------
-// DIALOG
+// MODAL DIALOG
 // -----------------------------------------------------------
-// Based on Tingle.js v0.8.5 http://robinparisi.github.io/tingle/
+// Based on Vanilla Modal https://github.com/thephuse/vanilla-modal
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        define(factory);
-    } else if (typeof exports === 'object') {
-        module.exports = factory();
-    } else {
-        root.tingle = factory();
+(function (global, factory) {
+  if (typeof define === "function" && define.amd) {
+    define('VanillaModal', ['module', 'exports'], factory);
+  } else if (typeof exports !== "undefined") {
+    factory(module, exports);
+  } else {
+    var mod = {
+      exports: {}
+    };
+    factory(mod, mod.exports);
+    global.VanillaModal = mod.exports;
+  }
+})(this, function (module, exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj;
+  };
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
     }
-}(this, function() {
+  }
 
-    /* ----------------------------------------------------------- */
-    /* == modal */
-    /* ----------------------------------------------------------- */
-
-    var transitionEvent = whichTransitionEvent();
-
-
-    function Modal(options) {
-        this.modal;
-        this.modalCloseBtn;
-        this.modalWrapper;
-        this.modalBox;
-        this.modalBoxContent
-        this.modalBoxFooter;
-        this.modalContent;
-
-        var defaults = {
-            onClose: null,
-            onOpen: null,
-            beforeClose: null,
-            stickyFooter: false,
-            footer: false,
-            cssClass: [],
-            closeLabel: 'Close'
-        }
-
-        // extends config
-        this.opts = extend({}, defaults, options);
-
-        // init modal
-        this.init();
-    }
-
-    Modal.prototype.init = function() {
-        if (this.modal) {
-            return;
-        }
-
-        _build.call(this);
-        _bindEvents.call(this);
-
-        // insert modal in dom
-        document.body.insertBefore(this.modal, document.body.firstChild);
-
-        if (this.opts.footer) {
-            this.addFooter();
-        }
-    };
-
-    Modal.prototype.destroy = function() {
-        if (this.modal === null) {
-            return;
-        }
-
-        // unbind all events
-        _unbindEvents.call(this);
-
-        // remove modal from dom
-        this.modal.parentNode.removeChild(this.modal);
-
-        this.modal = null;
-    };
-
-
-    Modal.prototype.open = function(options) {
-
-        if (this.modal.style.removeProperty) {
-            this.modal.style.removeProperty('display');
-        } else {
-            this.modal.style.removeAttribute('display');
-        }
-
-        // prevent double scroll
-        document.body.classList.add('tingle-enabled');
-
-        // sticky footer
-        this.setStickyFooter(this.opts.stickyFooter);
-
-        // show modal
-        this.modal.classList.add('tingle-modal--visible');
-
-        // onOpen event
-        var self = this;
-
-        if (transitionEvent) {
-            this.modal.addEventListener(transitionEvent, function handler() {
-                if (typeof self.opts.onOpen === 'function') {
-                    self.opts.onOpen.call(self);
-                }
-
-                // detach event after transition end (so it doesn't fire multiple onOpen)
-                self.modal.removeEventListener(transitionEvent, handler, false);
-
-            }, false);
-        }
-
-        // check if modal is bigger than screen height
-        _checkOverflow.call(this);
-
-    };
-
-    Modal.prototype.isOpen = function() {
-        var isOpen = this.modal.classList.contains("tingle-modal--visible") ? true :
-            false;
-        return isOpen;
+  var _createClass = function () {
+    function defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
     }
 
-    Modal.prototype.close = function(e) {
-
-        //  before close
-        if (typeof this.opts.beforeClose === "function") {
-            var close = this.opts.beforeClose.call(this);
-            if(!close) return;
-        }
-
-        this.modal.style.display = 'none';
-        document.body.classList.remove('tingle-enabled');
-
-        this.modal.classList.remove('tingle-modal--visible');
-
-        // on close callback
-        if (typeof this.opts.onClose === "function") {
-            this.opts.onClose.call(this);
-        }
+    return function (Constructor, protoProps, staticProps) {
+      if (protoProps) defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) defineProperties(Constructor, staticProps);
+      return Constructor;
     };
+  }();
 
-    Modal.prototype.setContent = function(content) {
-        // check type of content : String or Node
-        if (typeof content === 'string') {
-            this.modalBoxContent.innerHTML = content;
-        } else {
-            this.modalBoxContent.innerHTML = "";
-            this.modalBoxContent.appendChild(content);
-        }
-    };
+  var VanillaModal = function () {
 
-    Modal.prototype.getContent = function() {
-        return this.modalBoxContent;
-    };
+    /**
+     * @param {Object} [userSettings]
+     */
 
-    Modal.prototype.addFooter = function() {
-        // add footer to modal
-        _buildFooter.call(this);
+    function VanillaModal(userSettings) {
+      _classCallCheck(this, VanillaModal);
+
+      this.$$ = {
+        modal: '.modal',
+        modalInner: '.modal-inner',
+        modalContent: '.modal-content',
+        open: '[rel="modal:open"]',
+        close: '[rel="modal:close"]',
+        page: 'body',
+        class: 'modal-visible',
+        loadClass: 'vanilla-modal',
+        clickOutside: true,
+        closeKeys: [27],
+        transitions: true,
+        transitionEnd: null,
+        onBeforeOpen: null,
+        onBeforeClose: null,
+        onOpen: null,
+        onClose: null
+      };
+
+      this._applyUserSettings(userSettings);
+      this.error = false;
+      this.isOpen = false;
+      this.current = null;
+      this.open = this._open.bind(this);
+      this.close = this._close.bind(this);
+      this.$$.transitionEnd = this._transitionEndVendorSniff();
+      this.$ = this._setupDomNodes();
+
+      if (!this.error) {
+        this._addLoadedCssClass();
+        this._events().add();
+      } else {
+        console.error('Please fix errors before proceeding.');
+      }
     }
 
-    Modal.prototype.setFooterContent = function(content) {
-        // set footer content
-        this.modalBoxFooter.innerHTML = content;
-    };
+    /**
+     * @param {Object} userSettings
+     */
 
-    Modal.prototype.getFooterContent = function() {
-        return this.modalBoxFooter;
-    };
 
-    Modal.prototype.setStickyFooter = function(isSticky) {
-        // if the modal is smaller than the viewport height, we don't need sticky
-        if (!this.isOverflow()) {
-            isSticky = false;
-        }
-
-        if (isSticky) {
-            if (this.modalBox.contains(this.modalBoxFooter)) {
-                this.modalBox.removeChild(this.modalBoxFooter);
-                this.modal.appendChild(this.modalBoxFooter);
-                this.modalBoxFooter.classList.add('tingle-modal-box__footer--sticky');
-                _recalculateFooterPosition.call(this);
-                this.modalBoxContent.style['padding-bottom'] = this.modalBoxFooter.clientHeight +
-                    20 + 'px';
+    _createClass(VanillaModal, [{
+      key: '_applyUserSettings',
+      value: function _applyUserSettings(userSettings) {
+        if ((typeof userSettings === 'undefined' ? 'undefined' : _typeof(userSettings)) === 'object') {
+          for (var i in userSettings) {
+            if (userSettings.hasOwnProperty(i)) {
+              this.$$[i] = userSettings[i];
             }
-        } else if (this.modalBoxFooter) {
-            if (!this.modalBox.contains(this.modalBoxFooter)) {
-                this.modal.removeChild(this.modalBoxFooter);
-                this.modalBox.appendChild(this.modalBoxFooter);
-                this.modalBoxFooter.style.width = 'auto';
-                this.modalBoxFooter.style.left = '';
-                this.modalBoxContent.style['padding-bottom'] = '';
-                this.modalBoxFooter.classList.remove('tingle-modal-box__footer--sticky');
-            }
+          }
         }
-    }
-
-
-    Modal.prototype.addFooterBtn = function(label, cssClass, callback) {
-        var btn = document.createElement("button");
-
-        // set label
-        btn.innerHTML = label;
-
-        // bind callback
-        btn.addEventListener('click', callback);
-
-        if (typeof cssClass === 'string' && cssClass.length) {
-            // add classes to btn
-            cssClass.split(" ").forEach(function(item) {
-                btn.classList.add(item);
-            });
-        }
-
-        this.modalBoxFooter.appendChild(btn);
-
-        return btn;
-    }
-
-    Modal.prototype.resize = function() {
-        console.warn('Resize is deprecated and will be removed in version 1.0');
-    };
-
-
-    Modal.prototype.isOverflow = function() {
-        var viewportHeight = window.innerHeight;
-        var modalHeight = this.modalBox.clientHeight;
-
-        var isOverflow = modalHeight < viewportHeight ? false : true;
-        return isOverflow;
-    }
-
-
-    /* ----------------------------------------------------------- */
-    /* == private methods */
-    /* ----------------------------------------------------------- */
-
-
-    function _checkOverflow() {
-        // only if the modal is currently shown
-        if (this.modal.classList.contains('tingle-modal--visible')) {
-            if (this.isOverflow()) {
-                this.modal.classList.add('tingle-modal--overflow');
-            } else {
-                this.modal.classList.remove('tingle-modal--overflow');
-            }
-
-            // TODO: remove offset
-            //_offset.call(this);
-            if (!this.isOverflow() && this.opts.stickyFooter) {
-                this.setStickyFooter(false);
-            } else if (this.isOverflow() && this.opts.stickyFooter) {
-                _recalculateFooterPosition.call(this);
-                this.setStickyFooter(true);
-            }
-        }
-    };
-
-    function _recalculateFooterPosition() {
-        if (!this.modalBoxFooter) {
-            return;
-        }
-        this.modalBoxFooter.style.width = this.modalBox.clientWidth + 'px';
-        this.modalBoxFooter.style.left = this.modalBox.offsetLeft + 'px';
-    }
-
-    function _build() {
-
-        // wrapper
-        this.modal = document.createElement('div')
-        this.modal.classList.add('tingle-modal');
-        this.modal.style.display = 'none';
-
-        // custom class
-        this.opts.cssClass.forEach(function(item) {
-            if (typeof item === 'string') {
-                this.modal.classList.add(item);
-            }
-        }, this);
-
-        // close btn
-        this.modalCloseBtn = document.createElement('button');
-        this.modalCloseBtn.classList.add('tingle-modal__close');
-
-        this.modalCloseBtnIcon = document.createElement('span');
-        this.modalCloseBtnIcon.classList.add('tingle-modal__closeIcon');
-        this.modalCloseBtnIcon.innerHTML = '×';
-
-        this.modalCloseBtnLabel = document.createElement('span');
-        this.modalCloseBtnLabel.classList.add('tingle-modal__closeLabel');
-        this.modalCloseBtnLabel.innerHTML = this.opts.closeLabel;
-
-        this.modalCloseBtn.appendChild(this.modalCloseBtnIcon);
-        this.modalCloseBtn.appendChild(this.modalCloseBtnLabel);
-
-        // modal
-        this.modalBox = document.createElement('div');
-        this.modalBox.classList.add('tingle-modal-box');
-
-        // modal box content
-        this.modalBoxContent = document.createElement('div');
-        this.modalBoxContent.classList.add('tingle-modal-box__content');
-
-        this.modalBox.appendChild(this.modalBoxContent);
-        this.modal.appendChild(this.modalCloseBtn);
-        this.modal.appendChild(this.modalBox);
-
-    };
-
-    function _buildFooter() {
-        this.modalBoxFooter = document.createElement('div');
-        this.modalBoxFooter.classList.add('tingle-modal-box__footer');
-        this.modalBox.appendChild(this.modalBoxFooter);
-    }
-
-    function _bindEvents() {
-
-        this._events = {
-            clickCloseBtn: this.close.bind(this),
-            clickOverlay: _handleClickOutside.bind(this),
-            resize: _checkOverflow.bind(this),
-            keyboardNav: _handleKeyboardNav.bind(this)
-        }
-
-        this.modalCloseBtn.addEventListener('click', this._events.clickCloseBtn);
-        this.modal.addEventListener('mousedown', this._events.clickOverlay);
-        window.addEventListener('resize', this._events.resize);
-        document.addEventListener("keydown", this._events.keyboardNav);
-    };
-
-    function _handleKeyboardNav(event) {
-        // escape key
-        if (event.which === 27 && this.isOpen()) {
-            this.close();
-        }
-    }
-
-    function _handleClickOutside(event) {
-        // if click is outside the modal
-        if (!_findAncestor(event.target, 'tingle-modal') && event.clientX < this.modal.clientWidth) {
-            this.close();
-        }
-    }
-
-    function _findAncestor(el, cls) {
-        while ((el = el.parentElement) && !el.classList.contains(cls));
-        return el;
-    }
-
-    function _unbindEvents() {
-        this.modalCloseBtn.removeEventListener('click', this._events.clickCloseBtn);
-        this.modal.removeEventListener('mousedown', this._events.clickOverlay);
-        window.removeEventListener('resize', this._events.resize);
-        document.removeEventListener("keydown", this._events.keyboardNav);
-    };
-
-    /* ----------------------------------------------------------- */
-    /* == confirm */
-    /* ----------------------------------------------------------- */
-
-    // coming soon
-
-    /* ----------------------------------------------------------- */
-    /* == alert */
-    /* ----------------------------------------------------------- */
-
-    // coming soon
-
-    /* ----------------------------------------------------------- */
-    /* == helpers */
-    /* ----------------------------------------------------------- */
-
-    function extend() {
-        for (var i = 1; i < arguments.length; i++) {
-            for (var key in arguments[i]) {
-                if (arguments[i].hasOwnProperty(key)) {
-                    arguments[0][key] = arguments[i][key];
-                }
-            }
-        }
-        return arguments[0];
-    }
-
-    function whichTransitionEvent() {
-        var t;
-        var el = document.createElement('tingle-test-transition');
+      }
+    }, {
+      key: '_transitionEndVendorSniff',
+      value: function _transitionEndVendorSniff() {
+        if (this.$$.transitions === false) return;
+        var el = document.createElement('div');
         var transitions = {
-            'transition': 'transitionend',
-            'OTransition': 'oTransitionEnd',
-            'MozTransition': 'transitionend',
-            'WebkitTransition': 'webkitTransitionEnd'
+          'transition': 'transitionend',
+          'OTransition': 'otransitionend',
+          'MozTransition': 'transitionend',
+          'WebkitTransition': 'webkitTransitionEnd'
+        };
+        for (var i in transitions) {
+          if (transitions.hasOwnProperty(i) && el.style[i] !== undefined) {
+            return transitions[i];
+          }
         }
-
-        for (t in transitions) {
-            if (el.style[t] !== undefined) {
-                return transitions[t];
-            }
+      }
+    }, {
+      key: '_getNode',
+      value: function _getNode(selector, parent) {
+        var targetNode = parent || document;
+        var node = targetNode.querySelector(selector);
+        if (!node) {
+          this.error = true;
+          return console.error(selector + ' not found in document.');
         }
-    }
+        return node;
+      }
+    }, {
+      key: '_setupDomNodes',
+      value: function _setupDomNodes() {
+        var $ = {};
+        $.modal = this._getNode(this.$$.modal);
+        $.page = this._getNode(this.$$.page);
+        $.modalInner = this._getNode(this.$$.modalInner, this.modal);
+        $.modalContent = this._getNode(this.$$.modalContent, this.modal);
+        return $;
+      }
+    }, {
+      key: '_addLoadedCssClass',
+      value: function _addLoadedCssClass() {
+        this._addClass(this.$.page, this.$$.loadClass);
+      }
+    }, {
+      key: '_addClass',
+      value: function _addClass(el, className) {
+        if (el instanceof HTMLElement === false) return;
+        var cssClasses = el.className.split(' ');
+        if (cssClasses.indexOf(className) === -1) {
+          cssClasses.push(className);
+        }
+        el.className = cssClasses.join(' ');
+      }
+    }, {
+      key: '_removeClass',
+      value: function _removeClass(el, className) {
+        if (el instanceof HTMLElement === false) return;
+        var cssClasses = el.className.split(' ');
+        if (cssClasses.indexOf(className) > -1) {
+          cssClasses.splice(cssClasses.indexOf(className), 1);
+        }
+        el.className = cssClasses.join(' ');
+      }
+    }, {
+      key: '_setOpenId',
+      value: function _setOpenId() {
+        var id = this.current.id || 'anonymous';
+        this.$.page.setAttribute('data-current-modal', id);
+      }
+    }, {
+      key: '_removeOpenId',
+      value: function _removeOpenId() {
+        this.$.page.removeAttribute('data-current-modal');
+      }
+    }, {
+      key: '_getElementContext',
+      value: function _getElementContext(e) {
+        if (e && typeof e.hash === 'string') {
+          return document.querySelector(e.hash);
+        } else if (typeof e === 'string') {
+          return document.querySelector(e);
+        } else {
+          return console.error('No selector supplied to open()');
+        }
+      }
+    }, {
+      key: '_open',
+      value: function _open(matches, e) {
+        this._releaseNode();
+        this.current = this._getElementContext(matches);
+        if (this.current instanceof HTMLElement === false) return console.error('VanillaModal target must exist on page.');
+        if (typeof this.$$.onBeforeOpen === 'function') this.$$.onBeforeOpen.call(this, e);
+        this._captureNode();
+        this._addClass(this.$.page, this.$$.class);
+        this._setOpenId();
+        this.isOpen = true;
+        if (typeof this.$$.onOpen === 'function') this.$$.onOpen.call(this, e);
+      }
+    }, {
+      key: '_detectTransition',
+      value: function _detectTransition() {
+        var css = window.getComputedStyle(this.$.modal, null);
+        var transitionDuration = ['transitionDuration', 'oTransitionDuration', 'MozTransitionDuration', 'webkitTransitionDuration'];
+        var hasTransition = transitionDuration.filter(function (i) {
+          if (typeof css[i] === 'string' && parseFloat(css[i]) > 0) {
+            return true;
+          }
+        });
+        return hasTransition.length ? true : false;
+      }
+    }, {
+      key: '_close',
+      value: function _close(e) {
+        if (this.isOpen === true) {
+          this.isOpen = false;
+          if (typeof this.$$.onBeforeClose === 'function') this.$$.onBeforeClose.call(this, e);
+          this._removeClass(this.$.page, this.$$.class);
+          var transitions = this._detectTransition();
+          if (this.$$.transitions && this.$$.transitionEnd && transitions) {
+            this._closeModalWithTransition(e);
+          } else {
+            this._closeModal(e);
+          }
+        }
+      }
+    }, {
+      key: '_closeModal',
+      value: function _closeModal(e) {
+        this._removeOpenId(this.$.page);
+        this._releaseNode();
+        this.isOpen = false;
+        this.current = null;
+        if (typeof this.$$.onClose === 'function') this.$$.onClose.call(this, e);
+      }
+    }, {
+      key: '_closeModalWithTransition',
+      value: function _closeModalWithTransition(e) {
+        var _closeTransitionHandler = function () {
+          this.$.modal.removeEventListener(this.$$.transitionEnd, _closeTransitionHandler);
+          this._closeModal(e);
+        }.bind(this);
+        this.$.modal.addEventListener(this.$$.transitionEnd, _closeTransitionHandler);
+      }
+    }, {
+      key: '_captureNode',
+      value: function _captureNode() {
+        if (this.current) {
+          while (this.current.childNodes.length > 0) {
+            this.$.modalContent.appendChild(this.current.childNodes[0]);
+          }
+        }
+      }
+    }, {
+      key: '_releaseNode',
+      value: function _releaseNode() {
+        if (this.current) {
+          while (this.$.modalContent.childNodes.length > 0) {
+            this.current.appendChild(this.$.modalContent.childNodes[0]);
+          }
+        }
+      }
+    }, {
+      key: '_closeKeyHandler',
+      value: function _closeKeyHandler(e) {
+        if (Object.prototype.toString.call(this.$$.closeKeys) !== '[object Array]' || this.$$.closeKeys.length === 0) return;
+        if (this.$$.closeKeys.indexOf(e.which) > -1 && this.isOpen === true) {
+          e.preventDefault();
+          this.close(e);
+        }
+      }
+    }, {
+      key: '_outsideClickHandler',
+      value: function _outsideClickHandler(e) {
+        if (this.$$.clickOutside !== true) return;
+        var node = e.target;
+        while (node && node != document.body) {
+          if (node === this.$.modalInner) return;
+          node = node.parentNode;
+        }
+        this.close(e);
+      }
+    }, {
+      key: '_matches',
+      value: function _matches(e, selector) {
+        var el = e.target;
+        var matches = (el.document || el.ownerDocument).querySelectorAll(selector);
+        for (var i = 0; i < matches.length; i++) {
+          var child = el;
+          while (child && child !== document.body) {
+            if (child === matches[i]) return child;
+            child = child.parentNode;
+          }
+        }
+        return null;
+      }
+    }, {
+      key: '_delegateOpen',
+      value: function _delegateOpen(e) {
+        var matches = this._matches(e, this.$$.open);
+        if (matches) {
+          e.preventDefault();
+          e.delegateTarget = matches;
+          return this.open(matches, e);
+        }
+      }
+    }, {
+      key: '_delegateClose',
+      value: function _delegateClose(e) {
+        if (this._matches(e, this.$$.close)) {
+          e.preventDefault();
+          return this.close(e);
+        }
+      }
+    }, {
+      key: '_events',
+      value: function _events() {
 
-    /* ----------------------------------------------------------- */
-    /* == return */
-    /* ----------------------------------------------------------- */
+        var _closeKeyHandler = this._closeKeyHandler.bind(this);
+        var _outsideClickHandler = this._outsideClickHandler.bind(this);
+        var _delegateOpen = this._delegateOpen.bind(this);
+        var _delegateClose = this._delegateClose.bind(this);
 
-    return {
-        modal: Modal
-    };
+        var add = function add() {
+          this.$.modal.addEventListener('click', _outsideClickHandler, false);
+          document.addEventListener('keydown', _closeKeyHandler, false);
+          document.addEventListener('click', _delegateOpen, false);
+          document.addEventListener('click', _delegateClose, false);
+        };
 
-}));
+        this.destroy = function () {
+          this.close();
+          this.$.modal.removeEventListener('click', _outsideClickHandler);
+          document.removeEventListener('keydown', _closeKeyHandler);
+          document.removeEventListener('click', _delegateOpen);
+          document.removeEventListener('click', _delegateClose);
+        };
+
+        return {
+          add: add.bind(this)
+        };
+      }
+    }]);
+
+    return VanillaModal;
+  }();
+
+  exports.default = VanillaModal;
+  module.exports = exports['default'];
+});
