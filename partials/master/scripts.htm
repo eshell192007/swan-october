@@ -11,24 +11,28 @@
 <script src="{{ 'assets/scripts/scripts.min.js' |theme }}"></script>
 
 <script>
-    // Slideshow
-    document.addEventListener('DOMContentLoaded', function () {
-        var simple = document.querySelector('.js_simple');
-
-        lory(simple, {
-            infinite: 1
-        });
-    });
-</script>
-<script>
      SyntaxHighlighter.all();
      svg4everybody();
 </script>
-
 <script>
+    // Slideshow
+    var element = document.querySelector('.slideshow'),
+        prevBtn = document.getElementById('prev'),
+        nextBtn = document.getElementById('next');
+    window.mySwipe = new Swipe(element, {
+      startSlide: 0,
+      //auto: 3000,
+      draggable: true,
+      autoRestart: false,
+      continuous: true,
+      disableScroll: true,
+      stopPropagation: true,
+      callback: function(index, element) {},
+      transitionEnd: function(index, element) {}
+    });
     // Modal Dialog
-    var modalDialog = new tingle.modal();
-    var modalDialogBtn = document.querySelector('.js-modal');
+    var modalDialog = new tingle.modal(),
+        modalDialogBtn = document.querySelector('.js-modal');
     modalDialogBtn.addEventListener('click', function(){
         modalDialog.open();
     });

@@ -2155,47 +2155,45 @@ ul.listview {
   }
 }
 
-.slider {
-  background: #333333;
-}
-
-.frame {
-  width: 980px;
-  position: relative;
-  font-size: 0;
-  line-height: 0;
+.swipe {
   overflow: hidden;
-  white-space: nowrap;
-}
-
-.slides {
-  display: inline-block;
-}
-
-.slider li {
+  visibility: hidden;
   position: relative;
-  display: inline-block;
-  width: 980px;
+  max-width: 980px;
+  height: 350px;
+  margin: 0 auto;
+  background: #262626;
+  border-top-left-radius: 0rem;
+  border-top-right-radius: 0rem;
 }
 
-.slider.prev, .slider.next {
-  position: absolute;
-  top: 50%;
-  margin-top: -25px;
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.swipe-wrap > div {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+.swipe div b {
+  background-color: #333333;
+  border-radius: 3px;
+  box-shadow: 0 -3px 0 0 rgba(0, 0, 0, 0.1) inset;
+  color: #eee;
+}
+
+.swipe-wrap > div b {
+  max-width: 980px;
+  height: 350px;
   display: block;
-  cursor: pointer;
-}
-
-.slider.next {
-  right: 0;
-}
-
-.slider.prev {
-  left: 0;
-}
-
-.slider .next svg, .slider .prev svg {
-  width: 25px;
+  font-size: 2rem;
+  margin: 0 0.5rem;
+  padding: 4rem 1rem;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .mapview-canvas {
