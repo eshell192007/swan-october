@@ -47,6 +47,20 @@ var outputSass = 'assets/styles/css/',
       outputStyle: 'expanded'
     };
 
+// browserSync watch files
+var inputBrowserFiles = [
+      // Native and adapted
+      './layouts/*.htm',
+      './layouts/**/*.htm',
+      './partials/*.htm',
+      './partials/**/*.htm',
+      './pages/*.htm',
+      './pages/**/*.htm',
+      './assets/styles/css/*.css'
+    ];
+
+
+
 //-----------------------------------------------------
 // Sass compiler task
 //-----------------------------------------------------
@@ -91,15 +105,7 @@ gulp.task('browser-sync' , function() {
         host: "localhost",
         port: 8888
     });
-    gulp.watch([
-      './layouts/*.htm',
-      './layouts/**/*.htm',
-      './partials/*.htm',
-      './partials/**/*.htm',
-      './pages/*.htm',
-      './pages/**/*.htm',
-      './assets/styles/css/*.css'
-      ]).on("change", browserSync.reload);
+
 });
 
 //-----------------------------------------------------
@@ -109,4 +115,5 @@ gulp.task('browser-sync' , function() {
 gulp.task('watch', ['minjs', 'sass', 'browser-sync'] , function() {
       gulp.watch(inputJs, ['minjs']);
       gulp.watch(inputSass, ['sass']);
+      gulp.watch(inputBrowserFiles).on("change", browserSync.reload);
 });

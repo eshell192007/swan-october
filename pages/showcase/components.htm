@@ -3,16 +3,14 @@ url = "/components"
 layout = "layout-basic-full"
 is_hidden = 0
 ==
-<div class="fixed-left" data-scroll-header style="margin-top:8rem;">
-  <a class="button" data-scroll href="#listview">List View</a>
-  <a class="button" data-scroll href="#cardview">Card View</a>
-  <a class="button" data-scroll href="#gridview">Grid View</a>
-  <a class="button" data-scroll href="#articleview">Article View</a>
-  <a class="button" data-scroll href="#main-menu">Main Menu</a>
-  <a class="button" data-scroll href="#pagination">Pagination</a>
-  <a class="button" data-scroll href="#dialog">Dialog</a>
-  <a class="button" data-scroll href="#slideshow">Slideshow</a>
-  <a class="button" data-scroll href="#mapview">Map View</a>
+<h2 id="anchors-menu" class="heading anchor">Anchors Menu</h2>
+{% partial 'components/anchor-menu' %}
+<!-- Code Example -->
+<button class="js-toggle">&#60;&#47;&#62; Show Code</button>
+<div class="js-toggle-hidden">
+    <script type="syntaxhighlighter" class="brush: xml">
+    <![CDATA[ {% partial 'components/anchor-menu' %} ]]>
+    </script>
 </div>
 
 <h2 id="listview" class="heading anchor">List View</h2>
@@ -65,7 +63,7 @@ is_hidden = 0
     </script>
 </div>
 
-<h2 id="main-menu" class="heading anchor">Basic Menu</h2>
+<h2 id="main-menu" class="heading anchor">Main Menu</h2>
 {% partial 'components/menu' %}
 <!-- Code Example -->
 <button class="js-toggle">&#60;&#47;&#62; Show Code</button>
