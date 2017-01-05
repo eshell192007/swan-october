@@ -11,31 +11,34 @@
 <script src="{{ 'assets/scripts/scripts.min.js' |theme }}"></script>
 
 <script>
-     SyntaxHighlighter.all();
-     svg4everybody();
-     smoothScroll.init({selectorHeader: '[data-scroll-header]'});
+  // Modal Dialog
+  const modal = new VanillaModal();
+  // Syntax Highlighter
+  SyntaxHighlighter.all();
+  // SVG Polyfill
+  svg4everybody();
+  // Smooth Scroll and Gum Shoe
+  smoothScroll.init({selectorHeader: '[data-scroll-header]'});
+  gumshoe.init();
+  // Slideshow
+  var element = document.querySelector('.slideshow'),
+     prevBtn = document.querySelector('.js-slideshow-prev'),
+     nextBtn = document.querySelector('.js-slideshow-next');
+  window.mySwipe = new Swipe(element, {
+    startSlide: 0,
+    auto: 3000,
+    draggable: true,
+    autoRestart: true,
+    continuous: true,
+    disableScroll: true,
+    stopPropagation: true,
+    callback: function(index, element) {},
+    transitionEnd: function(index, element) {}
+  });
+  prevBtn.onclick = mySwipe.prev;
+  nextBtn.onclick = mySwipe.next;
 </script>
 <script>
-    // Slideshow
-    var element = document.querySelector('.slideshow'),
-        prevBtn = document.querySelector('.js-slideshow-prev'),
-        nextBtn = document.querySelector('.js-slideshow-next');
-    window.mySwipe = new Swipe(element, {
-      startSlide: 0,
-      auto: 3000,
-      draggable: true,
-      autoRestart: true,
-      continuous: true,
-      disableScroll: true,
-      stopPropagation: true,
-      callback: function(index, element) {},
-      transitionEnd: function(index, element) {}
-    });
-    prevBtn.onclick = mySwipe.prev;
-    nextBtn.onclick = mySwipe.next;
 
-    // Modal Dialog
-
-    const modal = new VanillaModal();
 
 </script>
