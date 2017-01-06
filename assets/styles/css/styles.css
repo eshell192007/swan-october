@@ -1348,6 +1348,10 @@ body, .smooth-container {
   scroll-behavior: smooth;
 }
 
+.anchor {
+  padding-top: 4rem;
+}
+
 select {
   background: transparent;
   max-width: 25rem;
