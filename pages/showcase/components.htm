@@ -3,6 +3,17 @@ url = "/components"
 layout = "layout-basic-full"
 is_hidden = 0
 ==
+
+<h2 id="tooltip" class="heading anchor">Tooltips</h2>
+{% partial 'components/tooltip' %}
+<!-- Code Example -->
+<button class="js-toggle">&#60;&#47;&#62; Show Code</button>
+<div class="js-toggle-hidden">
+    <script type="syntaxhighlighter" class="brush: xml">
+    <![CDATA[ {% partial 'components/tooltip' %} ]]>
+    </script>
+</div>
+
 <h2 id="anchors-scroll" class="heading anchor">Scroll to Anchors</h2>
 {% partial 'components/anchor-menu' %}
 <!-- Code Example -->
