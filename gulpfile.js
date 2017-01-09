@@ -102,8 +102,7 @@ gulp.task ('minjs' , function() {
 
 gulp.task('browser-sync' , function() {
     browserSync.init({
-        host: "localhost",
-        port: 8888
+        proxy: "localhost:8888"
     });
 
 });
