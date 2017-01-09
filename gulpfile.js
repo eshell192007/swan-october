@@ -22,7 +22,7 @@ var gulp = require( 'gulp' ),
 // Global variables
 //-----------------------------------------------------
 
-// JS
+// JavaScript files
 var outputJs = 'assets/scripts/',
     inputJs = [
       // Native and adapted
@@ -39,7 +39,7 @@ var outputJs = 'assets/scripts/',
       'assets/scripts/src/vendors/syntax-xml.js'
     ];
 
-// Sass
+// Sass files
 var outputSass = 'assets/styles/css/',
     inputSass = 'assets/styles/sass/**/*.scss',
     sassOptions = {
@@ -47,9 +47,8 @@ var outputSass = 'assets/styles/css/',
       outputStyle: 'expanded'
     };
 
-// browserSync watch files
+// BrowserSync server files
 var inputBrowserFiles = [
-      // Native and adapted
       './layouts/*.htm',
       './layouts/**/*.htm',
       './partials/*.htm',
@@ -58,7 +57,6 @@ var inputBrowserFiles = [
       './pages/**/*.htm',
       './assets/styles/css/*.css'
     ];
-
 
 
 //-----------------------------------------------------
@@ -94,10 +92,8 @@ gulp.task ('minjs' , function() {
       .pipe(browserSync.stream());
 });
 
-
-
 //-----------------------------------------------------
-// Browser Sync task (static server)
+// BrowserSync task (server)
 //-----------------------------------------------------
 
 gulp.task('browser-sync' , function() {
@@ -108,7 +104,7 @@ gulp.task('browser-sync' , function() {
 });
 
 //-----------------------------------------------------
-// Watch tasks
+// Watch main task
 //-----------------------------------------------------
 
 gulp.task('watch', ['minjs', 'sass', 'browser-sync'] , function() {
