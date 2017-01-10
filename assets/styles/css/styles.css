@@ -2222,7 +2222,7 @@ ul.listview {
   bottom: 0;
   left: 0;
   padding: 1em 1em;
-  background-color: #262626;
+  background: #262626;
   color: #FFFFFF;
   font-size: 1.3rem;
 }
@@ -2235,11 +2235,11 @@ ul.listview {
   background-color: #262626;
   background-repeat: no-repeat;
   background-size: 32px 64px;
-  background-image: url("../../images/icon-controller.svg");
+  background-image: url(../../images/icon-controller.svg);
 }
 
 .no-touch .mapview-zoom-in:hover, .no-touch .mapview-zoom-out:hover {
-  background-color: #333333;
+  background-color: #4d4d4d;
 }
 
 .mapview-zoom-in {
@@ -2250,18 +2250,6 @@ ul.listview {
 
 .mapview-zoom-out {
   background-position: 50% -32px;
-}
-
-.marker-base {
-  fill: green;
-}
-
-.marker-circle {
-  fill: white;
-}
-
-.marker-shadow {
-  opacity: 0.19;
 }
 
 .pagination {
