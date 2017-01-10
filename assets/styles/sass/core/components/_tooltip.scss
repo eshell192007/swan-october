@@ -4,6 +4,17 @@
 // Based on Balloon.css https://github.com/kazzkiq/balloon.css
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+// VARIABLES
+// -----------------------------------------------------------
+
+$tooltip-text:               white !default;
+$tooltip-bg:                 $black !default;
+
+
+// STYLES
+// -----------------------------------------------------------
+
 button[data-tooltip] {
   overflow: visible;
 }
@@ -32,9 +43,9 @@ button[data-tooltip] {
   transform-origin: top;
 }
 [data-tooltip]:after {
-  background: rgba(17, 17, 17, 0.9);
+  background: $tooltip-bg;
   border-radius: 4px;
-  color: #fff;
+  color: $tooltip-text;
   content: attr(data-tooltip);
   font-size: 12px;
   padding: .5em 1em;

@@ -2377,7 +2377,7 @@ li.page-active a {
   max-height: 90%;
   overflow-x: hidden;
   overflow-y: auto;
-  background: #fff;
+  background: #FFFFFF;
   z-index: -1;
   opacity: 0;
   -webkit-transform: scale(0);
@@ -2443,9 +2443,9 @@ button[data-tooltip] {
 }
 
 [data-tooltip]:after {
-  background: rgba(17, 17, 17, 0.9);
+  background: black;
   border-radius: 4px;
-  color: #fff;
+  color: white;
   content: attr(data-tooltip);
   font-size: 12px;
   padding: .5em 1em;
