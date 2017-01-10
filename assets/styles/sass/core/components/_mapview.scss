@@ -8,12 +8,11 @@
 // VARIABLES
 // -----------------------------------------------------------
 
-$mapview-bg:                 $gray2 !default;
-$mapview-address-text:       $white !default;
-$mapview-address-bg:         $gray9 !default;
-$mapview-btnzoom-bg:         $gray9 !default;
-$mapview-btnzoom-hover-bg:   $gray7 !default;
-$mapview-btnzoom-icon:       '../../images/icon-controller.svg' !default;
+$mapview-bg:                  $gray2 !default;
+$mapview-address-text:        $white !default;
+$mapview-address-bg:          $gray9 !default;
+$mapview-btn-zoom-bg:         $gray9 !default;
+$mapview-btn-zoom-hover-bg:   $gray7 !default;
 
 
 // STYLES
@@ -44,26 +43,5 @@ $mapview-btnzoom-icon:       '../../images/icon-controller.svg' !default;
 }
 
 .mapview-zoom-in, .mapview-zoom-out {
-  height: 32px;
-  width: 32px;
-  cursor: pointer;
-  margin-left: 10px;
-  background-color: $mapview-btnzoom-bg;
-  background-repeat: no-repeat;
-  background-size: 32px 64px;
-  background-image: url(#{$mapview-btnzoom-icon});
-
-  .no-touch &:hover {
-    background-color: $mapview-btnzoom-hover-bg;
-  }
-}
-
-.mapview-zoom-in {
-  background-position: 50% 0;
-  margin-top: 10px;
-  margin-bottom: 1px;
-}
-
-.mapview-zoom-out  {
-  background-position: 50% -32px;
+  display: block;
 }

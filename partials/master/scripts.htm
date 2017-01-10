@@ -7,7 +7,9 @@
 
 <script>
   // Modal Dialog
-  const modal = new VanillaModal();
+  const modal = new VanillaModal({
+    clickOutside : false
+  });
   // Syntax Highlighter
   SyntaxHighlighter.all();
   // SVG Polyfill
@@ -35,7 +37,7 @@
   // Map View
   // Parameters ("map_id", latitude, longitude, zoom, "theme-name")
   // Theme name is used to define the url path for the custom marker)
-  mapView("office", 6.249232, -75.566814, 16, "swan-october");
-  mapView("office2", 51.5255069, -0.0836207, 10, "swan-october");
+  mapView("map1", 6.249232, -75.566814, 16, "swan-october");
+  mapView("map2", 51.5255069, -0.0836207, 10, "swan-october");
 
 </script>

@@ -456,6 +456,10 @@ body:before {
   width: 100%;
 }
 
+.shadow {
+  box-shadow: 12px 11px 23px -14px rgba(0, 0, 0, 0.8);
+}
+
 .layout {
   overflow: auto;
   min-height: 100%;
@@ -878,6 +882,10 @@ img {
   fill: #e6e6e6;
   -webkit-transition: .2s;
   transition: .2s;
+}
+
+svg path, svg g {
+  fill: inherit;
 }
 
 .icon-medium {
@@ -1393,7 +1401,7 @@ select optgroup {
 }
 
 .label-switch input[type="checkbox"] + .checkbox {
-  background: #dbdbdb;
+  background: #e8e8e8;
   border: 0;
   border-radius: 25px;
   cursor: pointer;
@@ -1413,7 +1421,7 @@ select optgroup {
   right: 0;
   bottom: 0;
   left: 2px;
-  background: #f2f2f2;
+  background: white;
   border-radius: 25px;
   content: "";
   height: 21px;
@@ -1433,7 +1441,7 @@ select optgroup {
   left: 2px;
   height: 21px;
   width: 21px;
-  background: #f2f2f2;
+  background: white;
   border-radius: 21px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   content: "";
@@ -2170,7 +2178,8 @@ ul.listview {
   width: 100%;
   min-height: 35rem;
   margin: 0 auto;
-  background: #262626;
+  color: #b3b3b3;
+  background: #f2f2f2;
   border-top-left-radius: 0rem;
   border-top-right-radius: 0rem;
 }
@@ -2187,7 +2196,7 @@ ul.listview {
 }
 
 .swipe div b {
-  background-color: #333333;
+  background-color: #e6e6e6;
   vertical-align: middle;
 }
 
@@ -2197,10 +2206,6 @@ ul.listview {
   font-size: 15rem;
   padding: 7rem 1rem;
   text-align: center;
-}
-
-.slideshow-btn-icon {
-  fill: #e6e6e6;
 }
 
 .mapview-canvas {
@@ -2228,28 +2233,7 @@ ul.listview {
 }
 
 .mapview-zoom-in, .mapview-zoom-out {
-  height: 32px;
-  width: 32px;
-  cursor: pointer;
-  margin-left: 10px;
-  background-color: #262626;
-  background-repeat: no-repeat;
-  background-size: 32px 64px;
-  background-image: url(../../images/icon-controller.svg);
-}
-
-.no-touch .mapview-zoom-in:hover, .no-touch .mapview-zoom-out:hover {
-  background-color: #4d4d4d;
-}
-
-.mapview-zoom-in {
-  background-position: 50% 0;
-  margin-top: 10px;
-  margin-bottom: 1px;
-}
-
-.mapview-zoom-out {
-  background-position: 50% -32px;
+  display: block;
 }
 
 .pagination {
@@ -2334,7 +2318,7 @@ li.page-active a {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   z-index: -1;
   opacity: 0;
   font-size: 0;
@@ -2410,8 +2394,14 @@ a[rel="modal:close"] {
   font-size: 13px;
   cursor: pointer;
   text-align: center;
+  color: #e6e6e6;
   background: #4d4d4d;
-  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+a[rel="modal:close"]:hover {
+  color: #FFFFFF;
+  background: black;
 }
 
 button[data-tooltip] {

@@ -8,9 +8,9 @@
 // VARIABLES
 // -----------------------------------------------------------
 
-$slideshow-bg:                 $gray9 !default;
-$slideshow-item-bg:            $gray8 !default;
-$slideshow-btn-icon-color:     $gray2 !default;
+$slideshow-bg:                 $gray1 !default;
+$slideshow-item-bg:            $gray2 !default;
+$slideshow-item-text:          $gray3 !default;
 
 
 // STYLES
@@ -23,6 +23,7 @@ $slideshow-btn-icon-color:     $gray2 !default;
   width:100%;
   min-height:35rem;
   margin:0 auto;
+  color: $slideshow-item-text;
   background: $slideshow-bg;
   border-top-left-radius: 0rem;
   border-top-right-radius: 0rem;
@@ -49,8 +50,4 @@ $slideshow-btn-icon-color:     $gray2 !default;
     //margin: 0 0.5rem;
     padding: 7rem 1rem;
     text-align: center;
-}
-
-.slideshow-btn-icon {
-  fill: $slideshow-btn-icon-color;
 }

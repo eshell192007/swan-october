@@ -8,9 +8,15 @@
 // VARIABLES
 // -----------------------------------------------------------
 
-$modal-bg:             $white !default;
-$modal-btn-close-bg:   $gray7 !default;
-$modal-fade-bg:        rgba(0, 0, 0, 0.6) !default;
+$modal-bg:                    $white !default;
+$modal-shadow:                rgba(0,0,0,0.5) !default;
+$modal-btn-close-bg:          $gray7 !default;
+$modal-btn-close-icon:        $gray2 !default;
+// Hover
+$modal-btn-close-hover-bg:    $black !default;
+$modal-btn-close-hover-icon:  $white !default;
+// Fade bg
+$modal-fade-bg:               rgba(0, 0, 0, 0.8) !default;
 
 
 // STYLES
@@ -93,6 +99,12 @@ a[rel="modal:close"] {
   font-size: 13px;
   cursor: pointer;
   text-align: center;
+  color: $modal-btn-close-icon;
   background: $modal-btn-close-bg;
-  box-shadow: -1px 1px 2px rgba(0,0,0,0.2);
+  box-shadow: -1px 1px 2px $modal-shadow;
+}
+
+a[rel="modal:close"]:hover {
+  color: $modal-btn-close-hover-icon;
+  background: $modal-btn-close-hover-bg;
 }

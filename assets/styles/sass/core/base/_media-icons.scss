@@ -45,6 +45,14 @@ $icon-hover-stroke-width:        0 !default;
 // Global styles (sizes)
 // -----------------------------------------------------------
 
+svg {
+  //border: 1px solid #eee;
+}
+
+svg path, svg g  {
+  fill: inherit; // Solves the overrides with classes
+}
+
 .icon {
   @extend %icon;
 }
