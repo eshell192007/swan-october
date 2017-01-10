@@ -151,17 +151,10 @@ for (var i = 0; i < toggleBtn.length; i++) {
 // Based on CodyHouse https://codyhouse.co/gem/custom-google-map/
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-document.addEventListener("DOMContentLoaded", customMap);
-
-var markerSvgPath = "/themes/swan-october/assets/images/icon-location.svg";
-var markerPngPath = "/themes/swan-october/assets/images/icon-location.png";
-
-function customMap() {
-	//set your google maps parameters
-	var latitude = 51.5255069,
-		longitude = -0.0836207,
-		map_zoom = 14;
+function mapView(map_id, latitude, longitude, map_zoom, theme_name) {
+	// Marker paths
+	var markerSvgPath = "/themes/"+theme_name+"/assets/images/icon-location.svg";
+	var markerPngPath = "/themes/"+theme_name+"/assets/images/icon-location.png";
 
 	//google map custom marker icon - .png fallback for IE11
 	var is_internetExplorer11= navigator.userAgent.toLowerCase().indexOf('trident') > -1;
@@ -346,14 +339,14 @@ function customMap() {
       	scrollwheel: false,
       	styles: style,
     }
-    //inizialize the map
-	var map = new google.maps.Map(document.querySelector(".mapview-canvas"), map_options);
+  //inizialize the map
+	var map = new google.maps.Map(document.getElementById(map_id), map_options);
 	//add a custom marker to the map
 	var marker = new google.maps.Marker({
 	  	position: new google.maps.LatLng(latitude, longitude),
 	    map: map,
 	    visible: true,
-	 	icon: marker_url,
+	 	  icon: marker_url,
 	});
 
 	//add custom buttons for the zoom-in/zoom-out on the map
@@ -378,6 +371,7 @@ function customMap() {
 
   	//insert the zoom div on the top left of the map
   	map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
+
 }
 
 // -----------------------------------------------------------
