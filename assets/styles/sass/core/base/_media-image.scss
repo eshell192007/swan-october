@@ -12,3 +12,21 @@ img {
 	max-width:100%;
 	height:auto;
 	}
+
+// Lazysizes
+
+img[data-sizes="auto"] {
+	display: block;
+	width: 100%;
+}
+
+// Fade effect
+// fade image in after load
+.lazyload,
+.lazyloading {
+    opacity: 0;
+}
+.lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
+}

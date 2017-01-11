@@ -864,6 +864,22 @@ img {
   height: auto;
 }
 
+img[data-sizes="auto"] {
+  display: block;
+  width: 100%;
+}
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms;
+}
+
 .icon, .icon-medium, .icon-large, .icon-huge, .icon-xhuge {
   display: inline-block;
   width: 3rem;
