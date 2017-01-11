@@ -32,6 +32,7 @@ var outputJs = 'assets/scripts/',
       'assets/scripts/src/components/toggle.js',
       'assets/scripts/src/components/mapview.js',
       'assets/scripts/src/components/dialog.js',
+      'assets/scripts/src/components/scrollbar.js',
       'assets/scripts/src/components/scroll-anchor.js',
       'assets/scripts/src/components/slideshow.js',
       // Vendors
