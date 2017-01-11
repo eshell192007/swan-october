@@ -866,8 +866,8 @@ img {
 
 .icon, .icon-medium, .icon-large, .icon-huge, .icon-xhuge {
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   stroke-width: 0;
   stroke: #595959;
   fill: #595959;
