@@ -12,7 +12,9 @@ is_hidden = 0
 <h2 class="heading">Grid Columns</h2>
 {% partial 'templates/basic-columns' %}
 <!-- Code Example -->
-<button class="js-toggle">&#60;&#47;&#62; Show Code</button>
+<button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
+  <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
+</button>
 <div class="js-toggle-hidden">
     <script type="syntaxhighlighter" class="brush: xml">
     <![CDATA[ {% partial 'templates/basic-columns' %} ]]>
