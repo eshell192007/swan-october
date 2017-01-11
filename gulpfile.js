@@ -30,14 +30,13 @@ var outputJs = 'assets/scripts/',
       'assets/scripts/src/components/menu.js',
       'assets/scripts/src/components/switch-theme.js',
       'assets/scripts/src/components/toggle.js',
-      'assets/scripts/src/components/mapview.js',
       'assets/scripts/src/components/dialog.js',
       'assets/scripts/src/components/scrollbar.js',
       'assets/scripts/src/components/scroll-anchor.js',
       'assets/scripts/src/components/slideshow.js',
+      'assets/scripts/src/components/lazy-load.js',
       // Vendors
-      'assets/scripts/src/vendors/svg4everybody.js',
-      'assets/scripts/src/vendors/syntax-xml.js'
+      'assets/scripts/src/vendors/svg4everybody.js'
     ];
 
 // Sass files

@@ -4,8 +4,6 @@
 <script src="{{ 'assets/scripts/scripts.min.js' |theme }}"></script>
 
 <script>
-  // Syntax Highlighter
-  SyntaxHighlighter.all();
   // Modal Dialog
   const modal = new VanillaModal({
     clickOutside : false
@@ -34,6 +32,8 @@
   nextBtn.onclick = mySwipe.next;
 </script>
 
+{% partial 'master/scripts-syntax' %}
+
 {% if this.page.url == "/components" %}
-   {% partial 'master/scripts-map' %}
+{% partial 'master/scripts-map' %}
 {% endif %}
