@@ -880,6 +880,17 @@ img[data-sizes="auto"] {
   transition: opacity 300ms;
 }
 
+.blur-up {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  transition: filter 400ms, -webkit-filter 400ms;
+}
+
+.blur-up.lazyloaded {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
 .icon, .icon-medium, .icon-large, .icon-huge, .icon-xhuge {
   display: inline-block;
   width: 3rem;
