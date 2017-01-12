@@ -16,6 +16,18 @@ is_hidden = 0
     </script>
 </div>
 
+<h2 id="tooltip" class="heading anchor">Hero Banner</h2>
+{% partial 'components/hero-banner' %}
+<!-- Code Example -->
+<button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
+  <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
+</button>
+<div class="js-toggle-hidden">
+    <script type="syntaxhighlighter" class="brush: xml">
+    <![CDATA[ {% partial 'components/hero-banner' %} ]]>
+    </script>
+</div>
+
 <h2 id="anchors-scroll" class="heading anchor">Scroll to Anchors</h2>
 {% partial 'components/anchor-menu' %}
 <!-- Code Example -->

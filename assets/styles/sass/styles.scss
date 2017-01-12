@@ -259,6 +259,8 @@ $pag-item-active-border:       $primary 1px solid ;
 // ---------------------------------------------------
 $hero-bg:              $gray1 ;
 $hero-content-bg:      none ;
+$hero-layer-bg:        rgba(255, 255, 255, 0.7) ;
+$hero-heigh:           $size-xl ;
 
 
 @import "core/core";
