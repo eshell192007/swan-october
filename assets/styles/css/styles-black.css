@@ -686,6 +686,14 @@ body:before {
   text-align: center;
 }
 
+.block {
+  min-height: 550px;
+  padding-bottom: 50px;
+  padding-top: 30px;
+  margin-bottom: 150px;
+  overflow: auto;
+}
+
 .col1 {
   float: left;
   display: block;
@@ -1802,23 +1810,13 @@ textarea:focus {
 }
 
 .menu-vertical {
-  width: 170px;
-  top: 5.7rem;
-  padding-bottom: 1000px;
   background: #262626;
   box-shadow: 4px 3px 5px -1px rgba(0, 0, 0, 0.2);
-}
-
-@media screen and (max-width: 768px) {
-  .menu-vertical {
-    display: none;
-  }
 }
 
 .menu-vertical ul li a {
   width: 100%;
   display: block;
-  float: left;
   text-decoration: none;
   padding: 1rem 4rem;
   color: #999999;

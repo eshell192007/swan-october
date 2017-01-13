@@ -161,3 +161,12 @@ $sidebar-bg:           $gray1 !default;
   @include vertical-align;
   text-align: center;
 }
+
+.block {
+	min-height: 550px;
+	padding-bottom: 50px;
+	padding-top: 30px;
+	margin-bottom: 150px;
+	//background: $gray2;
+	overflow: auto;
+}
