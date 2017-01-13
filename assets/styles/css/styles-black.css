@@ -638,7 +638,7 @@ body:before {
 
 .fixed-left {
   position: fixed;
-  top: 0;
+  left: 0;
   z-index: 20;
 }
 
@@ -1799,6 +1799,35 @@ textarea:focus {
   border: 1px solid #333333;
   color: #FFFFFF;
   background: #333333;
+}
+
+.menu-vertical {
+  width: 170px;
+  top: 5.7rem;
+  padding-bottom: 1000px;
+  background: #262626;
+  box-shadow: 4px 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .menu-vertical {
+    display: none;
+  }
+}
+
+.menu-vertical ul li a {
+  width: 100%;
+  display: block;
+  float: left;
+  text-decoration: none;
+  padding: 1rem 4rem;
+  color: #999999;
+  background: #262626;
+}
+
+.menu-vertical ul li a.active {
+  color: #FFFFFF;
+  background: #404040;
 }
 
 .hero {

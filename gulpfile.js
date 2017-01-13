@@ -26,7 +26,7 @@ var gulp = require( 'gulp' ),
 var outputJs = 'assets/scripts/',
     inputJs = [
       // Native and adapted
-      'assets/scripts/src/components/core.js',
+      'assets/scripts/src/components/prevent-url.js',
       'assets/scripts/src/components/menu.js',
       'assets/scripts/src/components/switch-theme.js',
       'assets/scripts/src/components/toggle.js',

@@ -214,3 +214,31 @@ $menu-mobile-border:           2px solid $gray5 !default;
   color: $menu-mobile-btn-hover-text;
   background: $menu-mobile-btn-hover-bg;
 }
+
+// Menu vertical (provisional)
+
+.menu-vertical {
+  width:170px;
+  top:5.7rem;
+  padding-bottom:1000px;
+  background: $menu-mobile-bg;
+  box-shadow: 4px 3px 5px -1px rgba(0,0,0,0.2);
+  @include media($mobile){
+    display: none;
+    }
+}
+
+.menu-vertical ul li a {
+  width: 100%;
+  display: block;
+  float: left;
+  text-decoration: none;
+  padding: 1rem 4rem;
+  color: $menu-mobile-item-text;
+  background: $menu-mobile-item-bg;
+}
+
+.menu-vertical ul li a.active {
+  color: $menu-mobile-item-active-text;
+  background: darken($menu-mobile-item-active-bg, 5%);
+}
