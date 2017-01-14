@@ -218,6 +218,11 @@ $menu-mobile-border:           2px solid $gray5 !default;
 // Menu vertical (provisional)
 
 .menu-vertical {
+  width:170px;
+  top:55px;
+  overflow: auto;
+  height:650px;
+  //padding-bottom: 30rem;
   background: $menu-mobile-bg;
   box-shadow: 4px 3px 5px -1px rgba(0,0,0,0.2);
 }
@@ -226,7 +231,7 @@ $menu-mobile-border:           2px solid $gray5 !default;
   width: 100%;
   display: block;
   text-decoration: none;
-  padding: 1rem 4rem;
+  padding: 1rem 1.5rem;
   color: $menu-mobile-item-text;
   background: $menu-mobile-item-bg;
 }
@@ -234,4 +239,12 @@ $menu-mobile-border:           2px solid $gray5 !default;
 .menu-vertical ul li a.active {
   color: $menu-mobile-item-active-text;
   background: darken($menu-mobile-item-active-bg, 5%);
+}
+
+// Header separator
+
+.separator {
+  margin-top:20px;
+  border-top:1px $gray7 solid;
+  border-bottom:1px $gray7 solid;
 }

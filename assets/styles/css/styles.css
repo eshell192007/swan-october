@@ -687,10 +687,11 @@ body:before {
 }
 
 .block {
-  min-height: 550px;
-  padding-bottom: 50px;
-  padding-top: 30px;
-  margin-bottom: 150px;
+  min-height: 30rem;
+  padding: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 15rem;
+  border: 1px solid rgba(158, 158, 158, 0.3);
   overflow: auto;
 }
 
@@ -1810,6 +1811,10 @@ textarea:focus {
 }
 
 .menu-vertical {
+  width: 170px;
+  top: 55px;
+  overflow: auto;
+  height: 650px;
   background: #FFFFFF;
   box-shadow: 4px 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
@@ -1818,7 +1823,7 @@ textarea:focus {
   width: 100%;
   display: block;
   text-decoration: none;
-  padding: 1rem 4rem;
+  padding: 1rem 1.5rem;
   color: gray;
   background: #FFFFFF;
 }
@@ -1826,6 +1831,12 @@ textarea:focus {
 .menu-vertical ul li a.active {
   color: #262626;
   background: #e6e6e6;
+}
+
+.separator {
+  margin-top: 20px;
+  border-top: 1px #4d4d4d solid;
+  border-bottom: 1px #4d4d4d solid;
 }
 
 .hero {

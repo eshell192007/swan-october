@@ -4,7 +4,21 @@ layout = "layout-basic-full"
 is_hidden = 0
 ==
 
-{% partial 'components/anchor-menu' %}
+<nav class="menu menu-vertical fixed-left">
+  <ul>
+    <li><a href="#tooltip" data-scroll>Tooltip</a></li>
+    <li><a href="#hero-banner" data-scroll>Hero Banner</a></li>
+    <li><a href="#listview" data-scroll>List View</a></li>
+    <li><a href="#cardview" data-scroll>Card View</a></li>
+    <li><a href="#gridview" data-scroll>Grid View</a></li>
+    <li><a href="#articleview" data-scroll>Article View</a></li>
+    <li><a href="#main-menu" data-scroll>Menu</a></li>
+    <li><a href="#pagination" data-scroll>Pagination</a></li>
+    <li><a href="#dialog" data-scroll>Dialog</a></li>
+    <li><a href="#slideshow" data-scroll>Slideshow</a></li>
+    <li><a href="#mapview" data-scroll>Map View</a></li>
+  </ul>
+</nav>
 
 <section id="tooltip" class="block">
   <h2>Tooltips</h2>
@@ -90,7 +104,7 @@ is_hidden = 0
   </div>
 </section>
 
-<section id="main-menu" class="block" style="height:700px;">
+<section id="main-menu" class="block">
   <h2>Main Menu</h2>
   {% partial 'components/menu' %}
   <!-- Code Example -->
@@ -104,7 +118,7 @@ is_hidden = 0
   </div>
 </section>
 
-<section id="pagination" class="block" style="height:500px;">
+<section id="pagination" class="block">
   <h2>Pagination</h2>
   {% partial 'components/pagination' %}
   <!-- Code Example -->
@@ -118,7 +132,7 @@ is_hidden = 0
   </div>
 </section>
 
-<section id="dialog" class="block" style="height:500px;">
+<section id="dialog" class="block">
   <h2>Modal Dialog</h2>
   {% partial 'components/dialog' %}
   <!-- Code Example -->
