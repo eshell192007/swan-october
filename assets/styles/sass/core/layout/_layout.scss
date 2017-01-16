@@ -157,6 +157,13 @@ $sidebar-bg:           $gray1 !default;
   margin-bottom: 1rem;
 }
 
+.gap-left {
+  padding-left: 15rem;
+	@include media($mobile){
+    padding-left:0;
+    }
+}
+
 .inner-centered {
   @include vertical-align;
   text-align: center;
@@ -165,8 +172,11 @@ $sidebar-bg:           $gray1 !default;
 .block {
 	min-height: 30rem;
 	padding: 2rem;
-	margin-top: 5rem;
-	margin-bottom: 15rem;
+	margin: 5rem 2rem 15rem 2rem;
 	border: 1px solid rgba(158, 158, 158, 0.3);
 	overflow: auto;
+	clear:both;
+	@include media($mobile){
+		margin:0;
+    }
 }

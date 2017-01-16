@@ -7,25 +7,14 @@
 <body>
 <div class="layout">
   <!-- Header :::::::::::::::::::::: -->
-  <header class="layout-header fixed-top shadow-bottom">     
-    {% partial 'master/header' %} 
+  <header class="layout-header fixed-top shadow-bottom">
+    {% partial 'master/navbar' %}
   </header>
-  <!-- Content Area :::::::::::::::::::::: --> 
+  <!-- Content Area :::::::::::::::::::::: -->
   <main class="layout-main" role="main">
-    <section class="section">
-      <div class="section-content-full">
-        <!-- Subheader :::::::::::::::::::::: -->
-        {% partial 'master/subheader-hero' %}
-      </div>
-    </section>
-    <section class="section">
-      <div class="section-content">
-        <!-- Content :::::::::::::::::::::: -->
-        {% partial 'master/content' %}
-      </div>
-    </section>
+    {% page %}
   </main>
-  <!-- Footer :::::::::::::::::::::: -->        
+  <!-- Footer :::::::::::::::::::::: -->
   <footer class="layout-footer">
     {% partial 'master/footer' %}
   </footer>

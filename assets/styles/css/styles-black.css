@@ -393,31 +393,6 @@ body:before {
   height: 70rem !important;
 }
 
-.fixed-top {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 20;
-}
-
-.fixed-bottom {
-  position: fixed;
-  bottom: 0;
-  z-index: 20;
-}
-
-.fixed-left {
-  position: fixed;
-  top: 0;
-  z-index: 20;
-}
-
-.fixed-right {
-  position: fixed;
-  right: 0;
-  z-index: 20;
-}
-
 .hidden {
   display: none;
   opacity: 0;
@@ -448,8 +423,8 @@ body:before {
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.22);
 }
 
-.pad-top {
-  padding-top: 1em;
+.shadow-right {
+  box-shadow: 4px 3px 5px -1px rgba(0, 0, 0, 0.22);
 }
 
 .full {
@@ -563,7 +538,7 @@ body:before {
   margin-right: 0%;
   width: 66.66667%;
   color: #b3b3b3;
-  background: #333333;
+  background: none;
   outline: none;
 }
 
@@ -589,7 +564,7 @@ body:before {
   margin-right: 0%;
   width: 100%;
   color: #b3b3b3;
-  background: #333333;
+  background: none;
   outline: none;
 }
 
@@ -603,7 +578,7 @@ body:before {
   margin-right: 0%;
   width: 33.33333%;
   color: #b3b3b3;
-  background: #4d4d4d;
+  background: none;
   outline: none;
 }
 
@@ -678,6 +653,16 @@ body:before {
   margin-bottom: 1rem;
 }
 
+.gap-left {
+  padding-left: 15rem;
+}
+
+@media screen and (max-width: 768px) {
+  .gap-left {
+    padding-left: 0;
+  }
+}
+
 .inner-centered {
   position: relative;
   top: 50%;
@@ -689,10 +674,16 @@ body:before {
 .block {
   min-height: 30rem;
   padding: 2rem;
-  margin-top: 5rem;
-  margin-bottom: 15rem;
+  margin: 5rem 2rem 15rem 2rem;
   border: 1px solid rgba(158, 158, 158, 0.3);
   overflow: auto;
+  clear: both;
+}
+
+@media screen and (max-width: 768px) {
+  .block {
+    margin: 0;
+  }
 }
 
 .col1 {
@@ -1425,8 +1416,7 @@ body, .smooth-container {
 .ss-scroll {
   position: relative;
   background: rgba(0, 0, 0, 0.7);
-  width: 9px;
-  border-radius: 4px;
+  width: 5px;
   top: 0;
   z-index: 2;
   cursor: pointer;
@@ -1647,7 +1637,6 @@ textarea:focus {
   display: block;
   margin-right: 0%;
   width: 75%;
-  margin-right: 0;
   background: none;
 }
 
@@ -1811,19 +1800,18 @@ textarea:focus {
 }
 
 .menu-vertical {
-  width: 170px;
-  top: 55px;
-  overflow: auto;
-  height: 650px;
+  min-width: 15rem;
   background: #262626;
-  box-shadow: 4px 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+.menu-vertical ul, .menu-vertical li {
+  margin: 0;
 }
 
 .menu-vertical ul li a {
   width: 100%;
   display: block;
   text-decoration: none;
-  padding: 1rem 1.5rem;
   color: #999999;
   background: #262626;
 }
@@ -1837,6 +1825,21 @@ textarea:focus {
   margin-top: 20px;
   border-top: 1px #4d4d4d solid;
   border-bottom: 1px #4d4d4d solid;
+}
+
+.sidebar-menu {
+  width: 15rem;
+  color: #b3b3b3;
+  background: #262626;
+  height: 100%;
+  top: 5.8rem;
+  padding-bottom: 5.8rem;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar-menu {
+    display: none;
+  }
 }
 
 .hero {

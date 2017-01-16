@@ -1,175 +1,160 @@
 title = "Components"
-url = "/components"
-layout = "layout-basic-full"
+url = "/showcase/components"
+layout = "showcase"
 is_hidden = 0
 ==
+{% partial 'master/subheader' %}
 
-<nav class="menu menu-vertical fixed-left">
-  <ul>
-    <li><a href="#tooltip" data-scroll>Tooltip</a></li>
-    <li><a href="#hero-banner" data-scroll>Hero Banner</a></li>
-    <li><a href="#listview" data-scroll>List View</a></li>
-    <li><a href="#cardview" data-scroll>Card View</a></li>
-    <li><a href="#gridview" data-scroll>Grid View</a></li>
-    <li><a href="#articleview" data-scroll>Article View</a></li>
-    <li><a href="#main-menu" data-scroll>Menu</a></li>
-    <li><a href="#pagination" data-scroll>Pagination</a></li>
-    <li><a href="#dialog" data-scroll>Dialog</a></li>
-    <li><a href="#slideshow" data-scroll>Slideshow</a></li>
-    <li><a href="#mapview" data-scroll>Map View</a></li>
-  </ul>
-</nav>
-
-<section id="tooltip" class="block">
-  <h2>Tooltips</h2>
-  {% partial 'components/tooltip' %}
+<section id="navbar" class="block">
+  <h2>Navbar</h2>
+  {% partial 'showcase/comp-navbar' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'components/tooltip' %} ]]>
+      <![CDATA[ {% partial 'showcase/comp-navbar' %} ]]>
       </script>
   </div>
 </section>
 
-<section id="hero-banner" class="block">
-<h2>Hero Banner</h2>
-{% partial 'components/hero-banner' %}
-<!-- Code Example -->
-<button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
-  <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
-</button>
-<div class="js-toggle-hidden">
-    <script type="syntaxhighlighter" class="brush: xml">
-    <![CDATA[ {% partial 'components/hero-banner' %} ]]>
-    </script>
-</div>
-</section>
-
 <section id="listview" class="block">
   <h2>List View</h2>
-  {% partial 'components/listview' %}
+  {% partial 'showcase/comp-listview' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'components/listview' %} ]]>
+      <![CDATA[ {% partial 'showcase/comp-listview' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="cardview" class="block">
   <h2>Card View</h2>
-  {% partial 'components/cardview' %}
+  {% partial 'showcase/comp-cardview' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'components/cardview' %} ]]>
+      <![CDATA[ {% partial 'showcase/comp-cardview' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="gridview" class="block">
   <h2>Grid View</h2>
-  {% partial 'components/gridview' %}
+  {% partial 'showcase/comp-gridview' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'components/gridview' %} ]]>
+      <![CDATA[ {% partial 'showcase/comp-gridview' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="articleview" class="block">
   <h2>Article View (Portrait)</h2>
-  {% partial 'components/articleview' %}
+  {% partial 'showcase/comp-articleview' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'components/articleview' %} ]]>
-      </script>
-  </div>
-</section>
-
-<section id="main-menu" class="block">
-  <h2>Main Menu</h2>
-  {% partial 'components/menu' %}
-  <!-- Code Example -->
-  <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
-    <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
-  </button>
-  <div class="js-toggle-hidden">
-      <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'components/menu' %} ]]>
-      </script>
-  </div>
-</section>
-
-<section id="pagination" class="block">
-  <h2>Pagination</h2>
-  {% partial 'components/pagination' %}
-  <!-- Code Example -->
-  <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
-    <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
-  </button>
-  <div class="js-toggle-hidden">
-      <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'components/pagination' %} ]]>
+      <![CDATA[ {% partial 'showcase/comp-articleview' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="dialog" class="block">
   <h2>Modal Dialog</h2>
-  {% partial 'components/dialog' %}
+  {% partial 'showcase/comp-dialog' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'components/dialog' %} ]]>
+      <![CDATA[ {% partial 'showcase/comp-dialog' %} ]]>
+      </script>
+  </div>
+</section>
+
+<section id="hero-banner" class="block">
+<h2>Hero Banner</h2>
+{% partial 'showcase/comp-hero-banner' %}
+<!-- Code Example -->
+<button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
+  <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
+</button>
+<div class="js-toggle-hidden">
+    <script type="syntaxhighlighter" class="brush: xml">
+    <![CDATA[ {% partial 'showcase/comp-hero-banner' %} ]]>
+    </script>
+</div>
+</section>
+
+<section id="pagination" class="block">
+  <h2>Pagination</h2>
+  {% partial 'showcase/comp-pagination' %}
+  <!-- Code Example -->
+  <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
+    <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
+  </button>
+  <div class="js-toggle-hidden">
+      <script type="syntaxhighlighter" class="brush: xml">
+      <![CDATA[ {% partial 'showcase/comp-pagination' %} ]]>
+      </script>
+  </div>
+</section>
+
+<section id="tooltip" class="block">
+  <h2>Tooltips</h2>
+  {% partial 'showcase/comp-tooltip' %}
+  <!-- Code Example -->
+  <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
+    <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
+  </button>
+  <div class="js-toggle-hidden">
+      <script type="syntaxhighlighter" class="brush: xml">
+      <![CDATA[ {% partial 'showcase/comp-tooltip' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="slideshow" class="block">
   <h2>Slideshow</h2>
-  {% partial 'components/slideshow' %}
+  {% partial 'showcase/comp-slideshow' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'components/slideshow' %} ]]>
+      <![CDATA[ {% partial 'showcase/comp-slideshow' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="mapview" class="block">
   <h2>Map View</h2>
-  {% partial 'components/mapview' %}
+  {% partial 'showcase/comp-mapview' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'components/mapview' %} ]]>
+      <![CDATA[ {% partial 'showcase/comp-mapview' %} ]]>
       </script>
   </div>
 </section>

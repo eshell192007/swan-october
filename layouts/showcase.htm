@@ -1,0 +1,37 @@
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% partial 'showcase/a-head' %}
+</head>
+<body>
+<div class="layout">
+  <!-- Header :::::::::::::::::::::: -->
+  <header class="layout-header fixed-top shadow-bottom">
+    {% partial 'showcase/a-navbar-main' %}
+  </header>
+  <!-- Content Area :::::::::::::::::::::: -->
+  <main class="layout-main" role="main">
+    <aside class="sidebar-menu fixed-left shadow-right" ss-container>
+      {% if this.page.url == "/showcase/components" %}
+          {% partial 'showcase/a-menu-components' %}
+      {% elseif this.page.url == "/showcase" %}
+          {% partial 'showcase/a-menu-base' %}
+      {% else %}
+          No hay items en el menú
+      {% endif %}
+    </aside>
+    <section class="content-full gap-left">
+      {% page %}
+    </section>
+  </main>
+  <!-- Footer :::::::::::::::::::::: -->
+  <footer class="layout-footer">
+    {% partial 'showcase/comp-footer' %}
+  </footer>
+</div>
+
+{% partial 'showcase/a-scripts' %}
+
+</body>
+</html>

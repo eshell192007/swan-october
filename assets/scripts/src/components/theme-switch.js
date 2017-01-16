@@ -1,5 +1,5 @@
 // -----------------------------------------------------------
-// SWITCH THEME  by Sebastian Serna - 2016
+//  THEME SWITCH  by Sebastian Serna - 2016
 // -----------------------------------------------------------
 // Provisional vanilla code // This solution is temporal
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

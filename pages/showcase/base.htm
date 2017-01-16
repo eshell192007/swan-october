@@ -1,113 +1,91 @@
 title = "Base"
-url = "/base"
-layout = "layout-basic-full"
+url = "/showcase"
+layout = "showcase"
 is_hidden = 0
 ==
-
-<nav class="menu menu-vertical fixed-left" ss-container>
-  <ul>
-    <li><a class="separator">Multimedia</a></li>
-    <li><a href="#image" data-scroll>Image</a></li>
-    <li><a href="#icons" data-scroll>Icons</a></li>
-    <li><a href="#audio" data-scroll>Audio</a></li>
-    <li><a href="#video" data-scroll>Video</a></li>
-    <li><a href="#text" data-scroll>Text</a></li>
-    <li><a class="separator">Interactive</a></li>
-    <li><a href="#buttons" data-scroll>Buttons</a></li>
-    <li><a href="#icon-buttons" data-scroll>Icon Buttons</a></li>
-    <li><a href="#radio-buttons" data-scroll>Radio Buttons</a></li>
-    <li><a href="#checkboxes" data-scroll>Checkboxes</a></li>
-    <li><a href="#dropdown" data-scroll>Dropdown</a></li>
-    <li><a href="#text-input" data-scroll>Text Input</a></li>
-    <li><a href="#form" data-scroll>Form Wrap</a></li>
-    <li><a href="#switch" data-scroll>Switch</a></li>
-    <li><a href="#progress" data-scroll>Progress</a></li>
-    <li><a href="#scroll-custom" data-scroll>Scroll Panel</a></li>
-    <li><a href="#file-input" data-scroll>File Input</a></li>
-  </ul>
-</nav>
+{% partial 'master/subheader' %}
 
 <h1 class="heading">Multimedia</h1>
 
 <section id="image" class="block">
   <h2>Image</h2>
-  {% partial 'base/media-image' %}
+  {% partial 'showcase/base-media-image' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/media-image' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-media-image' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="icons" class="block">
   <h2>Icons</h2>
-  {% partial 'base/media-icons' %}
+  {% partial 'showcase/base-media-icons' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/media-icons' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-media-icons' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="audio" class="block">
   <h2>Audio (Embed)</h2>
-  {% partial 'base/media-audio-embed' %}
+  {% partial 'showcase/base-media-audio-embed' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/media-audio-embed' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-media-audio-embed' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="video" class="block">
   <h2>Video (Embed)</h2>
-  {% partial 'base/media-video' %}
+  {% partial 'showcase/base-media-video' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/media-video' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-media-video' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="text" class="block">
   <h2>Texts</h2>
-  {% partial 'base/media-text-headings' %}
+  {% partial 'showcase/base-media-text-headings' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/media-text-headings' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-media-text-headings' %} ]]>
       </script>
   </div>
 
   <!-- Text Paragraphs + a,em tags :::::::::::::::::::::::::::::::::: -->
   <h2>Paragraph</h2>
-  {% partial 'base/media-text-paragraph' %}
+  {% partial 'showcase/base-media-text-paragraph' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/media-text-paragraph' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-media-text-paragraph' %} ]]>
       </script>
   </div>
 
@@ -116,105 +94,105 @@ is_hidden = 0
 
   <!-- Ordered List -->
   <h3>Ordered List</h3>
-  {% partial 'base/media-text-list-ol' %}
+  {% partial 'showcase/base-media-text-list-ol' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/media-text-list-ol' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-media-text-list-ol' %} ]]>
       </script>
   </div>
 
   <!-- Unordered List -->
   <h3>Unordered List</h3>
-  {% partial 'base/media-text-list-ul' %}
+  {% partial 'showcase/base-media-text-list-ul' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/media-text-list-ul' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-media-text-list-ul' %} ]]>
       </script>
   </div>
 
   <!-- Definition List -->
   <h3>Definition List</h3>
-  {% partial 'base/media-text-list-def' %}
+  {% partial 'showcase/base-media-text-list-def' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/media-text-list-def' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-media-text-list-def' %} ]]>
       </script>
   </div>
 
   <!-- Text Tables :::::::::::::::::::::::::::::::::: -->
   <h2>Tables</h2>
-  {% partial 'base/media-text-table' %}
+  {% partial 'showcase/base-media-text-table' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/media-text-table' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-media-text-table' %} ]]>
       </script>
   </div>
 
   <!-- Text Quote :::::::::::::::::::::::::::::::::: -->
   <h2>Text Quote</h2>
-  {% partial 'base/media-text-quote' %}
+  {% partial 'showcase/base-media-text-quote' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/media-text-quote' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-media-text-quote' %} ]]>
       </script>
   </div>
 
   <!-- Text Blockquote :::::::::::::::::::::::::::::::::: -->
   <h2>Text Blockquote</h2>
-  {% partial 'base/media-text-quote-block' %}
+  {% partial 'showcase/base-media-text-quote-block' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/media-text-quote-block' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-media-text-quote-block' %} ]]>
       </script>
   </div>
 
   <!-- Text Pre / Code :::::::::::::::::::::::::::::::::: -->
   <h2>Text Pre - Code</h2>
-  {% partial 'base/media-text-pre' %}
+  {% partial 'showcase/base-media-text-pre' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/media-text-pre' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-media-text-pre' %} ]]>
       </script>
   </div>
 
   <!-- Text Misc :::::::::::::::::::::::::::::::::: -->
   <h2 class="heading">Misc Stuff (abbr, sub, sup, etc)</h2>
-  {% partial 'base/media-text-other' %}
+  {% partial 'showcase/base-media-text-other' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/media-text-other' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-media-text-other' %} ]]>
       </script>
   </div>
 </section>
@@ -223,192 +201,192 @@ is_hidden = 0
 
 <section id="buttons" class="block">
   <h2>Buttons</h2>
-  {% partial 'base/control-buttons' %}
+  {% partial 'showcase/base-control-buttons' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/control-buttons' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-control-buttons' %} ]]>
       </script>
   </div>
 
   <!-- Buttons Input :::::::::::::::::::::::::::::::::: -->
   <h2 class="heading">Buttons (input tag)</h2>
-  {% partial 'base/control-buttons-input' %}
+  {% partial 'showcase/base-control-buttons-input' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/control-buttons-input' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-control-buttons-input' %} ]]>
       </script>
   </div>
 
   <!-- Buttons Link :::::::::::::::::::::::::::::::::: -->
   <h2 class="heading">Buttons (link tag)</h2>
-  {% partial 'base/control-buttons-link' %}
+  {% partial 'showcase/base-control-buttons-link' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/control-buttons-link' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-control-buttons-link' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="icon-buttons" class="block">
   <h2>Icon Buttons</h2>
-  {% partial 'base/control-buttons-icons' %}
+  {% partial 'showcase/base-control-buttons-icons' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/control-buttons-icons' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-control-buttons-icons' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="radio-buttons" class="block">
   <h2>Radio Buttons</h2>
-  {% partial 'base/control-radio-buttons' %}
+  {% partial 'showcase/base-control-radio-buttons' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/control-radio-buttons' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-control-radio-buttons' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="checkboxes" class="block">
   <h2>Checkboxes</h2>
-  {% partial 'base/control-checkboxes' %}
+  {% partial 'showcase/base-control-checkboxes' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/control-checkboxes' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-control-checkboxes' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="dropdown" class="block">
   <h2>Select (Dropdown)</h2>
-  {% partial 'base/control-select' %}
+  {% partial 'showcase/base-control-select' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/control-select' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-control-select' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="text-input" class="block">
   <h2>Text input</h2>
-  {% partial 'base/control-text-input' %}
+  {% partial 'showcase/base-control-text-input' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/control-text-input' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-control-text-input' %} ]]>
       </script>
   </div>
 
   <h2>Textarea</h2>
-  {% partial 'base/control-textarea' %}
+  {% partial 'showcase/base-control-textarea' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/control-textarea' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-control-textarea' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="form" class="block">
   <h2>Form container</h2>
-  {% partial 'base/control-basic-form' %}
+  {% partial 'showcase/base-control-basic-form' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/control-basic-form' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-control-basic-form' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="switch" class="block">
   <h2>Switch</h2>
-  {% partial 'base/control-switches' %}
+  {% partial 'showcase/base-control-switches' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/control-switches' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-control-switches' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="progress" class="block">
   <h2>Progress Indicator</h2>
-  {% partial 'base/control-progress' %}
+  {% partial 'showcase/base-control-progress' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/control-progress' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-control-progress' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="scroll-custom" class="block">
   <h2>Scroll Panel</h2>
-  {% partial 'base/control-scrollbar' %}
+  {% partial 'showcase/base-control-scrollbar' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/control-scrollbar' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-control-scrollbar' %} ]]>
       </script>
   </div>
 </section>
 
 <section id="file-input" class="block">
   <h2>File Input</h2>
-  {% partial 'base/control-file-input' %}
+  {% partial 'showcase/base-control-file-input' %}
   <!-- Code Example -->
   <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
     <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
   </button>
   <div class="js-toggle-hidden">
       <script type="syntaxhighlighter" class="brush: xml">
-      <![CDATA[ {% partial 'base/control-file-input' %} ]]>
+      <![CDATA[ {% partial 'showcase/base-control-file-input' %} ]]>
       </script>
   </div>
 </section>

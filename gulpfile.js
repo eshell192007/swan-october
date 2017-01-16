@@ -27,12 +27,11 @@ var outputJs = 'assets/scripts/',
     inputJs = [
       // Native and adapted
       'assets/scripts/src/components/prevent-url.js',
-      'assets/scripts/src/components/menu.js',
-      'assets/scripts/src/components/switch-theme.js',
+      'assets/scripts/src/components/navbar.js',
       'assets/scripts/src/components/toggle.js',
       'assets/scripts/src/components/dialog.js',
       'assets/scripts/src/components/scrollbar.js',
-      'assets/scripts/src/components/scroll-anchor.js',
+      'assets/scripts/src/components/scroll-smooth.js',
       'assets/scripts/src/components/slideshow.js',
       'assets/scripts/src/components/lazy-load.js',
       // Vendors

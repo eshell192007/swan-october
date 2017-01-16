@@ -2,6 +2,7 @@
 ==
 <!-- Scripts -->
 <script src="{{ 'assets/scripts/scripts.min.js' |theme }}"></script>
+<script src="{{ 'assets/scripts/src/components/theme-switch.js' |theme }}"></script>
 
 <script>
   // Modal Dialog
@@ -32,6 +33,8 @@
   nextBtn.onclick = mySwipe.next;
 </script>
 
-{% if this.page.url == "/contact" %}
-{% partial 'master/scripts-map' %}
+{% partial 'showcase/a-scripts-syntax' %}
+
+{% if this.page.url == "/showcase/components" %}
+{% partial 'showcase/a-scripts-map' %}
 {% endif %}
