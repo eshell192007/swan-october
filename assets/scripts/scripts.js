@@ -84,7 +84,7 @@ menuFadeBg.onclick = function(event){
 
 // ACTIVE MENU ITEM
 // -----------------------------------------------------------
-
+/*
   function activeMenuItem() {
     var menulinks = document.querySelector(".menu, .menu-mobile").getElementsByTagName("a"),
         i = 0,
@@ -97,9 +97,10 @@ menuFadeBg.onclick = function(event){
         }
     }
 }
+document.addEventListener("DOMContentLoaded", activeMenuItem);
+*/
 
 // Execute Functions
-document.addEventListener("DOMContentLoaded", activeMenuItem);
 showMobileBtn();
 window.onresize = function() {
   showMobileBtn();
