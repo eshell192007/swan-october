@@ -11,7 +11,6 @@
 // Abstract
 @import "abstract/variables";
 @import "abstract/mixins";
-@import "abstract/utilities"; // Generic classes
 
 // Layout
 @import "layout/layout";
@@ -49,3 +48,6 @@
 @import "components/togglepanel";
 @import "components/dialog";
 @import "components/tooltip";
+
+// Other
+@import "abstract/utilities";

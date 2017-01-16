@@ -203,6 +203,8 @@ $menu-bg:                       none ;
 // Item
 $menu-item-text:                $gray5 ;
 $menu-item-bg:                  $white ;
+$menu-item-border-radius:       0 ;
+$menu-item-padding:             1.5rem 2.2rem ;
 // Item hover
 $menu-item-hover-text:          $gray9 ;
 $menu-item-hover-bg:            $gray1 ;
@@ -259,8 +261,8 @@ $pag-item-active-border:       $primary 1px solid ;
 // ---------------------------------------------------
 $hero-bg:              $gray1 ;
 $hero-content-bg:      none ;
-$hero-layer-bg:        rgba(255, 255, 255, 0.7) ;
 $hero-heigh:           $size-xl ;
+$overlay-bg:           rgba(255, 255, 255, 0.7) ;
 
 
 @import "core/core";

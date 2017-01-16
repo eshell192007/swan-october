@@ -266,175 +266,6 @@ body:before {
   }
 }
 
-.fill-white {
-  fill: #FFFFFF;
-}
-
-.white {
-  color: #FFFFFF;
-}
-
-.gray1 {
-  color: #f2f2f2;
-}
-
-.gray2 {
-  color: #e6e6e6;
-}
-
-.gray3 {
-  color: #b3b3b3;
-}
-
-.gray4 {
-  color: #999999;
-}
-
-.gray5 {
-  color: gray;
-}
-
-.gray6 {
-  color: #595959;
-}
-
-.gray7 {
-  color: #4d4d4d;
-}
-
-.gray8 {
-  color: #333333;
-}
-
-.gray9 {
-  color: #262626;
-}
-
-.black {
-  color: black;
-}
-
-.bg-white {
-  background: #FFFFFF !important;
-  color: #595959;
-}
-
-.bg-gray1 {
-  background: #f2f2f2 !important;
-  color: #595959;
-}
-
-.bg-gray2 {
-  background: #e6e6e6 !important;
-  color: #595959;
-}
-
-.bg-gray3 {
-  background: #b3b3b3 !important;
-  color: #595959;
-}
-
-.bg-gray4 {
-  background: #999999 !important;
-  color: #FFFFFF;
-}
-
-.bg-gray5 {
-  background: gray !important;
-  color: #FFFFFF;
-}
-
-.bg-gray6 {
-  background: #595959 !important;
-  color: #FFFFFF;
-}
-
-.bg-gray7 {
-  background: #4d4d4d !important;
-  color: #FFFFFF;
-}
-
-.bg-gray8 {
-  background: #333333 !important;
-  color: #FFFFFF;
-}
-
-.bg-gray9 {
-  background: #262626 !important;
-  color: #FFFFFF;
-}
-
-.bg-black {
-  background: black !important;
-  color: #FFFFFF;
-}
-
-.size-xs {
-  height: 3.5rem !important;
-}
-
-.size-s {
-  height: 5rem !important;
-}
-
-.size-m {
-  height: 20rem !important;
-}
-
-.size-l {
-  height: 40rem !important;
-}
-
-.size-xl {
-  height: 50rem !important;
-}
-
-.size-xxl {
-  height: 70rem !important;
-}
-
-.hidden {
-  display: none;
-  opacity: 0;
-  -webkit-transition: visibility 0s, opacity 0.5s linear;
-  transition: visibility 0s, opacity 0.5s linear;
-}
-
-.visible {
-  display: block;
-  opacity: 1;
-  -webkit-transition: visibility 0s, opacity 0.5s linear;
-  transition: visibility 0s, opacity 0.5s linear;
-}
-
-.to-right {
-  float: right;
-}
-
-.to-left {
-  float: left;
-}
-
-.to-center {
-  text-align: center;
-}
-
-.shadow-bottom {
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.22);
-}
-
-.shadow-right {
-  box-shadow: 4px 3px 5px -1px rgba(0, 0, 0, 0.22);
-}
-
-.full {
-  width: 100%;
-}
-
-.shadow {
-  box-shadow: 12px 11px 23px -14px rgba(0, 0, 0, 0.8);
-}
-
 .layout {
   overflow: auto;
   min-height: 100%;
@@ -1678,6 +1509,7 @@ textarea:focus {
   padding: 1.5rem 2.2rem;
   color: #999999;
   background: black;
+  border-radius: 0;
 }
 
 .menu ul li a:visited {
@@ -1875,12 +1707,6 @@ textarea:focus {
   .hero-content p {
     width: 80%;
   }
-}
-
-.hero-layer {
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 100%;
-  height: 100%;
 }
 
 .vertical-align {
@@ -2726,4 +2552,183 @@ button[data-tooltip] {
 
 [data-tooltip-length="fit"]:after {
   width: 100%;
+}
+
+.fill-white {
+  fill: #FFFFFF;
+}
+
+.white {
+  color: #FFFFFF;
+}
+
+.gray1 {
+  color: #f2f2f2;
+}
+
+.gray2 {
+  color: #e6e6e6;
+}
+
+.gray3 {
+  color: #b3b3b3;
+}
+
+.gray4 {
+  color: #999999;
+}
+
+.gray5 {
+  color: gray;
+}
+
+.gray6 {
+  color: #595959;
+}
+
+.gray7 {
+  color: #4d4d4d;
+}
+
+.gray8 {
+  color: #333333;
+}
+
+.gray9 {
+  color: #262626;
+}
+
+.black {
+  color: black;
+}
+
+.bg-white {
+  background: #FFFFFF;
+  color: #595959;
+}
+
+.bg-gray1 {
+  background: #f2f2f2;
+  color: #595959;
+}
+
+.bg-gray2 {
+  background: #e6e6e6;
+  color: #595959;
+}
+
+.bg-gray3 {
+  background: #b3b3b3;
+  color: #595959;
+}
+
+.bg-gray4 {
+  background: #999999;
+  color: #FFFFFF;
+}
+
+.bg-gray5 {
+  background: gray;
+  color: #FFFFFF;
+}
+
+.bg-gray6 {
+  background: #595959;
+  color: #FFFFFF;
+}
+
+.bg-gray7 {
+  background: #4d4d4d;
+  color: #FFFFFF;
+}
+
+.bg-gray8 {
+  background: #333333;
+  color: #FFFFFF;
+}
+
+.bg-gray9 {
+  background: #262626;
+  color: #FFFFFF;
+}
+
+.bg-black {
+  background: black;
+  color: #FFFFFF;
+}
+
+.size-xs {
+  height: 3.5rem;
+}
+
+.size-s {
+  height: 5rem;
+}
+
+.size-m {
+  height: 20rem;
+}
+
+.size-l {
+  height: 40rem;
+}
+
+.size-xl {
+  height: 50rem;
+}
+
+.size-xxl {
+  height: 70rem;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.visible {
+  display: block;
+  opacity: 1;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.to-right {
+  float: right;
+}
+
+.to-left {
+  float: left;
+}
+
+.to-center {
+  text-align: center;
+}
+
+.shadow-bottom {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.22);
+}
+
+.shadow-right {
+  box-shadow: 4px 3px 5px -1px rgba(0, 0, 0, 0.22);
+}
+
+.full {
+  width: 100%;
+}
+
+.shadow {
+  box-shadow: 12px 11px 23px -14px rgba(0, 0, 0, 0.8);
+}
+
+.ghost-mode {
+  background: none;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
 }

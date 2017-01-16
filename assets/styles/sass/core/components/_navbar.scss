@@ -18,6 +18,8 @@ $menu-bg:                       none !default ;
 // Item
 $menu-item-text:                $gray5 !default ;
 $menu-item-bg:                  $white !default ;
+$menu-item-border-radius:       0 !default ;
+$menu-item-padding:             1.5rem 2.2rem !default;
 // Item hover
 $menu-item-hover-text:          $gray9 !default ;
 $menu-item-hover-bg:            $gray1 !default ;
@@ -99,9 +101,10 @@ $menu-mobile-border:           2px solid $gray5 !default;
 .menu ul li a {
   float: left;
   text-decoration: none;
-  padding: 1.5rem 2.2rem;
+  padding: $menu-item-padding;
   color: $menu-item-text;
   background: $menu-item-bg;
+  border-radius: $menu-item-border-radius;
 }
 
 .menu ul li a:visited {
