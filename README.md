@@ -76,7 +76,7 @@ styles/
 │   │   ├── themes/         # Themes (White / Black)
 │   │   ├── vendors/        # Vendor Libraries
 │   │   └── _core.scss      # Swan Core Package
-│   └── theme.scss         # Styles Final Package
+│   └── theme.scss          # Styles Final Package
 │
 ├── css/
 │   ├── theme.min.css      # Compiled CSS (min)

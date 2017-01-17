@@ -121,9 +121,8 @@
     }
 }
 
+// Font sizes
+
 .huge-text {
   font-size: 1.8rem;
-	@include media($mobile){
-    padding-left:0;
-    }
 }
