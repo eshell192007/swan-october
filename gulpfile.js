@@ -70,7 +70,7 @@ gulp.task ('sass' , function() {
       .pipe(autoprefixer())
       .pipe(gulp.dest(outputSass))
       .pipe(cleanCSS())
-      .pipe(rename('styles.min.css'))
+      .pipe(rename('theme.min.css'))
       .pipe(gulp.dest(outputSass))
       .pipe(browserSync.stream());
 });

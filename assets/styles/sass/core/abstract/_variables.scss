@@ -61,7 +61,6 @@ $footer-size: $size-m !default;
 
 // GRAYSCALE PALETTE variables (white to black)
 
-
 $white:             #FFFFFF ; // White (HTML color: white) #FFFFFF
 $gray1:             darken($white, 5%); // #F2F2F2
 $gray2:             darken($white, 10%); // ??
@@ -72,7 +71,7 @@ $gray6:             darken($white, 65%); // #595959
 $gray7:             darken($white, 70%); // #4D4D4D
 $gray8:             darken($white, 80%); // #333333
 $gray9:             darken($white, 85%); // #1A1A1A
-$black:             darken($white, 100%); // Black (HTML color: black) #000000
+$black:             #000000 ; // Black (HTML color: black) #000000
 
 $primary:           #000000 !default; // Black
 $secondary:         #999999 !default; // Gray

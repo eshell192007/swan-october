@@ -1,6 +1,12 @@
 @charset "UTF-8";
 /*!
- * Swan UI v0.5.0
+ * ----------------------------------------------------------------
+ * White Swan - Theme v0.1.0
+ * (c) 2016 Sebastian Serna
+ * ----------------------------------------------------------------
+ */
+/*!
+ * Swan UI v0.3.0
  * https://github.com/acuariux/swan
  * (c) 2015-2016 Sebastian Serna
  * Released under the MIT License.
@@ -375,7 +381,7 @@ body:before {
   margin-right: 0%;
   width: 66.66667%;
   color: #595959;
-  background: none;
+  background: #FFFFFF;
   outline: none;
 }
 
@@ -401,7 +407,7 @@ body:before {
   margin-right: 0%;
   width: 100%;
   color: #595959;
-  background: none;
+  background: #FFFFFF;
   outline: none;
 }
 
@@ -415,7 +421,7 @@ body:before {
   margin-right: 0%;
   width: 33.33333%;
   color: #595959;
-  background: none;
+  background: #f2f2f2;
   outline: none;
 }
 
@@ -1093,14 +1099,14 @@ input[type=checkbox]:not(old) + label > span {
 
 input[type=checkbox]:not(old):checked + label > span {
   background: #FFFFFF;
-  border: #262626 solid 2px;
+  border: #000000 solid 2px;
 }
 
 input[type=checkbox]:not(old):checked + label > span:before {
   content: '✓';
   display: block;
   width: 1.5rem;
-  color: black;
+  color: #000000;
   font-size: 1.5rem;
   line-height: 1em;
   text-align: center;
@@ -1179,7 +1185,7 @@ input[type=radio]:not(old) + label > span {
 
 input[type=radio]:not(old):checked + label > span {
   background: #FFFFFF;
-  border: black solid 2px;
+  border: #000000 solid 2px;
 }
 
 input[type=radio]:not(old):checked + label > span > span {
@@ -1188,7 +1194,7 @@ input[type=radio]:not(old):checked + label > span > span {
   height: 1rem;
   margin: 0.3rem;
   border-radius: 50%;
-  background: black;
+  background: #000000;
 }
 
 body, .smooth-container {
@@ -1227,8 +1233,10 @@ body, .smooth-container {
 
 .ss-scroll {
   position: relative;
-  background: rgba(0, 0, 0, 0.7);
-  width: 5px;
+  background: rgba(0, 0, 0, 0.2);
+  width: 7px;
+  border-radius: 3px;
+  border: none;
   top: 0;
   z-index: 2;
   cursor: pointer;
@@ -1413,11 +1421,11 @@ textarea:focus {
 
 .navbar {
   overflow: auto;
-  background: none;
+  background: #FFFFFF;
 }
 
 .main-logo {
-  fill: black;
+  fill: #000000;
 }
 
 .logo {
@@ -1522,7 +1530,7 @@ textarea:focus {
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
   z-index: 999999;
-  border-left: 2px solid #FFFFFF;
+  border-left: 2px solid gray;
   background: #FFFFFF;
 }
 
@@ -1544,7 +1552,7 @@ textarea:focus {
   transition: all 0.15s ease-out 0s;
   opacity: 0;
   visibility: hidden;
-  background: black;
+  background: #000000;
   z-index: 88888;
 }
 
@@ -1692,6 +1700,12 @@ textarea:focus {
 
 .vertical-align {
   margin-top: 7rem;
+}
+
+.overlay {
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  height: 100%;
 }
 
 .listview {
@@ -1923,7 +1937,7 @@ ul.listview {
           flex: 0 1 33%;
   margin-bottom: 0.5rem;
   color: gray;
-  background: #f2f2f2;
+  background: #FFFFFF;
 }
 
 @media screen and (max-width: 768px) {
@@ -2341,7 +2355,7 @@ a[rel="modal:close"] {
 
 a[rel="modal:close"]:hover {
   color: #FFFFFF;
-  background: black;
+  background: #000000;
 }
 
 button[data-tooltip] {
@@ -2373,7 +2387,7 @@ button[data-tooltip] {
 }
 
 [data-tooltip]:after {
-  background: black;
+  background: #000000;
   border-radius: 4px;
   color: white;
   content: attr(data-tooltip);
@@ -2580,7 +2594,7 @@ button[data-tooltip] {
 }
 
 .black {
-  color: black;
+  color: #000000;
 }
 
 .bg-white {
@@ -2634,7 +2648,7 @@ button[data-tooltip] {
 }
 
 .bg-black {
-  background: black;
+  background: #000000;
   color: #FFFFFF;
 }
 
@@ -2706,12 +2720,6 @@ button[data-tooltip] {
 
 .ghost-mode {
   background: none;
-}
-
-.overlay {
-  background-color: rgba(255, 255, 255, 0.7);
-  width: 100%;
-  height: 100%;
 }
 
 .pad {

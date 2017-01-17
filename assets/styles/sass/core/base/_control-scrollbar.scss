@@ -7,9 +7,11 @@
 // VARIABLES
 // ----------------------------------------------
 
-$scroll-panel-bg:     $gray1 !default;
-$scroll-panel-bar:    rgba(0, 0, 0, 0.7) !default;
-
+$scrollbar-panel-bg:       $gray1 !default;
+$scrollbar-color:          rgba(0, 0, 0, 0.2) !default;
+$scrollbar-size:           7px !default;
+$scrollbar-border:         none !default;
+$scrollbar-border-radius:  3px !default;
 
 // STYLES
 // ----------------------------------------------
@@ -26,7 +28,7 @@ body, .smooth-container {
   height: 300px;
   width: 500px;
   display: inline-block;
-  background: $scroll-panel-bg;
+  background: $scrollbar-panel-bg;
 }
 
 // Simple Scrollbar styles
@@ -50,11 +52,12 @@ body, .smooth-container {
   box-sizing: border-box;
 }
 
-.ss-scroll {
+.ss-scroll { // scrollbar
   position: relative;
-  background: $scroll-panel-bar;
-  width: 5px;
-  //border-radius: 4px;
+  background: $scrollbar-color;
+  width: $scrollbar-size;
+  border-radius: $scrollbar-border-radius;
+  border: $scrollbar-border;
   top: 0;
   z-index: 2;
   cursor: pointer;

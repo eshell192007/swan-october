@@ -1,6 +1,12 @@
 @charset "UTF-8";
 /*!
- * Swan UI v0.5.0
+ * ----------------------------------------------------------------
+ * Black Swan - Theme v0.1.0
+ * (c) 2016 Sebastian Serna
+ * ----------------------------------------------------------------
+ */
+/*!
+ * Swan UI v0.3.0
  * https://github.com/acuariux/swan
  * (c) 2015-2016 Sebastian Serna
  * Released under the MIT License.
@@ -287,7 +293,7 @@ body:before {
   margin-right: 0%;
   width: 100%;
   color: #b3b3b3;
-  background: none;
+  background: #000000;
   outline: none;
 }
 
@@ -323,7 +329,7 @@ body:before {
   padding: 3rem 3rem;
   height: 20rem;
   color: #b3b3b3;
-  background: black;
+  background: #000000;
   outline: none;
 }
 
@@ -666,7 +672,7 @@ html {
 
 body {
   font-size: 10px;
-  background: black;
+  background: #000000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1093,14 +1099,14 @@ input[type=checkbox]:not(old) + label > span {
 
 input[type=checkbox]:not(old):checked + label > span {
   background: #FFFFFF;
-  border: black solid 2px;
+  border: #000000 solid 2px;
 }
 
 input[type=checkbox]:not(old):checked + label > span:before {
   content: '✓';
   display: block;
   width: 1.5rem;
-  color: black;
+  color: #000000;
   font-size: 1.5rem;
   line-height: 1em;
   text-align: center;
@@ -1179,7 +1185,7 @@ input[type=radio]:not(old) + label > span {
 
 input[type=radio]:not(old):checked + label > span {
   background: #FFFFFF;
-  border: black solid 2px;
+  border: #000000 solid 2px;
 }
 
 input[type=radio]:not(old):checked + label > span > span {
@@ -1188,7 +1194,7 @@ input[type=radio]:not(old):checked + label > span > span {
   height: 1rem;
   margin: 0.3rem;
   border-radius: 50%;
-  background: black;
+  background: #000000;
 }
 
 body, .smooth-container {
@@ -1203,7 +1209,7 @@ body, .smooth-container {
   height: 300px;
   width: 500px;
   display: inline-block;
-  background: #f2f2f2;
+  background: #262626;
 }
 
 .ss-wrapper {
@@ -1227,8 +1233,10 @@ body, .smooth-container {
 
 .ss-scroll {
   position: relative;
-  background: rgba(0, 0, 0, 0.7);
-  width: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  width: 7px;
+  border-radius: 3px;
+  border: none;
   top: 0;
   z-index: 2;
   cursor: pointer;
@@ -1413,7 +1421,7 @@ textarea:focus {
 
 .navbar {
   overflow: auto;
-  background: black;
+  background: #000000;
 }
 
 .main-logo {
@@ -1489,7 +1497,7 @@ textarea:focus {
   text-decoration: none;
   padding: 1.5rem 2.2rem;
   color: #999999;
-  background: black;
+  background: #000000;
   border-radius: 0;
 }
 
@@ -1544,7 +1552,7 @@ textarea:focus {
   transition: all 0.15s ease-out 0s;
   opacity: 0;
   visibility: hidden;
-  background: black;
+  background: #000000;
   z-index: 88888;
 }
 
@@ -1598,9 +1606,9 @@ textarea:focus {
   width: 5rem;
   height: 5rem;
   text-align: center;
-  border: 1px solid black;
+  border: 1px solid #000000;
   color: #f2f2f2;
-  background: black;
+  background: #000000;
 }
 
 .menu-mobile-open button:hover {
@@ -1608,7 +1616,7 @@ textarea:focus {
   height: 5rem;
   text-align: center;
   border: 1px solid #333333;
-  color: #FFFFFF;
+  color: #f2f2f2;
   background: #333333;
 }
 
@@ -1692,6 +1700,12 @@ textarea:focus {
 
 .vertical-align {
   margin-top: 7rem;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
 }
 
 .listview {
@@ -2118,8 +2132,8 @@ ul.listview {
   width: 100%;
   min-height: 35rem;
   margin: 0 auto;
-  color: #b3b3b3;
-  background: #f2f2f2;
+  color: #999999;
+  background: #262626;
   border-top-left-radius: 0rem;
   border-top-right-radius: 0rem;
 }
@@ -2136,7 +2150,7 @@ ul.listview {
 }
 
 .swipe div b {
-  background-color: #e6e6e6;
+  background-color: #333333;
   vertical-align: middle;
 }
 
@@ -2341,7 +2355,7 @@ a[rel="modal:close"] {
 
 a[rel="modal:close"]:hover {
   color: #FFFFFF;
-  background: black;
+  background: #000000;
 }
 
 button[data-tooltip] {
@@ -2373,7 +2387,7 @@ button[data-tooltip] {
 }
 
 [data-tooltip]:after {
-  background: black;
+  background: #000000;
   border-radius: 4px;
   color: white;
   content: attr(data-tooltip);
@@ -2580,7 +2594,7 @@ button[data-tooltip] {
 }
 
 .black {
-  color: black;
+  color: #000000;
 }
 
 .bg-white {
@@ -2634,7 +2648,7 @@ button[data-tooltip] {
 }
 
 .bg-black {
-  background: black;
+  background: #000000;
   color: #FFFFFF;
 }
 
@@ -2706,12 +2720,6 @@ button[data-tooltip] {
 
 .ghost-mode {
   background: none;
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 100%;
-  height: 100%;
 }
 
 .pad {
