@@ -92,7 +92,7 @@ q {
   display: inline-block;
   font-style: italic;
   font-size: $text-medium;
-  }  
+  }
 
 blockquote {
   font-style: italic;
@@ -107,7 +107,7 @@ blockquote q {
     font-size: $text-large;
     line-height: 3rem;
     }
-  } 
+  }
 
 blockquote footer {
   margin-top: 1rem;
@@ -179,9 +179,8 @@ input [type="checkbox"] {
     }
 }
 
-h2.heading {
-  margin-top: 10rem;
-  margin-bottom: 3rem;
+.heading {
+  margin: 10rem 2rem 3rem 2rem;
   @include media($mobile){
     margin-left:1rem;
     }

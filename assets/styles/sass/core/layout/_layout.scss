@@ -144,25 +144,7 @@ $sidebar-bg:           $gray1 !default;
 .gap-right  { padding-right: $width-sidebar-tiny ; }
 .gap-bottom { margin-bottom: $width-sidebar-tiny ; }
 
-// Padding
-
-.pad {
- padding: 1rem 2rem;
-  @include media($mobile){
-    padding: 0.5rem 1rem;
-    }
-}
-
-.gap-bottom {
-  margin-bottom: 1rem;
-}
-
-.gap-left {
-  padding-left: 15rem;
-	@include media($mobile){
-    padding-left:0;
-    }
-}
+// other
 
 .inner-centered {
   @include vertical-align;

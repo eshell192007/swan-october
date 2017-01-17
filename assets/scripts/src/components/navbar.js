@@ -26,6 +26,7 @@ menuShow.onclick = function(event){
      menuFadeBg.className += " is-visible";
      event.preventDefault();
 };
+
 // Shame but works
 menuFadeBg.onclick = function(event){
      // Delete and Write menu classes

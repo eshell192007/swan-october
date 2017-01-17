@@ -220,7 +220,7 @@ $menu-mobile-border:           2px solid $gray5 !default;
 // Menu vertical (provisional)
 
 .menu-vertical {
-  min-width: 15rem;
+  width: 100%;
   background: $menu-mobile-bg;
 }
 
@@ -252,7 +252,7 @@ $menu-mobile-border:           2px solid $gray5 !default;
 
 
 .sidebar-menu {
-	width: 15rem;
+	width: 17rem;
   color: $text-basic;
   background: $menu-mobile-item-bg;
 	height: 100%;
