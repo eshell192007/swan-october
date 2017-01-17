@@ -1,6 +1,6 @@
 /*!
  * ----------------------------------------------------------------
- * White Swan - Theme v0.1.0
+ * White Swan - Theme v0.3.1
  * (c) 2016 Sebastian Serna
  * ----------------------------------------------------------------
  */
@@ -347,9 +347,10 @@ $pag-item-active-border:       $primary 1px solid ;
 // ----------------------------------------------------------------
 $hero-bg:              $gray1 ;
 $hero-content-bg:      none ;
-$hero-layer-bg:        rgba(255, 255, 255, 0.7) ;
 $hero-heigh:           $size-xl ;
-$overlay-bg:           rgba(255, 255, 255, 0.7) ;
+$overlay-bg:           rgba(255, 255, 255, 0.7)  ;
+$overlay-dark-bg:      rgba(0, 0, 0, 0.8) ;
+$overlay-light-bg:     rgba(255, 255, 255, 0.7) ;
 
 
 // ----------------------------------------------------------------

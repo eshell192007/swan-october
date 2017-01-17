@@ -43,9 +43,7 @@ El comando `gulp watch` ejecuta unas tareas específicas para compilar el códig
 ```sh
 swan-october/
 │
-├── assets/           # Recursos globales
-│   ├── audio/        
-│   ├── fonts/        
+├── assets/           # Recursos globales  
 │   ├── images/       
 │   ├── scripts/      
 │   └── styles/
@@ -78,11 +76,11 @@ styles/
 │   │   ├── themes/         # Themes (White / Black)
 │   │   ├── vendors/        # Vendor Libraries
 │   │   └── _core.scss      # Swan Core Package
-│   └── styles.scss         # Styles Final Package
+│   └── theme.scss         # Styles Final Package
 │
 ├── css/
-│   ├── styles.min.css      # Compiled CSS (min)
-│   └── styles.css          # Compiled CSS
+│   ├── theme.min.css      # Compiled CSS (min)
+│   └── theme.css          # Compiled CSS
 │
 └---------------------------------------------------------
 
@@ -123,7 +121,7 @@ Para el desarrollo se utilizan los siguientes módulos de Node.js (la mayoría s
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Sebastian Serna
+Copyright (c) 2015-2017 Sebastian Serna
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

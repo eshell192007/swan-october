@@ -4,11 +4,6 @@
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-//VARIABLES
-
-$overlay-bg:           rgba(255, 255, 255, 0.7) !default;
-
-
 // SVG COLOR
 
 .fill-white {
@@ -121,6 +116,13 @@ $overlay-bg:           rgba(255, 255, 255, 0.7) !default;
 
 .gap-left {
   padding-left: 17rem;
+	@include media($mobile){
+    padding-left:0;
+    }
+}
+
+.huge-text {
+  font-size: 1.8rem;
 	@include media($mobile){
     padding-left:0;
     }

@@ -12,6 +12,8 @@ $hero-bg:              $gray1 !default;
 $hero-content-bg:      none !default;
 $hero-heigh:           $size-xl !default;
 $overlay-bg:           rgba(255, 255, 255, 0.7) !default;
+$overlay-dark-bg:      rgba(0, 0, 0, 0.8) !default;
+$overlay-light-bg:     rgba(255, 255, 255, 0.7) !default;
 
 // STYLES
 // -----------------------------------------------------------
@@ -35,11 +37,6 @@ $overlay-bg:           rgba(255, 255, 255, 0.7) !default;
 .hero-content {
   color: $text-basic;
   background: $hero-content-bg;
-  padding-top: 8rem;
-
-  @include media($mobile){
-
-    }
 }
 
 .hero-content p {
@@ -50,15 +47,30 @@ $overlay-bg:           rgba(255, 255, 255, 0.7) !default;
     }
 }
 
-.vertical-align {
-  //@include vertical-align;
-  margin-top: 7rem;
+.align-vertical {
+  @include vertical-align(50%); // Default value 50%
+}
+
+.hero-align-vertical {
+  @include vertical-align(35%); // Provisional
 }
 
 // Layer inside bg image
 
 .overlay {
   background-color: $overlay-bg;
+  width:100%;
+  height:100%;
+}
+
+.overlay-dark {
+  background-color: $overlay-dark-bg;
+  width:100%;
+  height:100%;
+}
+
+.overlay-light {
+  background-color: $overlay-light-bg;
   width:100%;
   height:100%;
 }

@@ -1,6 +1,6 @@
 /*!
  * ----------------------------------------------------------------
- * Black Swan - Theme v0.1.0
+ * Black Swan - Theme v0.3.1
  * (c) 2016 Sebastian Serna
  * ----------------------------------------------------------------
  */
@@ -348,7 +348,9 @@ $pag-item-active-border:       $primary 1px solid ;
 $hero-bg:              $gray9 ;
 $hero-content-bg:      none ;
 $hero-heigh:           $size-xl ;
-$overlay-bg:           rgba(0, 0, 0, 0.8) ;
+$overlay-bg:           rgba(0, 0, 0, 0.8)  ;
+$overlay-dark-bg:      rgba(0, 0, 0, 0.8) ;
+$overlay-light-bg:     rgba(255, 255, 255, 0.7) ;
 
 
 // ----------------------------------------------------------------
