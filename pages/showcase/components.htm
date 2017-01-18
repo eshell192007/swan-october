@@ -3,7 +3,7 @@ url = "/showcase/components"
 layout = "showcase"
 is_hidden = 0
 ==
-{% partial 'master/subheader' %}
+{% partial 'showcase/a-subheader' %}
 
 <section id="navbar" class="block">
   <h2>Navbar</h2>
@@ -89,16 +89,16 @@ is_hidden = 0
   </div>
 </section>
 
-<section id="hero-banner" class="block">
-<h2>Hero Banner</h2>
-{% partial 'showcase/comp-hero-banner' %}
+<section id="hero-block" class="block">
+<h2>Hero Block</h2>
+{% partial 'showcase/comp-hero-block' %}
 <!-- Code Example -->
 <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
   <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
 </button>
 <div class="js-toggle-hidden">
     <script type="syntaxhighlighter" class="brush: xml">
-    <![CDATA[ {% partial 'showcase/comp-hero-banner' %} ]]>
+    <![CDATA[ {% partial 'showcase/comp-hero-block' %} ]]>
     </script>
 </div>
 </section>

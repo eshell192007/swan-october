@@ -34,6 +34,7 @@ var outputJs = 'assets/scripts/',
       'assets/scripts/src/components/scroll-smooth.js',
       'assets/scripts/src/components/slideshow.js',
       'assets/scripts/src/components/lazy-load.js',
+      'assets/scripts/src/components/theme-switch.js',
       // Vendors
       'assets/scripts/src/vendors/svg4everybody.js'
     ];

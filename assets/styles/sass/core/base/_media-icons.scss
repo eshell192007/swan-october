@@ -50,7 +50,7 @@ svg {
 }
 
 svg path, svg g  {
-  fill: inherit; // Solves the overrides with classes
+  fill: inherit; // Solves the overrides with classes on Firefox
 }
 
 .icon {
