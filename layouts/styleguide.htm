@@ -2,21 +2,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% partial 'showcase/a-head' %}
+    {% partial 'styleguide/app-html-head' %}
 </head>
 <body>
 <div class="layout">
   <!-- Header :::::::::::::::::::::: -->
   <header class="layout-header fixed-top shadow-bottom">
-    {% partial 'showcase/a-navbar-main' %}
+    {% partial 'styleguide/app-navbar-main' %}
   </header>
   <!-- Content Area :::::::::::::::::::::: -->
   <main class="layout-main" role="main">
     <aside class="sidebar-menu fixed-left shadow-right" ss-container>
-      {% if this.page.url == "/showcase/components" %}
-          {% partial 'showcase/a-menu-components' %}
-      {% elseif this.page.url == "/showcase" %}
-          {% partial 'showcase/a-menu-base' %}
+      {% if this.page.url == "/styleguide/components" %}
+          {% partial 'styleguide/app-menu-components' %}
+      {% elseif this.page.url == "/styleguide" %}
+          {% partial 'styleguide/app-menu-base' %}
       {% else %}
           No hay items en el menú
       {% endif %}
@@ -27,11 +27,11 @@
   </main>
   <!-- Footer :::::::::::::::::::::: -->
   <footer class="layout-footer">
-    {% partial 'showcase/comp-footer' %}
+    {% partial 'styleguide/comp-footer' %}
   </footer>
 </div>
 
-{% partial 'showcase/a-scripts' %}
+{% partial 'styleguide/app-scripts' %}
 
 </body>
 </html>

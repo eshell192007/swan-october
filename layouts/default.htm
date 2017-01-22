@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% partial 'master/head' %}
+    {% partial 'common/html-head' %}
 </head>
 <body>
 <div class="layout">
   <!-- Header :::::::::::::::::::::: -->
   <header class="layout-header fixed-top shadow-bottom">
-    {% partial 'master/navbar' %}
+    {% partial 'common/app-navbar' %}
   </header>
   <!-- Content Area :::::::::::::::::::::: -->
   <main class="layout-main" role="main">
@@ -16,11 +16,11 @@
   </main>
   <!-- Footer :::::::::::::::::::::: -->
   <footer class="layout-footer">
-    {% partial 'master/footer' %}
+    {% partial 'common/app-footer' %}
   </footer>
 </div>
 
-{% partial 'master/scripts' %}
+{% partial 'common/scripts' %}
 
 </body>
 </html>

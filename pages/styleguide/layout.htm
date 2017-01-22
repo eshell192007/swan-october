@@ -1,23 +1,23 @@
 title = "Layout"
-url = "/showcase/layout"
-layout = "showcase"
+url = "/styleguide/layout"
+layout = "styleguide"
 is_hidden = 0
 ==
-{% partial 'showcase/a-subheader' %}
+{% partial 'styleguide/app-subheader' %}
 
 <!-- Templates :::::::::::::::::::::::::::: -->
 <h2 class="heading">Basic Layouts</h2>
-{% partial 'showcase/layout-basic-layouts' %}
+{% partial 'styleguide/layout-basic-layouts' %}
 
 <!-- Grid Columns :::::::::::::::::::::::::::::::::: -->
 <h2 class="heading">Grid Columns</h2>
-{% partial 'showcase/layout-basic-columns' %}
+{% partial 'styleguide/layout-basic-columns' %}
 <!-- Code Example -->
 <button class="js-toggle circle" data-tooltip="Show Code" data-tooltip-pos="right">
   <svg class="icon-medium"><use xlink:href="{{'assets/images/icons.svg#markup'|theme }}"></use></svg>
 </button>
 <div class="js-toggle-hidden">
     <script type="syntaxhighlighter" class="brush: xml">
-    <![CDATA[ {% partial 'showcase/layout-basic-columns' %} ]]>
+    <![CDATA[ {% partial 'styleguide/layout-basic-columns' %} ]]>
     </script>
 </div>
