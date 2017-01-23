@@ -67,22 +67,6 @@ $sidebar-bg:           $gray1 !default;
 
 // Generic classes
 
-.section {
-  @include row();
-  outline: $layout-border;
-	overflow: hidden; // Resuelve margin compartido con elementos H1
-}
-
-.section-content {
-  @include outer-container(980px);
-  outline: $layout-border;
-}
-
-.section-content-full {
-  @include outer-container(100%);
-  outline: $layout-border;
-}
-
 .content {
   @include span-columns(8);
   color: $text-basic;
