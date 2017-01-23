@@ -5,6 +5,9 @@
 <script src="{{ 'assets/scripts/src/components/theme-switch.js' |theme }}"></script>
 
 <script>
+  // Polyfills
+  svg4everybody();
+  objectFitImages();
   // Smooth Scroll and Gum Shoe
   smoothScroll.init({selectorHeader: '[data-scroll-header]'});
   gumshoe.init();
@@ -12,8 +15,6 @@
   const modal = new VanillaModal({
     clickOutside : false
   });
-  // SVG Polyfill
-  svg4everybody();
   // Slideshow
   var element = document.querySelector('.slideshow'),
      prevBtn = document.querySelector('.js-slideshow-prev'),

@@ -625,6 +625,9 @@ body:before {
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
 }
 
 .row::after {
@@ -641,6 +644,7 @@ body:before {
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+  z-index: 4;
 }
 
 .row-content::after {
@@ -711,6 +715,18 @@ img[data-sizes="auto"] {
 .blur-up.lazyloaded {
   -webkit-filter: blur(0);
   filter: blur(0);
+}
+
+.bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  -o-object-fit: cover;
+     object-fit: cover;
+  font-family: 'object-fit: cover;';
 }
 
 .icon, .icon-medium, .icon-large, .icon-huge, .icon-xhuge {

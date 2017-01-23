@@ -3,61 +3,63 @@ url = "/"
 layout = "default"
 is_hidden = 0
 ==
-<section id="section1" class="row lazyload" data-bg="{{'assets/images/demo/hero1.jpg'|theme }}">
-    <div class="overlay-bg">
-      <div class="row-content align-centered">
-        <svg class="main-logo" viewBox="0 0 100 100" width="150" height="150">
-          <use xlink:href="{{'assets/images/logo.svg#logo'|theme }}"></use>
-        </svg>
-        <h1>Section 1</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet orci a dui mollis, ut ornare massa pharetra.</p>
-        <a href="#" class="button primary rounded">GET STARTED</a>
-      </div>
-    </div>
-</section>
-
-<section id="section2" class="row">
-    <div class="row-content">
-      <div class="half-wide pad">
-        <h2>Section 2</h2>
-        <p>Etiam tristique a ex eu viverra. Etiam ut mattis felis, a hendrerit diam. Sed vel diam sit amet mi mollis tempor sed finibus quam. Praesent commodo, nunc in imperdiet laoreet, nisl velit tristique risus, ut pretium arcu velit at quam.</p>
-        <a href="#" class="button primary rounded huge-text">GET STARTED</a>
-      </div>
-      <div class="half-wide">
-        <img
-          data-src="{{'assets/images/demo/thumb-nature.jpg'|theme }}"
-          alt="Photo by Laura Kangur"
-          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-          class="lazyload" />
-      </div>
-  </div>
-</section>
-
-<section id="section3" class="row lazyload" data-bg="{{'assets/images/demo/hero4.jpg'|theme }}">
-  <div class="overlay-bg">
-    <div class="row-content">
-      <div class="half-wide to-right pad align-right">
+  <!-- Section 1 -->
+  <section class="row" id="section1">
+    <article class="row-content align-centered">
+      <svg class="main-logo" viewBox="0 0 100 100" width="150" height="150">
+        <use xlink:href="{{'assets/images/logo.svg#logo'|theme }}"></use>
+      </svg>
+      <h1>Section 1</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet orci a dui mollis, ut ornare massa pharetra.</p>
+      <a href="#" class="button primary rounded">GET STARTED</a>
+    </article>
+    <!-- Background Image -->
+    <img class="bg-image lazyload" data-src="{{'assets/images/demo/hero1.jpg'|theme }}" />
+  </section>
+  <!-- Section 2 -->
+  <section class="row" id="section2" >
+    <article class="row-content">
+        <div class="six-columns pad">
+          <h2>Section 2</h2>
+          <p>Etiam tristique a ex eu viverra. Etiam ut mattis felis, a hendrerit diam. Sed vel diam sit amet mi mollis tempor sed finibus quam. Praesent commodo, nunc in imperdiet laoreet, nisl velit tristique risus, ut pretium arcu velit at quam.</p>
+          <a href="#" class="button primary rounded huge-text">GET STARTED</a>
+        </div>
+        <div class="six-columns">
+          <img class="lazyload" alt="Photo by Laura Kangur"
+            data-src="{{'assets/images/demo/thumb-nature.jpg'|theme }}"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+        </div>
+    </article>
+  </section>
+  <!-- Section 3 -->
+  <section id="section3" class="row">
+    <article class="row-content">
+      <div class="six-columns pad">
         <h2>Section 3</h2>
         <p>Etiam tristique a ex eu viverra. Etiam ut mattis felis, a hendrerit diam. Sed vel diam sit amet mi mollis tempor sed finibus quam. Praesent commodo, nunc in imperdiet laoreet, nisl velit tristique risus, ut pretium arcu velit at quam.</p>
         <a href="#" class="button primary rounded huge-text">GET STARTED</a>
       </div>
-      <div class="half-wide">
-        <img
-          data-src="{{'assets/images/demo/thumb-fashion.jpg'|theme }}"
-          alt="Photo by Laura Kangur"
-          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-          class="lazyload" />
+      <div class="six-columns">
+        <img class="lazyload" alt="Photo by Laura Kangur" data-src="{{'assets/images/demo/thumb-fashion.jpg'|theme }}"
+          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="section4" class="hero size-xxl lazyload" data-bg="{{'assets/images/demo/hero3.jpg'|theme }}">
-    <div class="hero-content overlay-bg">
-      <div class="align-vertical">
-        <a href="#" class="button primary rounded huge-text">
-          Section 4
-        </a>
+    </article>
+    <!-- Background Image -->
+    <img class="bg-image lazyload" data-src="{{'assets/images/demo/hero3.jpg'|theme }}" />
+  </section>
+  <!-- Section 4 -->
+  <section class="row" id="section4">
+    <article class="row-content">
+      <div class="six-columns pad">
+        <h2>Section 4</h2>
+        <p>Etiam tristique a ex eu viverra. Etiam ut mattis felis, a hendrerit diam. Sed vel diam sit amet mi mollis tempor sed finibus quam. Praesent commodo, nunc in imperdiet laoreet, nisl velit tristique risus, ut pretium arcu velit at quam.</p>
+        <a href="#" class="button primary rounded huge-text">GET STARTED</a>
       </div>
-    </div>
-</section>
+      <div class="six-columns">
+        <img class="lazyload" alt="Photo by Laura Kangur" data-src="{{'assets/images/demo/thumb-fashion.jpg'|theme }}"
+          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+      </div>
+    </article>
+    <!-- Background Image -->
+    <img class="bg-image lazyload" data-src="{{'assets/images/demo/hero4.jpg'|theme }}" />
+  </section>

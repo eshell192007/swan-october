@@ -35,6 +35,7 @@ var outputJs = 'assets/scripts/',
       'assets/scripts/src/components/slideshow.js',
       'assets/scripts/src/components/lazy-load.js',
       // Vendors
+      'assets/scripts/src/vendors/cover-image.js',
       'assets/scripts/src/vendors/svg4everybody.js'
     ];
 

@@ -2,25 +2,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% partial 'common/html-head' %}
+{% partial 'common/html-head' %}
 </head>
 <body>
 <div class="layout">
-  <!-- Header :::::::::::::::::::::: -->
-  <header class="layout-header fixed-top shadow-bottom">
-    {% partial 'common/app-navbar' %}
-  </header>
-  <!-- Content Area :::::::::::::::::::::: -->
-  <main class="layout-main" role="main">
-    {% page %}
-  </main>
-  <!-- Footer :::::::::::::::::::::: -->
-  <footer class="layout-footer">
-    {% partial 'common/app-footer' %}
-  </footer>
+<!-- Header :::::::::::::::::::::: -->
+<header class="layout-header fixed-top shadow-bottom">
+{% partial 'common/app-navbar' %}
+</header>
+<!-- Content Area :::::::::::::::::::::: -->
+<main class="layout-main" role="main">
+{% page %}
+</main>
+<!-- Footer :::::::::::::::::::::: -->
+<footer class="layout-footer">
+{% partial 'common/app-footer' %}
+</footer>
 </div>
 
 {% partial 'common/scripts' %}
-
 </body>
 </html>
