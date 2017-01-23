@@ -2,17 +2,18 @@
 ==
 <!-- Scripts -->
 <script src="{{ 'assets/scripts/scripts.min.js' |theme }}"></script>
+<script src="{{ 'assets/scripts/src/components/theme-switch.js' |theme }}"></script>
 
 <script>
+  // Smooth Scroll and Gum Shoe
+  smoothScroll.init({selectorHeader: '[data-scroll-header]'});
+  gumshoe.init();
   // Modal Dialog
   const modal = new VanillaModal({
     clickOutside : false
   });
   // SVG Polyfill
   svg4everybody();
-  // Smooth Scroll and Gum Shoe
-  smoothScroll.init({selectorHeader: '[data-scroll-header]'});
-  gumshoe.init();
   // Slideshow
   var element = document.querySelector('.slideshow'),
      prevBtn = document.querySelector('.js-slideshow-prev'),
