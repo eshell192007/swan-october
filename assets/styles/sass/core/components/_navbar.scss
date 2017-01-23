@@ -16,6 +16,7 @@ $main-logo-color:               $black !default ;
 $navigation-bg:                 $white !default ;
 $menu-bg:                       none !default ;
 // Item
+$menu-item-text-style:          capitalize !default ;
 $menu-item-text:                $gray5 !default ;
 $menu-item-bg:                  $white !default ;
 $menu-item-border-radius:       0 !default ;
@@ -93,6 +94,7 @@ $menu-mobile-border:           2px solid $gray5 !default;
 
 .menu ul li {
   display: inline;
+  text-transform: $menu-item-text-style;
   @include media($mobile){
     display: block;
     }
