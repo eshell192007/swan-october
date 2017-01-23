@@ -640,10 +640,6 @@ body:before {
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
   z-index: 4;
 }
 
@@ -671,6 +667,27 @@ body:before {
   .row-content-full {
     padding-top: 8rem;
   }
+}
+
+.center-x {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.center-y {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.center-xy {
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 html {
