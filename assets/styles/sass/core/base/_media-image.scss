@@ -9,7 +9,7 @@
 
 img {
 	display: inline-block;
-	max-width:100%;
+	width:100%;
 	height:auto;
 	}
 
@@ -42,6 +42,12 @@ img[data-sizes="auto"] {
 .blur-up.lazyloaded {
 		-webkit-filter: blur(0);
 		filter: blur(0);
+}
+
+figure { // For Gallery gridview thumbs
+  width: 100%;
+  padding: 0;
+  margin:0;
 }
 
 // Background with object fit (need polyfill on Internet Explorer)
