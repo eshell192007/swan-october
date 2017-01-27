@@ -12,28 +12,30 @@ is_hidden = 0
   <img class="bg-image lazyload" data-src="{{'assets/images/demo/hero1.jpg'|theme }}" />
 </section>
 <!-- Section 2 -->
-<section class="row" id="section2" >
+<section class="row" id="section2">
   <article class="row-content center-y">
     {% partial 'home/section2' %}
   </article>
 </section>
 <!-- Section 3 -->
-<section class="row bg-gray8" id="section3">
-  <article class="row-content center-x">
-    {% partial 'home/section3' %}
-  </article>
+<section class="row lazyload" id="section3" data-bg="{{'assets/images/demo/hero2.jpg'|theme }}" >
+  <div class="overlay-bg">
+    <article class="row-content center-x">
+      {% partial 'home/section3' %}
+    </article>
+  </div>
 </section>
 <!-- Section 4 -->
-<section class="row" id="section4">
-  <article class="row-content center-y">
-    {% partial 'home/section4' %}
-  </article>
+<section class="row lazyload" id="section4" data-bg="{{'assets/images/demo/hero4.jpg'|theme }}">
+  <div class="overlay-bg">
+    <article class="row-content center-y">
+      {% partial 'home/section4' %}
+    </article>
+  </div>
 </section>
 <!-- Section 5 -->
 <section class="row" id="section5">
-  <article class="row-content center-xy">
+  <article class="row-content">
     {% partial 'home/section5' %}
   </article>
-  <!-- Background Image -->
-  <img class="bg-image lazyload" data-src="{{'assets/images/demo/hero4.jpg'|theme }}" />
 </section>

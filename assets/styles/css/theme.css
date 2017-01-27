@@ -6,7 +6,7 @@
  * ----------------------------------------------------------------
  */
 /*!
- * Swan UI v0.3.5
+ * Swan UI v0.3.6
  * https://github.com/acuariux/swan
  * (c) 2015-2017 Sebastian Serna
  * Released under the MIT License.
@@ -641,6 +641,7 @@ body:before {
   margin-left: auto;
   margin-right: auto;
   z-index: 4;
+  overflow: auto;
 }
 
 .row-content::after {
@@ -655,6 +656,7 @@ body:before {
   margin-right: auto;
   padding-top: 10rem;
   height: 100%;
+  overflow: auto;
 }
 
 .row-content-full::after {
@@ -2010,6 +2012,10 @@ ul.listview {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 33%;
           flex: 0 1 33%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 0.5rem;
   color: gray;
   background: #FFFFFF;
